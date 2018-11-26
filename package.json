@@ -1,0 +1,50 @@
+{
+    "name": "in-class-db-api",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server/lib/index.js",
+    "scripts": {
+        "build:client": "webpack",
+        "build:server": "babel ./server/src -d ./server/lib",
+        "clean": "npm run clean:client && npm run clean:server",
+        "clean:client": "rimraf ./client/dist",
+        "clean:server": "rimraf ./server/lib",
+        "dev": "npm run clean && npm run build:server && concurrently -r -k \"npm run watch:client\" \"npm run watch:server\" \"nodemon --watch server/lib --delay 1\"",
+        "start": "npm run clean && npm run build:client && npm run build:server && npm run start:server",
+        "start:server": "node server/lib/index.js",
+        "watch:client": "webpack --mode development --watch",
+        "watch:server": "babel ./server/src -w -d ./server/lib"
+    },
+    "author": "Covalence",
+    "license": "ISC",
+    "dependencies": {
+        "@babel/cli": "^7.0.0",
+        "@babel/core": "^7.0.1",
+        "@babel/plugin-proposal-class-properties": "^7.0.0",
+        "@babel/polyfill": "^7.0.0",
+        "@babel/preset-env": "^7.0.0",
+        "@babel/preset-react": "^7.0.0",
+        "babel-loader": "^8.0.2",
+        "express": "^4.16.3",
+        "file-loader": "^2.0.0",
+        "isomorphic-fetch": "^2.2.1",
+        "morgan": "^1.9.1",
+        "mysql": "^2.16.0",
+        "passport": "^0.4.0",
+        "passport-http-bearer": "^1.0.1",
+        "passport-local": "^1.0.0",
+        "react": "^16.5.1",
+        "react-dom": "^16.5.1",
+        "react-router-dom": "^4.3.1",
+        "react-stripe-elements": "^2.0.1",
+        "rimraf": "^2.6.2",
+        "stripe": "^6.11.0",
+        "uuid": "^3.3.2",
+        "webpack": "^4.19.0"
+    },
+    "devDependencies": {
+        "concurrently": "^4.0.1",
+        "nodemon": "^1.18.4",
+        "webpack-cli": "^3.1.0"
+    }
+}
