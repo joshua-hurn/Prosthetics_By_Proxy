@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import Table from '../../queries/table';
+import Table from '../queries/table';
 
 let router = Router();
 let prostheticsTable = new Table('Prosthetics');

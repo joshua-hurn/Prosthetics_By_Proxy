@@ -5,7 +5,7 @@ import prostheticsRouter from './prosthetics';
 import categoriesRouter from './categories';
 import usersRouter from './users';
 import stripeDonationsRouter from './stripeDonations';
-import queriesRouter from '../queries/'
+import queriesRouter from './queries';
 import { isLoggedIn, tokenMiddleware } from '../middleware/auth.mw';
 
 let router = Router();

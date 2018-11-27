@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import Table from '../../queries/table';
+import Table from '../queries/table';
 
 let router = Router();
 let categoriesTable = new Table('Categories');
@@ -33,3 +33,5 @@ router.delete('/:id', (req, res) => {
         .then(results => res.send(`Post ID ${req.params.id} has been deleted!`))
         .catch(e => res.status(500).send(e));
 });
+
+export default router;
