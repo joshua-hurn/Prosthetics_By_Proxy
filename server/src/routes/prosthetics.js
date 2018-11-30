@@ -2,7 +2,7 @@ import { Router } from 'express';
 import Table from '../queries/table';
 
 let router = Router();
-let prostheticsTable = new Table('Prosthetics');
+let prostheticsTable = new Table('prosthetics');
 
 router.get('/:id?', (req, res) => {
     if (req.params.id) {
