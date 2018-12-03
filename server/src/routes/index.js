@@ -12,14 +12,15 @@ import { isLoggedIn, tokenMiddleware } from '../middleware/auth.mw';
 let router = Router();
 
 router.use('/auth', authRouter);
-router.use('/donate', stripeDonationsRouter);
 router.use('/contact', contactRouter);
+router.use('/Donations', stripeDonationsRouter); 
 
 router.route('*')
     .post(tokenMiddleware, isLoggedIn)
     .put(tokenMiddleware, isLoggedIn)
     .delete(tokenMiddleware, isLoggedIn);
 
+  
 router.use('/classes', classesRouter);
 router.use('/prosthetics', prostheticsRouter);
 router.use('/categories', categoriesRouter);

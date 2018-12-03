@@ -1,19 +1,24 @@
 import * as baseService from './base';
 
-async function postCharge(token) {
-    let response = await baseService.makeFetch('/api/donate', {
+async function postCharge(token, amount = 10) {
+    let response = await baseService.makeFetch('/api/Donations', {
         method: 'POST',
-        body: JSON.stringify({ token }),
+        body: JSON.stringify({ token, amount }),
         headers: new Headers({
             'Content-Type': 'application/json'
         })
+    })
+    .then((response) => {
+        if (response.ok) {
+            return response.json();
+        } else {
+            return response.json();
+        }
+    })
+    .catch((error) => {
+        throw error;
     });
-    let contentType = response.headers.get('Content-Type');
-
-    if (contentType.indexOf('application/json') > -1) {
-        return response.json();
-    }
-    return response.statusText;
 }
+    
 
 export { postCharge };
