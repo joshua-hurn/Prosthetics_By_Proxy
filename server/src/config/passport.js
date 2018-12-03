@@ -4,8 +4,8 @@ import { Strategy as BearerStrategy } from 'passport-http-bearer';
 import Table from '../table';
 import { encode, decode } from '../utils/tokens';
 
-let usersTable = new Table('Users');
-let tokensTable = new Table('Tokens');
+let usersTable = new Table('users');
+let tokensTable = new Table('tokens');
 
 function configurePassport(app) {
     passport.use(new LocalStrategy({
