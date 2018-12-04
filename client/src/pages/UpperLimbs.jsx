@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 import Jumbotron from "../components/Jumbotron.jsx";
 
-class LowerLimbs extends Component {
+class UpperLimbs extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -21,7 +21,7 @@ class LowerLimbs extends Component {
 
   renderProsthetics() {
     return this.state.prosthetics.map(prosthetic => {
-        return <LowerCards key={prosthetic.id} prosthetic={prosthetic} />
+        return <UpperCards key={prosthetic.id} prosthetic={prosthetic} />
     })
   }
 
