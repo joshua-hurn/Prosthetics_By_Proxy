@@ -18,17 +18,15 @@ class App extends Component {
       <Router>
         <div className="ui container">
           <Route exact path="/" component = {Home}/>
-          <Route exact path="/login" component = {LoginPage}/>
-          <Route exact path="/user" component = {}/>
+          <Route exact path="/Login" component = {LoginPage}/>
+          <Route exact path="/User" component = {UserProfile}/>
           <Route exact path="/Donations" component = {Donations}/>
           <Route exact path="/Select" component = {Select}/>
           <Route exact path="/LowerLimbs" component = {LowerLimbs}/>
         </div>
       </Router>
-     
     );
   }
 }
-
 
 export default App;

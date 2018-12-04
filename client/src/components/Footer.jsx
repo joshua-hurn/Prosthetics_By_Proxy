@@ -101,16 +101,6 @@ class Footer extends Component {
               <a type="button" className="btn-floating btn-dribbble">
                 <i className="fa fa-dribbble" />
               </a>
-
-              <Map
-                google={this.props.google}
-                initialCenter={{
-                  lat: 40.854885,
-                  lng: -88.081807
-                }}
-                zoom={15}
-                onClick={this.onMapClicked}
-              />
             </div>
           </div>
         </div>

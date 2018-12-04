@@ -25,6 +25,7 @@
         "@babel/preset-env": "^7.0.0",
         "@babel/preset-react": "^7.0.0",
         "babel-loader": "^8.0.2",
+        "cors": "^2.8.5",
         "css-loader": "^1.0.1",
         "express": "^4.16.3",
         "file-loader": "^2.0.0",
