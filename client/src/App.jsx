@@ -8,6 +8,7 @@ import Donations from './pages/Donations.jsx';
 import ThankYou1 from './pages/ThankYou1.jsx';
 import UpperLimbs from './pages/UpperLimbs';
 import LowerLimbs from './pages/LowerLimbs.jsx';
+import UserProfile from './pages/UserProfile';
 import RegistrationPage from './pages/Registrationpage';
 import AllParts from './pages/AllParts';
 
@@ -27,8 +28,8 @@ class App extends Component {
           <Route exact path= "/UpperLimbs" component = {UpperLimbs}/>
           <Route exact path= "/LowerLimbs" component = {LowerLimbs}/>
           <Route exact path= "/AllParts" component = {AllParts}/>
+          <Route exact path= "/user" component = {UserProfile}/> 
         </div>
-      
       </Router>
     );
   }
