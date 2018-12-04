@@ -1,7 +1,8 @@
-import React, { Component } from "react";
-import Navbar from "../components/Navbar.jsx";
-import Footer from "../components/Footer.jsx";
-import Jumbotron from "../components/Jumbotron.jsx";
+import React, { Component } from 'react';
+import Navbar from '../components/Navbar.jsx';
+import Footer from '../components/Footer.jsx';
+import Jumbotron from '../components/Jumbotron.jsx';
+import LowerCards from '../components/Cards/LowerCards';
 
 class LowerLimbs extends Component {
   constructor(props) {

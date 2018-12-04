@@ -1,12 +1,17 @@
-import React from "react";
+import React from 'react';
 import LoginForm from "../forms/LoginForm";
-
+import Footer from '../components/Footer';
+import Jumbotron from '../components/Jumbotron';
+import Navbar from '../components/Navbar';
 const LoginPage = () => (
-  <div>
-    <h1> Login </h1>
+    <div>
+         <Navbar />
+                <Jumbotron title="Login" subtitle="Provider of Prosthetic Patient Needs" />
 
-    <LoginForm />
-  </div>
+<LoginForm />
+
+    <Footer />
+    </div>
 );
 
 export default LoginPage;
