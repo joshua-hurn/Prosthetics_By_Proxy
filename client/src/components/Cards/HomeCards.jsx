@@ -1,34 +1,35 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import {Link} from 'react-router-dom';
+
+
 
 class HomeCards extends React.Component {
-  render() {
+    render () {
     return (
-      <div className="row">
-        <div className="col-sm-6">
-          <div className="card">
-            <div className="card-body">
-              <h5 className="card-title">Recipients</h5>
-              <p className="card-text">Find What You Neeed </p>
-              <a href="#" className="btn btn-primary">
-                Go somewhere
-              </a>
+        <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Recipients</h5>
+              <p class="card-text">Find What You Need </p>
+              <a href="/AllParts" class="btn btn-primary">Select</a> 
+              
             </div>
           </div>
         </div>
-        <div className="col-sm-6">
-          <div className="card">
-            <div className="card-body">
-              <h5 className="card-title">Donars</h5>
-              <p className="card-text">Give a prosthetic</p>
-              <a href="#" className="btn btn-primary">
-                Go somewhere
-              </a>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Donors</h5>
+              <p class="card-text">Give a prosthetic</p>
+              <a href="/Donations" class="btn btn-primary">Donate</a>
             </div>
           </div>
         </div>
       </div>
-    );
-  }
+
+        );
+    }
+
 }
 export default HomeCards;

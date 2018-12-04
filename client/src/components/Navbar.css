@@ -1,3 +1,36 @@
 .navbar {
 background-color: #3584db;
+display:block;
+justify-content: space-between;
 }
+
+
+
+.navbar-nav {
+    display:flex;
+    align-items:left;
+}
+
+.navbar-toggler {
+margin : 0.5px;
+    align-items: left;
+}
+
+.form-inline.my-2.my-lg-0 {
+    
+    float:right;
+    margin-top: -40px;
+    position: relative;
+    left: 12px;
+    margin: 3px;
+
+
+}
+
+img{
+    width: 40px;
+    float: right;
+    position: relative;
+    margin-top: -40px;
+}
+    
