@@ -50,4 +50,4 @@ class UpperLimbs extends Component {
     );
   }
 }
-export default LowerLimbs;
+export default UpperLimbs;
