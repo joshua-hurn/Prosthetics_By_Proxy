@@ -85,7 +85,7 @@ render() {
 						</div>
 
 						<div class="form-group ">
-							<button href ="/ThankYou1" target="_blank" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button" onClick={this.onRegister}>Register</button>
+							<button href ="/ThankYou1" target="_blank" type="button" id="button2" class="btn btn-primary btn-lg btn-block login-button" onClick={this.onRegister}>Register</button>
 						</div>
 						
 					</form>
@@ -98,46 +98,6 @@ render() {
 
 
 
-
-        // <form>
-        //     <input 
-        //     name= 'firstName'
-        //     placeholder='First name' 
-        //     value = {this.state.firstName} 
-        //     onChange= {e => this.change(e)} 
-        //     />
-        //     <br />
-        // <input 
-        //     name= 'lastName'
-        //     placeholder='Last name' 
-        //     value = {this.state.lastName} 
-        //     onChange= {e => this.change(e)} 
-        //     />
-        //     <br />
-        // <input 
-        //     name= 'username'
-        //     placeholder='Username' 
-        //     value = {this.state.username} 
-        //     onChange= {e => this.change(e)} 
-        //     />
-        //     <br />
-        // <input 
-        //     name='email'
-        //     placeholder='Email' 
-        //     value = {this.state.email} 
-        //     onChange= {e => this.change(e)} 
-        //     />
-        //     <br />
-        // <input 
-        //     name='password'
-        //     type='password'
-        //     placeholder='Password' 
-        //     value = {this.state.password} 
-        //     onChange= {e => this.change(e)} 
-        //     />
-        //     <br />
-        //     <button onClick={e=> this.onSubmit(e)}>Submit</button>
-        //     </form>
     
 
     

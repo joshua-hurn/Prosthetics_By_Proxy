@@ -113,4 +113,5 @@ span.input-group-addon i {
 
 .btn-primary.btn-lg.btn-block.login-button {
     background-color:  #29abe2 !important;
+    font-weight: bold;
 }
