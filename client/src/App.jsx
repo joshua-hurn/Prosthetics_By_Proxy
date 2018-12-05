@@ -10,6 +10,7 @@ import UpperLimbs from './pages/UpperLimbs';
 import LowerLimbs from './pages/LowerLimbs.jsx';
 import RegistrationPage from './pages/Registrationpage';
 import AllParts from './pages/AllParts';
+import FAQ from './pages/FAQ.jsx';
 
 
 
@@ -27,6 +28,7 @@ class App extends Component {
           <Route exact path= "/UpperLimbs" component = {UpperLimbs}/>
           <Route exact path= "/LowerLimbs" component = {LowerLimbs}/>
           <Route exact path= "/AllParts" component = {AllParts}/>
+          <Route exact path="/faq" component= {FAQ}/>
         </div>
       
       </Router>
