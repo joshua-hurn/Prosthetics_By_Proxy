@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import PartsCard from './PartsCard';
+import ProstheticsCard from './ProstheticsCard';
 
 
-class SinglePart extends Component {
+class SingleProsthetic extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            part:{}
+            prosthetic:{}
         };
     }
 
@@ -14,10 +14,10 @@ class SinglePart extends Component {
     async componentDidMount() {
         try {
             let id= this.props.match.params.id
-            let res = await fetch(`/api/parts/${id}`);
-            let part = await res.json();
-            console.log(part);
-           this.setState ({part});
+            let res = await fetch(`/api/prosthetics/${id}`);
+            let prosthetic = await res.json();
+            console.log(prosthetic);
+           this.setState ({prosthetic});
         } catch (e) {
             console.log(e);
         }
@@ -27,11 +27,11 @@ class SinglePart extends Component {
         return (
             <div className="row">
             
-             <PartsCard blogs={this.state.part} />
+             <ProstheticsCard blogs={this.state.prosthetic} />
 
             </div>
         );
     }
 };
 
-export default SinglePart;
+export default SingleProsthetic;
