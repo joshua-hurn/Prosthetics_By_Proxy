@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Navbar from '../components/Navbar.jsx';
 import Footer from '../components/Footer.jsx';
 import Jumbotron from '../components/Jumbotron.jsx';
-import LowerCards from '../components/Cards/LowerCards';
+import LowerCard from '../components/Cards/LowerCard';
 
 class LowerLimbs extends Component {
   constructor(props) {
@@ -14,15 +14,22 @@ class LowerLimbs extends Component {
   async componentDidMount() {
     let res = await fetch('/api/prosthetics');
     let prosthetics = await res.json();
+    let lowerprosthetics = prosthetics.filter((item)=> {
+      if(item.placement == 'Lowerlimb') {
+        return true
+      }
+      return false
+    }) 
     console.log(prosthetics);
-    this.setState({ prosthetics });
+    this.setState({ prosthetics:lowerprosthetics });
   } catch (e) {
       console.log(e);
   }
 
   renderProsthetics() {
+    console.log(this.state)
     return this.state.prosthetics.map(prosthetic => {
-        return <LowerCards key={prosthetic.id} prosthetic={prosthetic} />
+        return <LowerCard key={prosthetic.id} prosthetic={prosthetic} />
     })
   }
 
