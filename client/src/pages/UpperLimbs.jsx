@@ -15,7 +15,7 @@ class UpperLimbs extends Component {
     let res = await fetch('/api/prosthetics');
     let prosthetics = await res.json();
     let upperprosthetics = prosthetics.filter((item)=> {
-      if(item.placement == 'upper') {
+      if(item.placement == 'Upperlimb') {
         return true
       }
       return false

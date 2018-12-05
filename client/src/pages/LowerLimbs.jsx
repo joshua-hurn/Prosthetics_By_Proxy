@@ -15,7 +15,7 @@ class LowerLimbs extends Component {
     let res = await fetch('/api/prosthetics');
     let prosthetics = await res.json();
     let lowerprosthetics = prosthetics.filter((item)=> {
-      if(item.placement == 'lower') {
+      if(item.placement == 'Lowerlimb') {
         return true
       }
       return false
