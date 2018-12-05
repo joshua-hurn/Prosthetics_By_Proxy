@@ -14,8 +14,14 @@ class UpperLimbs extends Component {
   async componentDidMount() {
     let res = await fetch('/api/prosthetics');
     let prosthetics = await res.json();
+    let upperprosthetics = prosthetics.filter((item)=> {
+      if(item.placement == 'upper') {
+        return true
+      }
+      return false
+    }) 
     console.log(prosthetics);
-    this.setState({ prosthetics });
+    this.setState({ prosthetics:upperprosthetics });
   } catch (e) {
       console.log(e);
   }
