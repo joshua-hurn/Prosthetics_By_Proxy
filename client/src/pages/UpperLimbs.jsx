@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 import Jumbotron from "../components/Jumbotron.jsx";
+import UpperCard from '../components/Cards/UpperCard';
 
 class UpperLimbs extends Component {
   constructor(props) {
@@ -21,7 +22,7 @@ class UpperLimbs extends Component {
 
   renderProsthetics() {
     return this.state.prosthetics.map(prosthetic => {
-        return <UpperCards key={prosthetic.id} prosthetic={prosthetic} />
+        return <UpperCard key={prosthetic.id} prosthetic={prosthetic} />
     })
   }
 
@@ -30,7 +31,7 @@ class UpperLimbs extends Component {
       <div>
         <Navbar />
         <Jumbotron
-          title="Lower Limb Selection"
+          title="Upper Limb Selection"
           subtitle="See What's Available"
         />
 
