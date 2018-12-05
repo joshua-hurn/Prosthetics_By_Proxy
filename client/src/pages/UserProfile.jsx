@@ -15,7 +15,7 @@ class UserProfile extends Component {
 
   async componentDidMount() {
     try {
-      let res = await fetch(`https://peaceful-beyond-87161.herokuapp.com/api/users/me/${this.props.match.params.id}`);
+      let res = await fetch(`/api/users/me/${this.props.match.params.id}`);
       let user = await res.json();
       this.setState({ user });
     } catch (e) {
