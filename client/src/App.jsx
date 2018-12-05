@@ -22,7 +22,7 @@ class App extends Component {
         <div className="ui container">
           <Route exact path="/" component = {Home}/>
           <Route exact path="/login" exact component = {LoginPage}/>
-          <Route exact path = "/register" exact component = {RegistrationPage}/>
+          <Route exact path= "/register" exact component = {RegistrationPage}/>
           <Route exact path= "/Donations" component = {Donations}/>
           <Route exact path= "/ThankYou1" component = {ThankYou1}/>
           <Route exact path= "/UpperLimbs" component = {UpperLimbs}/>

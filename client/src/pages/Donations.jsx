@@ -22,6 +22,11 @@ class Donations extends Component {
 <DonateForm />
 </div>
                 </div>
+                <StripeProvider apiKey="pk_test_5GDgprhGFrgFpd2hZxcxSRlQ">
+          <Elements>
+            <InjectedCheckoutForm />
+          </Elements>
+        </StripeProvider>
                 < Footer />
             </div>
         );
