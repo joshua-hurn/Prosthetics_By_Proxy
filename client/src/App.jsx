@@ -12,6 +12,7 @@ import UserProfile from "./pages/UserProfile";
 import RegistrationPage from "./pages/Registrationpage";
 import AllParts from "./pages/AllParts";
 import FAQ from "./pages/FAQ.jsx";
+import SinglePart from "./components/Cards/SingleProsthetic";
 
 class App extends Component {
   render() {
@@ -28,6 +29,7 @@ class App extends Component {
           <Route exact path="/AllParts" component={AllParts} />
           <Route exact path="/user/:id" component={UserProfile} />
           <Route exact path="/FAQ" component={FAQ} />
+          <Route exact path="/item/:id" component={SinglePart} />
         </div>
       </Router>
     );

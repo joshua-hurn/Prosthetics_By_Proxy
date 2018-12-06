@@ -27,9 +27,7 @@ class SingleProsthetic extends Component {
     render() {
         return (
             <div className="row">
-            
              <ProstheticsCard blogs={this.state.prosthetic} />
-
             </div>
         );
     }
