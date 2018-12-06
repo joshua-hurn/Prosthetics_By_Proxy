@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Jumbotron from "../components/Jumbotron";
+import { StripeProvider, Elements } from "react-stripe-elements";
+import InjectedCheckoutForm from "./CheckoutForm";
 import DonateForm from "../forms/DonateForm";
 
 class Donations extends Component {
