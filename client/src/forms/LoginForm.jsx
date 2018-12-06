@@ -82,7 +82,7 @@ class LoginForm extends Component {
 
             <div class="row register-form">
               <div class="col-md-12">
-                <form method="post" onSubmit={(e) => this.login(e)}>
+                <form method="post" onSubmit={e => this.login(e)}>
                   <div class="form-group">
                     <label htmlFor="email"> Email </label>
                     <input
@@ -90,7 +90,9 @@ class LoginForm extends Component {
                       id="email"
                       name="email"
                       placeholder="Enter your email"
-                      onChange={(e) => { this.handleEmailChange(e.target.value)} }
+                      onChange={e => {
+                        this.handleEmailChange(e.target.value);
+                      }}
                     />
                   </div>
                   <div class="form-group">
@@ -100,13 +102,19 @@ class LoginForm extends Component {
                       id="password"
                       name="password"
                       placeholder="Enter a password. Make it secure!"
-                      onChange={(e) => { this.handlePasswordChange(e.target.value)}}
+                      onChange={e => {
+                        this.handlePasswordChange(e.target.value);
+                      }}
                     />
                   </div>
                   {this.state.feedbackMessage ? (
-                        <p>{ this.state.feedbackMessage }</p>
-                    ): null}
-                  <input type="submit" value="Login" className="btn btn-primary" />
+                    <p>{this.state.feedbackMessage}</p>
+                  ) : null}
+                  <input
+                    type="submit"
+                    value="Login"
+                    className="btn btn-primary"
+                  />
                 </form>
               </div>
             </div>
