@@ -5,7 +5,7 @@ function all() {
 }
 
 function one(id) {
-  return baseService.get(`/api/prosthetic/${id}`);
+  return baseService.get(`/api/prosthetics/${id}`);
 }
 
 function insert(data) {
@@ -13,11 +13,11 @@ function insert(data) {
 }
 
 function update(id, data) {
-  return baseService.put(`/api/prosthetic/${id}`, data);
+  return baseService.put(`/api/prosthetics/${id}`, data);
 }
 
 function destroy(id) {
-  return baseService.destroy(`/api/prosthetic/${id}`);
+  return baseService.destroy(`/api/prosthetics/${id}`);
 }
 
 export { all, one, insert, update, destroy };
