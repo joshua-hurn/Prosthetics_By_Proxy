@@ -6,49 +6,49 @@ class Carousel extends Component {
     return (
       <div
         id="carouselExampleControls"
-        class="carousel slide"
+        className="carousel slide"
         data-ride="carousel"
       >
-        <div class="carousel-inner">
-          <div class="carousel-item active">
+        <div className="carousel-inner">
+          <div className="carousel-item active">
             <img
-              class="d-block w-50"
+              className="d-block w-50"
               src="https://storage.pixteller.com/designs/designs-images/2018-12-04/06/ojohion-1-5c06a4a99ba99.png"
               alt="First slide"
             />
           </div>
-          <div class="carousel-item">
+          <div className="carousel-item">
             <img
-              class="d-block w-50"
+              className="d-block w-50"
               src="https://storage.pixteller.com/designs/designs-images/2018-12-04/06/ljbo-1-5c06aaeeb119d.png"
               alt="Second slide"
             />
           </div>
-          <div class="carousel-item">
+          <div className="carousel-item">
             <img
-              class="d-block w-50"
+              className="d-block w-50"
               src="https://storage.pixteller.com/designs/designs-images/2018-12-04/06/uogug-1-5c06ad076efbd.png"
               alt="Third slide"
             />
           </div>
         </div>
         <a
-          class="carousel-control-prev"
+          className="carousel-control-prev"
           href="#carouselExampleControls"
           role="button"
           data-slide="prev"
         >
-          <span class="carousel-control-prev-icon" aria-hidden="true" />
-          <span class="sr-only">Previous</span>
+          <span className="carousel-control-prev-icon" aria-hidden="true" />
+          <span className="sr-only">Previous</span>
         </a>
         <a
-          class="carousel-control-next"
+          className="carousel-control-next"
           href="#carouselExampleControls"
           role="button"
           data-slide="next"
         >
-          <span class="carousel-control-next-icon" aria-hidden="true" />
-          <span class="sr-only">Next</span>
+          <span className="carousel-control-next-icon" aria-hidden="true" />
+          <span className="sr-only">Next</span>
         </a>
       </div>
     );

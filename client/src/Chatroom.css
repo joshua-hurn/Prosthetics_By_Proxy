@@ -1,0 +1,57 @@
+.rooms-list {
+    box-sizing: border-box;
+    padding:10px;
+    background-color: lightskyblue;
+    overflow: scroll;
+    height: 100%;
+}
+
+.rooms-list ul {
+    list-style-type:none;
+    padding:0;
+    overflow: scroll;
+}
+.rooms-list li {
+    margin:10px 0;
+}
+.rooms-list h3 {
+    margin:5px 0;
+    color: palevioletred;
+}
+
+.rooms-list .room a {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+
+.chatroom {
+    display:grid;
+    height:100%;
+    grid-template-columns:repeat(6, 1fr);
+    grid-template-rows: 1fr 1fr 1fr 1fr 60px;
+    grid-template-areas:
+    " m m m m m n"
+    " m m m m m r"
+    " m m m m m r"
+    " m m m m m r"
+    " m m m m m r"
+    " s s s s s r";
+}
+
+.new-room-form {
+    grid-area: n;
+}
+
+.rooms-list {
+    grid-area: r;
+}
+
+.message-list {
+    grid-area: m;
+}
+
+.send-message-form {
+    grid-area: s;
+}

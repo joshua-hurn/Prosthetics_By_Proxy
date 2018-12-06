@@ -44,7 +44,7 @@ class Navbar extends Component {
                 <Link className="nav-link" to="/">
                   Home <span className="sr-only">(current)</span>
                 </Link>
-
+                </li>
                 <li className="nav-item dropdown">
                   <Link
                     className="nav-link dropdown-toggle"
@@ -78,7 +78,7 @@ class Navbar extends Component {
                     Donate
                   </Link>
                 </li>
-              </li>
+              
               <li className="nav-item">
                 <Link className="nav-link disabled" to="/">
                   Disabled
