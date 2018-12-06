@@ -1,18 +1,20 @@
-import React from 'react';
+import React from "react";
 import RegistrationForm from "../forms/RegistrationForm";
-import Footer from '../components/Footer';
-import Jumbotron from '../components/Jumbotron';
-import Navbar from '../components/Navbar';
+import Footer from "../components/Footer";
+import Jumbotron from "../components/Jumbotron";
+import Navbar from "../components/Navbar";
 const RegistrationPage = () => (
-    <div>
-         <Navbar />
-    <Jumbotron title="Register" subtitle="Provider of Prosthetic Patient Needs" />
+  <div>
+    <Navbar />
+    <Jumbotron
+      title="Register"
+      subtitle="Provider of Prosthetic Patient Needs"
+    />
 
+    <RegistrationForm />
 
-< RegistrationForm/>
-   
-    < Footer />
-</div>
+    <Footer />
+  </div>
 );
 
 export default RegistrationPage;
