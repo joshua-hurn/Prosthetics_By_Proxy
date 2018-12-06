@@ -1,7 +1,3 @@
-
-
-
-
 // class Donations extends Component {
 //     render() {
 //         return (
@@ -22,5 +18,3 @@
 //     }
 // }
 // export default Donations;
-
-
