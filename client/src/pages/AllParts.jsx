@@ -45,10 +45,9 @@ class AllParts extends Component {
         <Navbar />
         <Dropdown />
         <Jumbotron title="Full Selection" subtitle="See What's Available" />
-
         <div className="container">
           <h2>Welcome to PBP</h2>
-          <p>We have a selection of prosthetics from our authorized donars.</p>
+          <p>We have a selection of prosthetics from our authorized donors.</p>
         </div>
         <div className="prosthetics-container">{this.renderProsthetics()}</div>
         <Footer />

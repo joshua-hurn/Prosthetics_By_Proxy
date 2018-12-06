@@ -31,7 +31,6 @@ class ProstheticsTimeline extends Component {
         return (
             <div className="row">
                 {this.renderProsthetics()}
-
             </div>
         );
     }
