@@ -4,22 +4,27 @@ import { config } from '../../../server/src/config';
  
 export class MapContainer extends Component {
   render() {
+    const style = {
+      width: '100%',
+      height: '100%'
+    }
     return (
-      <Map google={this.props.google} zoom={14}>
+    <div style={style}>
+      <Map initialCenter={{
+            lat: 37.774929,
+            lng: -122.419416
+        }} google={this.props.google} zoom={14}>
  
-        <Marker onClick={this.onMarkerClick}
+        <Marker position={{lat: 37.774929, lng: -122.419416}}
+
+        onClick={this.onMarkerClick}
                 name={'Current location'} />
- 
-        <InfoWindow onClose={this.onInfoWindowClose}>
-            <div>
-              <h1>{this.state.selectedPlace.name}</h1>
-            </div>
-        </InfoWindow>
       </Map>
+    </div>
     );
   }
 }
- 
+
 export default GoogleApiWrapper({
   apiKey: (config.GOOGLE_MAPS_API_KEY)
 })(MapContainer)
