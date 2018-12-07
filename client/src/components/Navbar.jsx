@@ -6,7 +6,7 @@ import "./Footer.jsx";
 class Navbar extends Component {
   render() {
     return (
-      <nav className="navbar navbar-dark bg-primary">
+      <nav className="navbar navbar-dark mt-3 ">
         <button
           className="navbar-toggler"
           type="button"
@@ -26,15 +26,15 @@ class Navbar extends Component {
             aria-label="Search"
           />
           <button
-            className="btn btn-outline-success my-2 my-sm-0"
+            className="btn btn-outline-danger text-center my-2 my-sm-0"
             type="submit"
           >
-            Search
+            SEARCH
           </button>
         </form>
-        <div className="logo" id="logo">
+        {/* <div className="logo" id="logo">
           <img src="https://storage.pixteller.com/designs/designs-images/2018-12-03/10/logo-1-5c0596089c591.png" />
-        </div>
+        </div> */}
 
         <a className="navbar-brand" to="/" />
         <div className="container">
@@ -44,44 +44,44 @@ class Navbar extends Component {
                 <Link className="nav-link" to="/">
                   Home <span className="sr-only">(current)</span>
                 </Link>
-                </li>
-                <li className="nav-item dropdown">
-                  <Link
-                    className="nav-link dropdown-toggle"
-                    to="/"
-                    id="navbarDropdown"
-                    role="button"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    Make a Selection
+              </li>
+              <li className="nav-item dropdown">
+                <Link
+                  className="nav-link dropdown-toggle"
+                  to="/"
+                  id="navbarDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Make a Selection
                   </Link>
-                  <div
-                    className="dropdown-menu"
-                    aria-labelledby="navbarDropdown"
-                  >
-                    <Link className="dropdown-item" to="/UpperLimbs">
-                      Upper Limb
+                <div
+                  className="dropdown-menu"
+                  aria-labelledby="navbarDropdown"
+                >
+                  <Link className="dropdown-item" to="/UpperLimbs">
+                    Upper Limb
                     </Link>
-                    <Link className="dropdown-item" to="/LowerLimbs">
-                      Lower Limb
+                  <Link className="dropdown-item" to="/LowerLimbs">
+                    Lower Limb
                     </Link>
-                    <div className="dropdown-divider" />
-                    <Link className="dropdown-item" to="/">
-                      Info for New Amputees
+                  <div className="dropdown-divider" />
+                  <Link className="dropdown-item" to="/">
+                    Info for New Amputees
                     </Link>
-                  </div>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/Donations">
-                    Donate
-                  </Link>
-                </li>
-              
+                </div>
+              </li>
               <li className="nav-item">
-                <Link className="nav-link disabled" to="/">
-                  Disabled
+                <Link className="nav-link" to="/Donations">
+                  Donate
+                  </Link>
+              </li>
+
+              <li className="nav-item">
+                <Link className="nav-link" to="/FAQ">
+                  FAQ
                 </Link>
               </li>
             </ul>

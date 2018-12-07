@@ -4,4 +4,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
+    text-align: right;
+    border-radius: 1em;
+    font-weight: bolder;
 }
