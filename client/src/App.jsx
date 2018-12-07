@@ -12,7 +12,7 @@ import UserProfile from "./pages/UserProfile";
 import RegistrationPage from "./pages/Registrationpage";
 import AllParts from "./pages/AllParts";
 import FAQ from "./pages/FAQ.jsx";
-import SinglePart from "./components/Cards/SingleProsthetic";
+import SinglePart from "./pages/SingleProsthetic";
 
 class App extends Component {
   render() {
