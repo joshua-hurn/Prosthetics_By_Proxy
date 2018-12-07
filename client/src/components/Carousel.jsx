@@ -12,21 +12,21 @@ class Carousel extends Component {
         <div className="carousel-inner">
           <div className="carousel-item active">
             <img
-              className="d-block w-50"
+              className="d-block w-20"
               src="https://storage.pixteller.com/designs/designs-images/2018-12-04/06/ojohion-1-5c06a4a99ba99.png"
               alt="First slide"
             />
           </div>
           <div className="carousel-item">
             <img
-              className="d-block w-50"
+              className="d-block w-20"
               src="https://storage.pixteller.com/designs/designs-images/2018-12-04/06/ljbo-1-5c06aaeeb119d.png"
               alt="Second slide"
             />
           </div>
           <div className="carousel-item">
             <img
-              className="d-block w-50"
+              className="d-block w-20"
               src="https://storage.pixteller.com/designs/designs-images/2018-12-04/06/uogug-1-5c06ad076efbd.png"
               alt="Third slide"
             />

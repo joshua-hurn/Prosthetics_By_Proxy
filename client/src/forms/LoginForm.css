@@ -67,3 +67,40 @@
 .nav-link.active {
     font-weight:bold;
 }
+
+
+#a1, #a2 {
+    background-color: red;
+  box-shadow: 0 5px 0 darkred;
+  color: white;
+  padding: 0.2em 1em;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+
+}
+
+#a2 {
+    margin-left:10px;
+    
+}
+
+
+
+#a1:hover,#a2:hover {
+  background-color: #ce0606;
+  cursor: pointer;
+}
+
+#a1:active,#a2:active {
+  box-shadow: none;
+  top: 5px;
+}
+
+/* Non-Demo Styles
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+} */

@@ -12,8 +12,8 @@ class Home extends Component {
     return (
       <div>
         <Navbar />
-        <Link to="/login"> Login </Link>
-        <Link to="/register"> Register </Link>
+        <Link to="/login" id="a1"> Login </Link>
+        <Link to="/register" id="a2"> Register </Link>
         <Jumbotron
           title="Prosthetic By Proxy"
           subtitle="Provider of Prosthetic Patient Needs"
