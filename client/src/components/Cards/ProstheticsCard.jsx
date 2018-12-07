@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ProstheticsCard = props => {
   return (
-    <div className="col-md-4">
+    <div className="col-md-4 mt-2">
       <div className="card">
         <div className="card-header bg-secondary text-white">
           Parts ID: {props.id}

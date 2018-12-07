@@ -28,7 +28,7 @@ class SingleProsthetic extends Component {
     render() {
         return (
             <div className="row">
-             <ProstheticsCard blogs={this.state.prosthetic} />
+             <ProstheticsCard prosthetic={this.state.prosthetic} />
             <GoogleApiWrapper/>
             </div>
         );
