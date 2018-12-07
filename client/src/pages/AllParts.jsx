@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import Navbar from '../components/Navbar.jsx';
 import Footer from '../components/Footer.jsx';
 import Jumbotron from '../components/Jumbotron.jsx';
@@ -98,7 +98,7 @@ class AllParts extends Component {
         };
 
         return (
-            <>
+            <Fragment>
                 <Navbar />
                 <Jumbotron title="Full Selection" subtitle="See What's Available" />
                 <div className="m-5">
@@ -119,7 +119,7 @@ class AllParts extends Component {
                     </div>
                 </div>
                 <Footer />
-            </>
+            </Fragment>
         );
     }
 }
