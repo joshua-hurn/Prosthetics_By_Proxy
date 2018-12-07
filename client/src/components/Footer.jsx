@@ -81,7 +81,6 @@ const Footer = props => {
 
           <div className="col-md-2 col-lg-2 text-center mx-auto my-4">
             <h5 className="font-weight-bold text-uppercase mb-4">Follow Us</h5>
-            <GoogleAPIWrapper/>
             <a type="button" className="btn-floating btn-fb">
               <i className="fa fa-facebook" />
             </a>

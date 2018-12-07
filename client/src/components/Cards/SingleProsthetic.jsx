@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ProstheticsCard from './ProstheticsCard';
+import GoogleApiWrapper from '../../services/mapsContainer';
 
 
 class SingleProsthetic extends Component {
@@ -28,6 +29,7 @@ class SingleProsthetic extends Component {
         return (
             <div className="row">
              <ProstheticsCard blogs={this.state.prosthetic} />
+            <GoogleApiWrapper/>
             </div>
         );
     }

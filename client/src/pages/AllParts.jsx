@@ -63,10 +63,6 @@ class AllParts extends Component {
         return (
           <ProstheticsCard
             key={prosthetic.id}
-            id={prosthetic.id}
-            brand={prosthetic.brand}
-            height={prosthetic.height}
-            weight={prosthetic.weight}
             prosthetic={prosthetic}
           />
         );
@@ -119,14 +115,9 @@ class AllParts extends Component {
                 </div>
                 <div className="container">
                     <div className="row">
-                        {this.state.displayProsthetics.map(item => {
-                            return(
-                                    <ProstheticsCard key={item.id} prosthetic={item} />
-                            );
-                        })}
+                        {this.renderProsthetics()}
                     </div>
                 </div>
-                <div className="prosthetics-container">{this.renderProsthetics()}</div>
                 <Footer />
             </>
         );
