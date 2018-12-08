@@ -1,26 +1,34 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import Navbar from '../components/Navbar.jsx';
 import Footer from '../components/Footer.jsx';
 import Jumbotron from '../components/Jumbotron.jsx';
 import ProstheticsCard from '../components/Cards/ProstheticsCard';
 import * as prostheticsServices from '../services/prosthetics';
 import * as categoryServices from '../services/categories';
+import * as brandsServices from '../services/brands';
 import Autosuggest from 'react-autosuggest';
 import './AllParts.css';
 
 let categories;
+let brands;
 
-categoryServices.all()
-    .then(data => categories = data);
+brandsServices.all()
+    .then(data => brands = data);
 
 const getSuggestions = value => {
     const inputValue = value.trim().toLowerCase();
     const inputLength = inputValue.length;
 
-    return inputLength === 0 ? [] : categories.filter(lang =>
+    return inputLength === 0 ? [] : brands.filter(lang =>
         lang.name.toLowerCase().slice(0, inputLength) === inputValue
     );
 };
+
+
+categoryServices.all()
+    .then(data => categories = data);
+
+
 
 const getSuggestionValue = suggestion => suggestion.name;
 
@@ -29,6 +37,11 @@ const renderSuggestion = suggestion => (
         {suggestion.name}
     </span>
 );
+
+let array = [
+    { brands: [] },
+    { categories: [] }
+];
 
 class AllParts extends Component {
     constructor(props) {
@@ -40,6 +53,8 @@ class AllParts extends Component {
             value: ''
         };
     }
+
+    
 
     async componentDidMount() {
         try {
@@ -98,7 +113,7 @@ class AllParts extends Component {
         };
 
         return (
-            <>
+            <Fragment>
                 <Navbar />
                 <Jumbotron title="Full Selection" subtitle="See What's Available" />
                 <div className="m-5">
@@ -119,7 +134,7 @@ class AllParts extends Component {
                     </div>
                 </div>
                 <Footer />
-            </>
+            </Fragment>
         );
     }
 }
