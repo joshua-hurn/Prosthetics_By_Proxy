@@ -1,9 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url(https://cdn.hipwallpaper.com/i/78/91/C0vtfQ.jpg);
+  background: url('https://ultraprosthetics.com/wp-content/uploads/2017/05/prosthetic-leg-sunset.png');
   background-repeat: no-repeat; 
-  background-size: 300px 100px;
   background-size: cover;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -12,8 +11,27 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.jumbotron {
+  height: auto;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
+.outline {
+  text-shadow:
+  -1.5px -1.5px 0 white,
+  1.5px -1.5px 0 white,
+  -1.5px 1.5px 0 white,
+  1.5px 1.5px 0 white;
+}
+
+.outlineblack {
+  text-shadow:
+  -1.5px -1.5px 0 black,
+  1.5px -1.5px 0 black,
+  -1.5px 1.5px 0 black,
+  1.5px 1.5px 0 black;
+}

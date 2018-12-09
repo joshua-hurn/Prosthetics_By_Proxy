@@ -114,6 +114,7 @@ class AllParts extends Component {
 
         return (
             <Fragment>
+                <div>
                 <Navbar />
                 <Jumbotron title="Full Selection" subtitle="See What's Available" />
                 <div className="m-5">
@@ -134,6 +135,7 @@ class AllParts extends Component {
                     </div>
                 </div>
                 <Footer />
+                </div>
             </Fragment>
         );
     }

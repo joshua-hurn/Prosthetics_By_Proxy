@@ -6,7 +6,7 @@ import "./Footer.jsx";
 class Navbar extends Component {
   render() {
     return (
-      <nav className="navbar navbar-dark mt-3 ">
+      <nav className="navbar navbar-dark mt-3">
         <button
           className="navbar-toggler"
           type="button"
@@ -26,7 +26,7 @@ class Navbar extends Component {
             aria-label="Search"
           />
           <button
-            className="btn btn-outline-danger text-center my-2 my-sm-0"
+            className="btn btn-outline-danger font-weight-bold text-center my-2 my-sm-0"
             type="submit"
           >
             SEARCH
