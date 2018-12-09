@@ -82,10 +82,10 @@ const Footer = props => {
 
           <div className="col-md-2 col-lg-2 text-center mx-auto my-4">
             <h5 className="font-weight-bold text-uppercase mb-4">Follow Us</h5>
-            <FontAwesomeIcon size="2x" icon={faFacebook} />
-            <FontAwesomeIcon size="2x" icon={faTwitter} />
-            <FontAwesomeIcon size="2x" icon={faGooglePlus} />
-            <FontAwesomeIcon size="2x" icon={faYoutube} />
+            <FontAwesomeIcon className="icons" size="2x" icon={faFacebook} />
+            <FontAwesomeIcon className="icons" size="2x" icon={faTwitter} />
+            <FontAwesomeIcon className="icons" size="2x" icon={faGooglePlus} />
+            <FontAwesomeIcon className="icons" size="2x" icon={faYoutube} />
           </div>
         </div>
       </div>
