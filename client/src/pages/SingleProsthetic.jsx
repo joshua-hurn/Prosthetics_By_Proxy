@@ -42,7 +42,6 @@ class SingleProsthetic extends Component {
               <h5 className="card-title">{this.state.prosthetic.brand}</h5>
               <p className="card-text">{this.state.prosthetic.part}</p>
               <p className="card-text">
-                {" "}
                 length: {this.state.prosthetic.length}
               </p>
               <p className="card-text"> width: {this.state.prosthetic.width}</p>
@@ -56,6 +55,7 @@ class SingleProsthetic extends Component {
                 weight: {this.state.prosthetic.weight}
               </p>
             </div>
+            <GoogleApiWrapper />
           </div>
         </div>
         <Footer />
