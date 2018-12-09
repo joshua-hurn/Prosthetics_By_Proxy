@@ -1,11 +1,9 @@
 .navbar {
-background-color: rgb(1, 57, 200);
-display:block;
+background-color: black;
+display: block;
 justify-content: space-between;
 border-radius: .5em;
 }
-
-
 
 .navbar-nav {
     display:flex;
@@ -19,7 +17,7 @@ border-radius: .5em;
 
 .form-inline.my-2.my-lg-0 {
     
-    float:right;
+    float: right;
     margin-top: -40px;
     position: relative;
     left: 12px;

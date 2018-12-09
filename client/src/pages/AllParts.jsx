@@ -96,28 +96,26 @@ class AllParts extends Component {
     };
 
     return (
-        <div>
-          <Navbar />
-          <Jumbotron title="Full Selection" subtitle="See What's Available" />
-          <div className="m-5">
-            <h2>Welcome to PBP</h2>
-            <p>
-              We have a selection of prosthetics from our authorized donors.
-            </p>
-            <Autosuggest
-              suggestions={suggestions}
-              onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-              onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-              getSuggestionValue={getSuggestionValue}
-              renderSuggestion={renderSuggestion}
-              inputProps={inputProps}
-            />
-          </div>
-          <div className="container">
-            <div className="row">{this.renderProsthetics()}</div>
-          </div>
-          <Footer />
+      <div>
+        <Navbar />
+        <Jumbotron title="Full Selection" subtitle="See What's Available" />
+        <div className="m-5">
+          <h2>Welcome to PBP</h2>
+          <p>We have a selection of prosthetics from our authorized donors.</p>
+          <Autosuggest
+            suggestions={suggestions}
+            onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+            onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+            getSuggestionValue={getSuggestionValue}
+            renderSuggestion={renderSuggestion}
+            inputProps={inputProps}
+          />
         </div>
+        <div className="container">
+          <div className="row">{this.renderProsthetics()}</div>
+        </div>
+        <Footer />
+      </div>
     );
   }
 }
