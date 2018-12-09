@@ -57,9 +57,6 @@ class SingleProsthetic extends Component {
               </p>
             </div>
           </div>
-          <div id="map">
-          <MapContainer />
-          </div>
         </div>
         <Footer />
       </div>
