@@ -4,7 +4,7 @@ import Footer from '../components/Footer.jsx';
 
 export default (props) => {
     return (
-        <React.Fragment>
+        <div>
             <Navbar />
             
             <div className="jumbotron text-right">
@@ -100,6 +100,6 @@ export default (props) => {
             </div>
 
             <Footer />
-        </React.Fragment>
+        </div>
     )
 };

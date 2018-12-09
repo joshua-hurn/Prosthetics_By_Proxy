@@ -1,6 +1,7 @@
 import React from "react";
 import "./Footer.css";
-import GoogleAPIWrapper from '../services/mapsContainer';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook, faTwitter, faGooglePlus, faYoutube } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = props => {
   return (
@@ -81,18 +82,10 @@ const Footer = props => {
 
           <div className="col-md-2 col-lg-2 text-center mx-auto my-4">
             <h5 className="font-weight-bold text-uppercase mb-4">Follow Us</h5>
-            <a type="button" className="btn-floating btn-fb">
-              <i className="fa fa-facebook" />
-            </a>
-            <a type="button" className="btn-floating btn-tw">
-              <i className="fa fa-twitter" />
-            </a>
-            <a type="button" className="btn-floating btn-gplus">
-              <i className="fa fa-google-plus" />
-            </a>
-            <a type="button" className="btn-floating btn-dribbble">
-              <i className="fa fa-dribbble" />
-            </a>
+            <FontAwesomeIcon size="2x" icon={faFacebook} />
+            <FontAwesomeIcon size="2x" icon={faTwitter} />
+            <FontAwesomeIcon size="2x" icon={faGooglePlus} />
+            <FontAwesomeIcon size="2x" icon={faYoutube} />
           </div>
         </div>
       </div>
