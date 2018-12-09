@@ -1,7 +1,12 @@
 import React from "react";
 import "./Footer.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faTwitter, faGooglePlus, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import {
+  faFacebook,
+  faTwitter,
+  faGooglePlus,
+  faYoutube
+} from "@fortawesome/free-brands-svg-icons";
 
 const Footer = props => {
   return (
@@ -27,22 +32,22 @@ const Footer = props => {
             <ul className="list-unstyled">
               <li>
                 <p>
-                  <a href="#!">PROJECTS</a>
+                  <a href="#!">About Us</a>
                 </p>
               </li>
               <li>
                 <p>
-                  <a href="#!">ABOUT US</a>
+                  <a href="#!">Donate</a>
                 </p>
               </li>
               <li>
                 <p>
-                  <a href="#!">BLOG</a>
+                  <a href="#!">Blog</a>
                 </p>
               </li>
               <li>
                 <p>
-                  <a href="#!">AWARDS</a>
+                  <a href="#!">Awards</a>
                 </p>
               </li>
             </ul>
@@ -82,10 +87,26 @@ const Footer = props => {
 
           <div className="col-md-2 col-lg-2 text-center mx-auto my-4">
             <h5 className="font-weight-bold text-uppercase mb-4">Follow Us</h5>
-            <FontAwesomeIcon size="2x" icon={faFacebook} />
-            <FontAwesomeIcon size="2x" icon={faTwitter} />
-            <FontAwesomeIcon size="2x" icon={faGooglePlus} />
-            <FontAwesomeIcon size="2x" icon={faYoutube} />
+            <FontAwesomeIcon
+              className="brand-icons"
+              size="2x"
+              icon={faFacebook}
+            />
+            <FontAwesomeIcon
+              className="brand-icons"
+              size="2x"
+              icon={faTwitter}
+            />
+            <FontAwesomeIcon
+              className="brand-icons"
+              size="2x"
+              icon={faGooglePlus}
+            />
+            <FontAwesomeIcon
+              className="brand-icons"
+              size="2x"
+              icon={faYoutube}
+            />
           </div>
         </div>
       </div>
