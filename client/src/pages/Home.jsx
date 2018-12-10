@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import HomeCards from "../components/Cards/HomeCards.jsx";
 import Carousel from "../components/Carousel.jsx";
 // import Chatroom from "../Chatroom.jsx";
+import './Home.css';
 
 class Home extends Component {
   render() {
@@ -31,7 +32,7 @@ class Home extends Component {
         </div>
 
         <div>
-          <HomeCards />
+          <HomeCards  />
         </div>
         <div>
           {/* <Chatroom /> */}
