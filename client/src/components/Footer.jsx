@@ -87,26 +87,38 @@ const Footer = props => {
 
           <div className="col-md-2 col-lg-2 text-center mx-auto my-4">
             <h5 className="font-weight-bold text-uppercase mb-4">Follow Us</h5>
-            <FontAwesomeIcon
-              className="brand-icons"
-              size="2x"
-              icon={faFacebook}
-            />
-            <FontAwesomeIcon
-              className="brand-icons"
-              size="2x"
-              icon={faTwitter}
-            />
-            <FontAwesomeIcon
-              className="brand-icons"
-              size="2x"
-              icon={faGooglePlus}
-            />
-            <FontAwesomeIcon
-              className="brand-icons"
-              size="2x"
-              icon={faYoutube}
-            />
+            <a href="https://www.facebook.com/groups/838627816468346/">
+              <FontAwesomeIcon
+                className="brand-icons"
+                id="fa-facebook"
+                size="lg"
+                icon={faFacebook}
+              />
+            </a>
+            <a href="your link here">
+              <FontAwesomeIcon
+                className="brand-icons"
+                id="fa-twitter"
+                size="lg"
+                icon={faTwitter}
+              />{" "}
+            </a>
+            <a href="your link here">
+              <FontAwesomeIcon
+                className="brand-icons"
+                icon="fa-google"
+                size="lg"
+                icon={faGooglePlus}
+              />
+            </a>
+            <a href="your link here">
+              <FontAwesomeIcon
+                className="brand-icons"
+                id="fa-youtube"
+                size="lg"
+                icon={faYoutube}
+              />
+            </a>
           </div>
         </div>
       </div>

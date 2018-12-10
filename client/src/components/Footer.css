@@ -14,5 +14,21 @@
 }
 
 .brand-icons {
-  margin: 3px;
+  margin: 2px;
+}
+
+#fa-facebook{
+  color: #3b5998;
+}
+
+#fa-twitter{
+  color: #55acee;
+}
+
+#fa-google{
+  color: #dd4b39;
+}
+
+#fa-youtube{
+  color: #e52d27;
 }

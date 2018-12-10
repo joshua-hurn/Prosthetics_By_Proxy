@@ -8,11 +8,7 @@ class DonateForm extends React.Component {
     super(props);
 
     this.state = {
-      firstName: " ",
-      lastName: " ",
-      username: " ",
-      email: " ",
-      password: " ",
+      
       urls: " "
     };
   }
