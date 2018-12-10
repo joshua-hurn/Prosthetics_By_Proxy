@@ -26,6 +26,7 @@ class Navbar extends Component {
             aria-label="Search"
           />
           <button
+          id="searchbarbutton"
             className="btn btn-outline-danger font-weight-bold text-center my-2 my-sm-0"
             type="submit"
           >

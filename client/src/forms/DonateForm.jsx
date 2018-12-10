@@ -53,7 +53,7 @@ class DonateForm extends React.Component {
 
         <div className="form-row" />
         <div className="form-group col-md-6">
-          <label htmlFor="inputEmail4">Email</label>
+          <label for="inputEmail4">Email</label>
           <input
             type="email"
             className="form-control"
@@ -62,7 +62,7 @@ class DonateForm extends React.Component {
           />
         </div>
         <div className="form-group col-md-6">
-          <label htmlFor="inputPassword4">Password</label>
+          <label for="inputPassword4">Password</label>
           <input
             type="password"
             className="form-control"
@@ -71,7 +71,7 @@ class DonateForm extends React.Component {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="inputAddress">Address</label>
+          <label for="inputAddress">Address</label>
           <input
             type="text"
             className="form-control"
@@ -80,7 +80,7 @@ class DonateForm extends React.Component {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="inputAddress2">Address 2</label>
+          <label for="inputAddress2">Address 2</label>
           <input
             type="text"
             className="form-control"
@@ -90,18 +90,18 @@ class DonateForm extends React.Component {
         </div>
         <div className="form-row">
           <div className="form-group col-md-6">
-            <label htmlFor="inputCity">City</label>
+            <label for="inputCity">City</label>
             <input type="text" className="form-control" id="inputCity" />
           </div>
           <div className="form-group col-md-4">
-            <label htmlFor="inputState">State</label>
+            <label for="inputState">State</label>
             <select id="inputState" className="form-control">
               <option selected>Choose...</option>
               <option>...</option>
             </select>
           </div>
           <div className="form-group col-md-2">
-            <label htmlFor="inputZip">Zip</label>
+            <label for="inputZip">Zip</label>
             <input type="text" className="form-control" id="inputZip" />
           </div>
         </div>
@@ -112,7 +112,7 @@ class DonateForm extends React.Component {
               type="checkbox"
               id="gridCheck"
             />
-            <label className="form-check-label" htmlFor="gridCheck">
+            <label className="form-check-label" for="gridCheck">
               Save Contact Information
             </label>
           </div>
@@ -121,12 +121,12 @@ class DonateForm extends React.Component {
         <hr className="hr"/>
 
         <div className="form-group">
-          <label htmlFor="brand-input" >Prosthetic Brand</label>
+          <label for="brand-input" >Prosthetic Brand</label>
           <input type="text" className="form-control" id="brand-input" />
         </div>
 
         <div className="form-group">
-          <label htmlFor="part-input" >Type of Part</label>
+          <label for="part-input" >Type of Part</label>
           <input type="text" className="form-control" id="part-input" />
         </div>
 
@@ -146,7 +146,7 @@ class DonateForm extends React.Component {
         </div>
 
         <div className="form-group">
-          <label htmlFor="exampleFormControlTextarea1">
+          <label for="exampleFormControlTextarea1">
             Donation Description
           </label>
           <textarea
@@ -157,7 +157,7 @@ class DonateForm extends React.Component {
         </div>
 
         <div class="form-group">
-          <label htmlFor="image-upload">Upload images</label>
+          <label for="image-upload">Upload images</label>
           <p>Our site supports url links as images. Please enter URLs below.</p>
           <input
             type="text"
