@@ -19,7 +19,8 @@ class DonateForm extends React.Component {
     });
   };
 
-  onDonate = e => {
+  async onDonate(e) {
+    e.preventDefault();
     try {
       let res = await prostheticsService.insert(this.state);
       this.props.history.replace("/");
@@ -28,7 +29,6 @@ class DonateForm extends React.Component {
     }
     this.props.history.push("/ThankYou1");
   };
-
   render() {
     return (
       <form>
