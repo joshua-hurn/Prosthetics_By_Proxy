@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./HomeCards.css";
 
 class HomeCards extends React.Component {
   render() {
