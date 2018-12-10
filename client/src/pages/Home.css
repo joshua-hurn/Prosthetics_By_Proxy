@@ -1,0 +1,4 @@
+.card-body {
+    background-image:-webkit-linear-gradient(left, #3931af, #00c6ff);
+    animation:bg-pan-right 8s both;
+}
