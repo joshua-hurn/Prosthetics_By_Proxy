@@ -1,27 +1,38 @@
 import React from "react";
+import * as prostheticsService from "../services/prosthetics";
 import "./DonateForm.css";
 import { withRouter } from "react-router";
+
 class DonateForm extends React.Component {
-  state = {
-    firstName: "",
-    lastName: "",
-    username: "",
-    email: "",
-    password: ""
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      firstName: " ",
+      lastName: " ",
+      username: " ",
+      email: " ",
+      password: " ",
+      urls: " "
+    };
+  }
+
   change = e => {
     this.setState({
       [e.target.name]: e.target.value
     });
   };
 
-  onSubmit = e => {
-    e.preventDefault();
-    console.log(this.state);
-  };
   onDonate = e => {
+    try {
+      let res = await prostheticsService.insert(this.state);
+      this.props.history.replace("/");
+    } catch (error) {
+      console.log(error);
+    }
     this.props.history.push("/ThankYou1");
   };
+
   render() {
     return (
       <form>
@@ -113,6 +124,18 @@ class DonateForm extends React.Component {
             class="form-control"
             id="exampleFormControlTextarea1"
             rows="3"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="image-upload">Upload images</label>
+          <p>Our site supports url links as images. Please enter URLs below.</p>
+          <input
+            type="text"
+            multiple="true"
+            name="image-upload"
+            id="uploadedfile"
+            class="form-control"
           />
         </div>
 
