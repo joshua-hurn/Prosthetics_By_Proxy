@@ -70,7 +70,7 @@
 
 #a1, #a2 {
     background-color: red;
-  box-shadow: 0 5px 0 darkred;
+  /* box-shadow: 0 5px 0 darkred; */
   color: white;
   padding: 0.2em 1em;
   position: relative;

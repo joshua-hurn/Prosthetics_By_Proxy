@@ -1,9 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url(https://statewide-title.com/wp-content/uploads/sites/100/2017/07/Depositphotos_53957057_original.jpg);
+  background: url('https://ultraprosthetics.com/wp-content/uploads/2017/05/prosthetic-leg-sunset.png');
   background-repeat: no-repeat; 
-  background-size: 300px 100px;
   background-size: cover;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -12,7 +11,42 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.jumbotron {
+  height: auto;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.outline {
+  text-shadow:
+  -1.5px -1.5px 0 white,
+  1.5px -1.5px 0 white,
+  -1.5px 1.5px 0 white,
+  1.5px 1.5px 0 white;
+}
+
+.outlineblack {
+  text-shadow:
+  -1.5px -1.5px 0 black,
+  1.5px -1.5px 0 black,
+  -1.5px 1.5px 0 black,
+  1.5px 1.5px 0 black;
+}
+
+
+.map-container > div {
+  position: relative !important;
+  height: auto !important;
+  width: 100% !important;
+}
+
+.map-container > div > div {
+  width: 70% !important;
+}
+
+.single-product-container >.container > div:nth-of-type(2) {
+  width: 100%;
 }
