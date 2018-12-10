@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import GoogleApiWrapper from "../services/mapsContainer";
+import MapContainer from "../services/mapsContainer";
 import Navbar from "../components/Navbar";
 import Jumbotron from "../components/Jumbotron";
 import Footer from "../components/Footer";
+import "./SingleProsthetic.css";
 
 class SingleProsthetic extends Component {
   constructor(props) {
@@ -32,32 +33,29 @@ class SingleProsthetic extends Component {
           title="Prosthetic By Proxy"
           subtitle="Provider of Prosthetic Patient Needs"
         />
-        <div className="row">
-          <div className="col-md-4 mt-4">
-            <div className="card">
-              <div className="card-header bg-secondary text-white">
-                Parts ID: {this.state.prosthetic.id}
-              </div>
-              <div className="card-body">
-                <h5 className="card-title">{this.state.prosthetic.brand}</h5>
-                <p className="card-text">{this.state.prosthetic.part}</p>
-                <p className="card-text">
-                  {" "}
-                  length: {this.state.prosthetic.length}
-                </p>
-                <p className="card-text">
-                  {" "}
-                  width: {this.state.prosthetic.width}
-                </p>
-                <p className="card-text">
-                  {" "}
-                  weight: {this.state.prosthetic.weight}
-                </p>
-              </div>
+        <div className="container">
+          <div className="card">
+            <div className="card-header bg-secondary text-white">
+              Part Status: {this.state.prosthetic.part_status}
             </div>
-            <div className="map-container">
-              <GoogleApiWrapper />
+            <div className="card-body">
+              <h5 className="card-title">{this.state.prosthetic.brand}</h5>
+              <p className="card-text">{this.state.prosthetic.part}</p>
+              <p className="card-text">
+                length: {this.state.prosthetic.length}
+              </p>
+              <p className="card-text"> width: {this.state.prosthetic.width}</p>
+              <p className="card-text">
+                weight: {this.state.prosthetic.weight}
+              </p>
+              <p className="card-text">
+                quality: {this.state.prosthetic.quality}
+              </p>
+              <p className="card-text">
+                weight: {this.state.prosthetic.weight}
+              </p>
             </div>
+            <GoogleApiWrapper />
           </div>
         </div>
         <Footer />

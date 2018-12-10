@@ -1,26 +1,40 @@
 import React, { Component, Fragment } from 'react';
-import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+import {Map, Circle, GoogleApiWrapper} from 'google-maps-react';
 import { config } from '../../../server/src/config';
- 
+
+const style = {
+  maxWidth: "100px",
+  maxHeight: "100px",
+  display: "flex",
+  flex: 1
+}
+
+const coords = { lat: -21.805149, lng: -49.0921657 };
+
 export class MapContainer extends Component {
   render() {
-    const style = {
-      width: '100%',
-      height: '100%'
-    }
     return (
-    <div style={style}>
-      <Map initialCenter={{
-            lat: 37.774929,
-            lng: -122.419416
-        }} google={this.props.google} zoom={14}>
- 
-        <Marker position={{lat: 37.774929, lng: -122.419416}}
-
-        onClick={this.onMarkerClick}
-                name={'Current location'} />
-      </Map>
-    </div>
+      <div style={style}>
+       <Map
+      initialCenter={coords}
+      google={this.props.google}
+      style={{width: 500, height: 500, position: 'relative'}}
+      zoom={14}
+    >
+      <Circle
+        radius={1200}
+        center={coords}
+        onMouseover={() => console.log('mouseover')}
+        onClick={() => console.log('click')}
+        onMouseout={() => console.log('mouseout')}
+        strokeColor='transparent'
+        strokeOpacity={0}
+        strokeWeight={5}
+        fillColor='#FF0000'
+        fillOpacity={0.2}
+      />
+    </Map>
+      </div>
     );
   }
 }

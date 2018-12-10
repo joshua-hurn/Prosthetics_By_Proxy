@@ -41,14 +41,12 @@ class UpperLimbs extends Component {
           title="Upper Limb Selection"
           subtitle="See What's Available"
         />
-
         <div className="container">
           <h2>Welcome to PBP</h2>
           <p>
-            We have a selection of lower limb prosthetics from our authorized
-            donars.
+            We have a selection of upper limb prosthetics from our authorized
+            donors.
           </p>
-
           <div className="row">{this.renderProsthetics()}</div>
         </div>
         <Footer />
