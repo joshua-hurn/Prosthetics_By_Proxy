@@ -33,7 +33,7 @@ class SingleProsthetic extends Component {
           title="Prosthetic By Proxy"
           subtitle="Provider of Prosthetic Patient Needs"
         />
-        <div className="container">
+        <div className="container1">
           <div className="card product-card shadow rounded">
             <div className="card-header bg-secondary text-white">
               Part Status: {this.state.prosthetic.part_status}
