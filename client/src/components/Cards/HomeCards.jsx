@@ -11,7 +11,7 @@ class HomeCards extends React.Component {
             <div className="card-body">
               <h5 className="card-title">Recipients</h5>
               <p className="card-text">Find What You Need </p>
-              <a href="/AllParts" className="btn btn-primary">
+              <a href="/AllParts" className="btn btn-danger">
                 Select
               </a>
             </div>
@@ -22,7 +22,7 @@ class HomeCards extends React.Component {
             <div className="card-body">
               <h5 className="card-title">Donors</h5>
               <p className="card-text">Give a prosthetic</p>
-              <a href="/Donations" className="btn btn-primary">
+              <a href="/Donations" className="btn btn-danger">
                 Donate
               </a>
             </div>
