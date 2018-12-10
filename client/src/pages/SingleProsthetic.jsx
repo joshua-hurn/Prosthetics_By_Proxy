@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import MapContainer from "../services/mapsContainer";
+import MapContainer from "../services/mapsContainer.jsx";
 import Navbar from "../components/Navbar";
 import Jumbotron from "../components/Jumbotron";
 import Footer from "../components/Footer";
@@ -34,13 +34,19 @@ class SingleProsthetic extends Component {
           subtitle="Provider of Prosthetic Patient Needs"
         />
         <div className="container">
-          <div className="card">
+          <div className="card product-card shadow rounded">
             <div className="card-header bg-secondary text-white">
               Part Status: {this.state.prosthetic.part_status}
             </div>
+
             <div className="card-body">
-              <h5 className="card-title">{this.state.prosthetic.brand}</h5>
-              <p className="card-text">{this.state.prosthetic.part}</p>
+              <h5 className="card-title">
+                Brand: {this.state.prosthetic.brand}
+              </h5>
+              <p className="card-text">
+                Part type: {this.state.prosthetic.part}
+              </p>
+              <img className="product-image" src={this.state.prosthetic.prosthetic_image} alt="" />
               <p className="card-text">
                 length: {this.state.prosthetic.length}
               </p>
@@ -55,8 +61,8 @@ class SingleProsthetic extends Component {
                 weight: {this.state.prosthetic.weight}
               </p>
             </div>
-            <GoogleApiWrapper />
           </div>
+          <MapContainer className="map-element" style={{ width: "100%" }} />
         </div>
         <Footer />
       </div>

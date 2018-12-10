@@ -35,3 +35,18 @@ code {
   -1.5px 1.5px 0 black,
   1.5px 1.5px 0 black;
 }
+
+
+.map-container > div {
+  position: relative !important;
+  height: auto !important;
+  width: 100% !important;
+}
+
+.map-container > div > div {
+  width: 70% !important;
+}
+
+.single-product-container >.container > div:nth-of-type(2) {
+  width: 100%;
+}

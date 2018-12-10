@@ -1,10 +1,14 @@
-#map {
-    max-width: 100px;
-    max-height: 100px;
-    flex: 1
+.container {
+    display: flex;
+    flex-direction: row;
 }
 
-.container {
-    flex-direction: row;
-    display: flex;
+.product-card {
+    margin-right: 1em;
+    min-width: 50%;
+}
+
+.product-image {
+    min-height: 150px;
+    min-width: 150px;
 }
