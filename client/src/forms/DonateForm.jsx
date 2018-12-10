@@ -29,7 +29,6 @@ class DonateForm extends React.Component {
     }
     this.props.history.push("/ThankYou1");
   };
-
   render() {
     return (
       <form>
