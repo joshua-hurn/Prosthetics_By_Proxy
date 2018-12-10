@@ -136,7 +136,7 @@ class RegistrationForm extends React.Component {
                   href="/ThankYou1"
                   target="_blank"
                   type="button"
-                  id="a2"
+              
                   class="btn btn-primary btn-lg btn-block login-button"
                   onClick={this.onRegister}
                 >

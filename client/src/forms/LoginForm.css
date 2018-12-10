@@ -4,11 +4,10 @@
     border-radius: 1rem;
     padding: 1.5%;
     color: #fff;
-    background-color: #0062cc;
+    background-color: #29abe2 !important;
     border: none;
     cursor: pointer;
     margin-right: 6%;
-    background-color: white;
     color: blue;
     margin-top: 4%;
 }
@@ -97,10 +96,6 @@
   top: 5px;
 }
 
-/* Non-Demo Styles
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-} */
+input.btn.btn-primary{
+    background-color: #29abe2 !important;
+}

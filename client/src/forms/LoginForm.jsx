@@ -111,7 +111,7 @@ class LoginForm extends Component {
                     <p>{this.state.feedbackMessage}</p>
                   ) : null}
                   <input
-                  id= "a1"
+                    class="btnContactSubmit"
                     type="submit"
                     value="Login"
                     className="btn btn-primary"
