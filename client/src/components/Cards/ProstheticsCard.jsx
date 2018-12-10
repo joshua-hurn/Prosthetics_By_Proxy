@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./ProstheticsCard.css"
 
 const ProstheticsCard = props => {
   return (
     <div className="col-md-4 mt-4">
       <div className="card">
-        <div className="card-header bg-secondary text-white">
+        <div className="card-header bg-secondary text-black ">
           Parts ID: {props.prosthetic.id}
         </div>
         <div className="card-body">
@@ -15,7 +16,7 @@ const ProstheticsCard = props => {
           <p className="card-text"> width: {props.prosthetic.width}</p>
           <p className="card-text"> weight: {props.prosthetic.weight}</p>
 
-          <Link to={`/part/${props.prosthetic.id}`} className="btn btn-primary">
+          <Link to={`/part/${props.prosthetic.id}`} className="btn">
             See More
           </Link>
         </div>
