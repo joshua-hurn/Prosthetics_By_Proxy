@@ -8,7 +8,6 @@ class DonateForm extends React.Component {
     super(props);
 
     this.state = {
-      
       urls: " "
     };
   }
@@ -28,7 +27,7 @@ class DonateForm extends React.Component {
       console.log(error);
     }
     this.props.history.push("/ThankYou1");
-  };
+  }
 
   render() {
     return (
@@ -54,7 +53,7 @@ class DonateForm extends React.Component {
 
         <div className="form-row" />
         <div className="form-group col-md-6">
-          <label for="inputEmail4">Email</label>
+          <label htmlFor="inputEmail4">Email</label>
           <input
             type="email"
             className="form-control"
@@ -63,7 +62,7 @@ class DonateForm extends React.Component {
           />
         </div>
         <div className="form-group col-md-6">
-          <label for="inputPassword4">Password</label>
+          <label htmlFor="inputPassword4">Password</label>
           <input
             type="password"
             className="form-control"
@@ -72,7 +71,7 @@ class DonateForm extends React.Component {
           />
         </div>
         <div className="form-group">
-          <label for="inputAddress">Address</label>
+          <label htmlFor="inputAddress">Address</label>
           <input
             type="text"
             className="form-control"
@@ -81,7 +80,7 @@ class DonateForm extends React.Component {
           />
         </div>
         <div className="form-group">
-          <label for="inputAddress2">Address 2</label>
+          <label htmlFor="inputAddress2">Address 2</label>
           <input
             type="text"
             className="form-control"
@@ -91,32 +90,65 @@ class DonateForm extends React.Component {
         </div>
         <div className="form-row">
           <div className="form-group col-md-6">
-            <label for="inputCity">City</label>
+            <label htmlFor="inputCity">City</label>
             <input type="text" className="form-control" id="inputCity" />
           </div>
           <div className="form-group col-md-4">
-            <label for="inputState">State</label>
+            <label htmlFor="inputState">State</label>
             <select id="inputState" className="form-control">
               <option selected>Choose...</option>
               <option>...</option>
             </select>
           </div>
           <div className="form-group col-md-2">
-            <label for="inputZip">Zip</label>
+            <label htmlFor="inputZip">Zip</label>
             <input type="text" className="form-control" id="inputZip" />
           </div>
         </div>
         <div className="form-group">
           <div className="form-check">
-            <input className="form-check-input" type="checkbox" id="gridCheck" />
-            <label className="form-check-label" for="gridCheck">
+            <input
+              className="form-check-input"
+              type="checkbox"
+              id="gridCheck"
+            />
+            <label className="form-check-label" htmlFor="gridCheck">
               Save Contact Information
             </label>
           </div>
         </div>
 
+        <hr className="hr"/>
+
         <div className="form-group">
-          <label for="exampleFormControlTextarea1">Donation Description</label>
+          <label htmlFor="brand-input" >Prosthetic Brand</label>
+          <input type="text" className="form-control" id="brand-input" />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="part-input" >Type of Part</label>
+          <input type="text" className="form-control" id="part-input" />
+        </div>
+
+        <div className="form-froup">
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Select Part location
+            </button>
+          </div>
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="exampleFormControlTextarea1">
+            Donation Description
+          </label>
           <textarea
             className="form-control"
             id="exampleFormControlTextarea1"
@@ -125,7 +157,7 @@ class DonateForm extends React.Component {
         </div>
 
         <div class="form-group">
-          <label for="image-upload">Upload images</label>
+          <label htmlFor="image-upload">Upload images</label>
           <p>Our site supports url links as images. Please enter URLs below.</p>
           <input
             type="text"
