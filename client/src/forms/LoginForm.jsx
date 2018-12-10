@@ -61,7 +61,7 @@ class LoginForm extends Component {
     }
 
     return (
-      <div class="container register">
+      <div class=" register">
    
             <div class="row register-form">
               <div class="col-md-12">
@@ -97,13 +97,12 @@ class LoginForm extends Component {
                     class="btnContactSubmit"
                     type="submit"
                     value="Login"
-                    className="btn btn-primary"
+                    className="btn btn-warning"
                   />
                 </form>
               </div>
             </div>
           </div>
-       
     );
   }
 }
