@@ -8,7 +8,7 @@ export default props => {
       <Navbar />
 
       <div className="jumbotron text-left">
-        <h3 className="outlineblack" style={{ fontFamily: "bungee" }}>
+        <h3 className="outlineblack" style={{ fontFamily: "bungee", color: "white" }}>
           pros·the·sis
         </h3>
         <h1
@@ -25,7 +25,7 @@ export default props => {
           noun
         </p>
         <hr className="my-4" />
-        <p>
+        <p className="text-white" style={{ fontSize: "18px"}} >
           1. an artificial body part, such as a leg, a heart, or a breast
           implant.
           <br /> 2. "his upper jaw was removed and a prosthesis was fitted"

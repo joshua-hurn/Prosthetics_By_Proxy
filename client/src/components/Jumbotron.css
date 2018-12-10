@@ -1,9 +1,8 @@
 .jumbotron {
-    background: linear-gradient(rgba(0,0,0, 0.4), rgba(0,0,0,0.4)), url('https://ultraprosthetics.com/wp-content/uploads/2017/05/prosthetic-leg-sunset.png');
+    background: linear-gradient(rgba(0,0,0, 0.4), rgba(0,0,0,0.4)), url('../../background.png');
     background-position: no-repeat;
     background-size: cover;
     background-repeat: no-repeat;
-    color: white;
     border-radius: 1em;
     font-weight: bolder;
     border: black solid 5px;
