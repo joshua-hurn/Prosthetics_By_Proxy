@@ -111,7 +111,7 @@ class AllParts extends Component {
                 inputProps={inputProps}
               />
             </div>
-            <div className="container">
+            <div className="container product-container">
               <div className="row">{this.renderProsthetics()}</div>
             </div>
             <Footer />

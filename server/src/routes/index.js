@@ -13,13 +13,13 @@ let router = Router();
 
 router.use('/auth', authRouter);
 router.use('/contact', contactRouter);
-router.use('/Donations', stripeDonationsRouter); 
 
 router.route('*')
     .post(tokenMiddleware, isLoggedIn)
     .put(tokenMiddleware, isLoggedIn)
     .delete(tokenMiddleware, isLoggedIn);
 
+router.use('/Donations', stripeDonationsRouter); 
 router.use('/classes', classesRouter);
 router.use('/prosthetics', prostheticsRouter);
 router.use('/categories', categoriesRouter);

@@ -29,6 +29,8 @@ class DonateForm extends React.Component {
     this.props.history.push("/ThankYou1");
   }
 
+  
+
   render() {
     return (
       <form>
@@ -118,15 +120,15 @@ class DonateForm extends React.Component {
           </div>
         </div>
 
-        <hr className="hr"/>
+        <hr className="hr" />
 
         <div className="form-group">
-          <label for="brand-input" >Prosthetic Brand</label>
+          <label for="brand-input">Prosthetic Brand</label>
           <input type="text" className="form-control" id="brand-input" />
         </div>
 
         <div className="form-group">
-          <label for="part-input" >Type of Part</label>
+          <label for="part-input">Type of Part</label>
           <input type="text" className="form-control" id="part-input" />
         </div>
 
@@ -142,13 +144,19 @@ class DonateForm extends React.Component {
             >
               Select Part location
             </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li class="dropdown-item" href="#">
+                Upper Limb
+              </li>
+              <li class="dropdown-item" href="#">
+                Lower Limb
+              </li>
+            </div>
           </div>
         </div>
 
         <div className="form-group">
-          <label for="exampleFormControlTextarea1">
-            Donation Description
-          </label>
+          <label for="exampleFormControlTextarea1">Donation Description</label>
           <textarea
             className="form-control"
             id="exampleFormControlTextarea1"
