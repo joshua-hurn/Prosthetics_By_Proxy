@@ -39,7 +39,7 @@
     color: #f8f9fa;
 }
 .register{
-    background: linear-gradient(rgba(0,0,0, 0.4), rgba(0,0,0,0.4)), url('../../woman.jpg');
+    background: linear-gradient(rgba(0,0,0, 0.55), rgba(0,0,0,0.55));
     background-position: no-repeat;
     background-repeat: no-repeat;
     background-size: cover;

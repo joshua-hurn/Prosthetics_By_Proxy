@@ -94,9 +94,9 @@ class AllParts extends Component {
       <div>
         <Navbar />
         <Jumbotron title="Full Selection" subtitle="See What's Available" />
-        <div className="m-5">
-          <h2>Welcome to PBP</h2>
-          <p>We have a selection of prosthetics from our authorized donors.</p>
+        <div className="m-5 text-center ">
+          <h2 className="blackpacifico outline display-4">Welcome to PBP</h2>
+          <h2 className="redbungee outline">We have a selection of prosthetics from our authorized donors.</h2>
           <Autosuggest
             suggestions={suggestions}
             onSuggestionSelected={this.onSuggestionSelected}
@@ -108,7 +108,7 @@ class AllParts extends Component {
           />
         </div>
         <div className="container ">
-          <div className="row product-container">{this.renderProsthetics()}</div>
+          <div className="d-flex flex-wrap justify-content-center product-container" style={{ background: "linear-gradient(rgba(0,0,0, 0.55), rgba(0,0,0,0.55))", borderRadius: ".5em", border: "black solid 3px"}} >{this.renderProsthetics()}</div>
         </div>
         <Footer />
       </div>
