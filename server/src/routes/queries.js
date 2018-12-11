@@ -1,11 +1,11 @@
 import { Router } from 'express';
-//import each query individually.
+import getProstheticsOfCategory from '../queries/getProstheticsOfCategory';
 
 let router = Router();
 
 // leaving barebones router stuff to fill in later.
-router.get('/', (req, res) => {
-    getBlogsWithAuthor()
+router.get('/prosthetics/category/:id', (req, res) => {
+    getProstheticsOfCategory(req.params.id)
         .then(results => res.send(results))
         .catch(e => res.status(500).send(e));
 });

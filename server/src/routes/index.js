@@ -19,7 +19,7 @@ router.route('*')
     .put(tokenMiddleware, isLoggedIn)
     .delete(tokenMiddleware, isLoggedIn);
 
-router.use('/Donations', stripeDonationsRouter); 
+router.use('/Donations', stripeDonationsRouter, isLoggedIn); 
 router.use('/classes', classesRouter);
 router.use('/prosthetics', prostheticsRouter);
 router.use('/categories', categoriesRouter);
