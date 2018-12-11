@@ -20,4 +20,8 @@ function destroy(id) {
   return baseService.destroy(`/api/prosthetics/${id}`);
 }
 
-export { all, one, insert, update, destroy };
+function ofCategory(id) {
+  return baseService.get(`/api/q/prosthetics/category/${id}`);
+}
+
+export { all, one, insert, update, destroy, ofCategory };

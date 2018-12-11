@@ -5,35 +5,28 @@ import Jumbotron from "../components/Jumbotron.jsx";
 import ProstheticsCard from "../components/Cards/ProstheticsCard";
 import * as prostheticsServices from "../services/prosthetics";
 import * as categoryServices from "../services/categories";
-import * as brandsServices from "../services/brands";
 import Autosuggest from "react-autosuggest";
 import "./AllParts.css";
 
-let categories;
-let brands;
+let data;
 
-brandsServices.all().then(data => (brands = data));
+categoryServices.all().then(categories => data = categories).catch(e => console.log(e));
 
 const getSuggestions = value => {
   const inputValue = value.trim().toLowerCase();
   const inputLength = inputValue.length;
-
   return inputLength === 0
     ? []
-    : brands.filter(
-        lang => lang.name.toLowerCase().slice(0, inputLength) === inputValue
-      );
+    : data.filter(
+      lang => lang.name.toLowerCase().slice(0, inputLength) === inputValue
+    );
 };
-
-categoryServices.all().then(data => (categories = data));
 
 const getSuggestionValue = suggestion => suggestion.name;
 
 const renderSuggestion = suggestion => (
-  <span id={suggestion.id}>{suggestion.name}</span>
+  <span>{suggestion.name}</span>
 );
-
-let array = [{ brands: [] }, { categories: [] }];
 
 class AllParts extends Component {
   constructor(props) {
@@ -53,18 +46,10 @@ class AllParts extends Component {
     } catch (e) {
       console.log(e);
     }
-    try {
-      let res = await fetch("/api/prosthetics");
-      let prosthetics = await res.json();
-      console.log(prosthetics);
-      this.setState({ prosthetics });
-    } catch (e) {
-      console.log(e);
-    }
   }
 
   renderProsthetics = () => {
-    return this.state.prosthetics.map(prosthetic => {
+    return this.state.displayProsthetics.map(prosthetic => {
       return <ProstheticsCard key={prosthetic.id} prosthetic={prosthetic} />;
     });
   };
@@ -79,6 +64,16 @@ class AllParts extends Component {
     this.setState({
       suggestions: getSuggestions(value)
     });
+  };
+
+  onSuggestionSelected = async (event, { suggestion, suggestionValue, suggestionIndex, sectionIndex, method }) => {
+    try {
+      let res = await fetch(`/api/q/prosthetics/category/${suggestion.id}`);
+      let displayProsthetics = await res.json();
+      this.setState({ displayProsthetics });
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   onSuggestionsClearRequested = () => {
@@ -98,12 +93,13 @@ class AllParts extends Component {
     return (
       <div>
         <Navbar />
-        {/* <Jumbotron title="Full Selection" subtitle="See What's Available" /> */}
+        <Jumbotron title="Full Selection" subtitle="See What's Available" />
         <div className="m-5">
           <h2>Welcome to PBP</h2>
           <p>We have a selection of prosthetics from our authorized donors.</p>
           <Autosuggest
             suggestions={suggestions}
+            onSuggestionSelected={this.onSuggestionSelected}
             onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
             onSuggestionsClearRequested={this.onSuggestionsClearRequested}
             getSuggestionValue={getSuggestionValue}
@@ -112,9 +108,7 @@ class AllParts extends Component {
           />
         </div>
         <div className="container product-container">
-          <div className="row">
-            {this.renderProsthetics()}
-          </div>
+          <div className="row">{this.renderProsthetics()}</div>
         </div>
         <Footer />
       </div>
