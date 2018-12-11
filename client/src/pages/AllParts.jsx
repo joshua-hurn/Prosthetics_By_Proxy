@@ -66,8 +66,14 @@ class AllParts extends Component {
     });
   };
 
-  onSuggestionSelected = (event, { suggestion, suggestionValue, suggestionIndex, sectionIndex, method }) => {
-    console.log(suggestion);
+  onSuggestionSelected = async (event, { suggestion, suggestionValue, suggestionIndex, sectionIndex, method }) => {
+    try {
+      let res = await fetch(`/api/q/prosthetics/category/${suggestion.id}`);
+      let displayProsthetics = await res.json();
+      this.setState({ displayProsthetics });
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   onSuggestionsClearRequested = () => {
