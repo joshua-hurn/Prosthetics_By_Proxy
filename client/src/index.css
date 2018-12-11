@@ -56,6 +56,30 @@ code {
   font-family: "bungee";
 }
 
+.blackbungee {
+  color: black;
+  font-weight: bold;
+  font-family: "bungee";
+}
+
+.redpacifico {
+  color: darkred;
+  font-weight: bold;
+  font-family: "pacifico";
+}
+
+.whitepacifico {
+  color: white;
+  font-weight: bold;
+  font-family: "pacifico";
+}
+
+.blackpacifico {
+  color: black;
+  font-weight: bold;
+  font-family: "pacifico";
+}
+
 .map-container > div {
   position: relative !important;
   height: auto !important;
