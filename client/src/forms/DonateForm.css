@@ -17,3 +17,8 @@ hr {
    border-style: inset;
    border-width: 1px;
 }
+.donate-container {
+  border: black solid 5px;
+  border-radius: 1em;
+  background: -webkit-linear-gradient(left, darkred, #ea920c);
+}
