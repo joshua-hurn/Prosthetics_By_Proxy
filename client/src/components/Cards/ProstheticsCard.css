@@ -16,14 +16,14 @@
 }
 
 .prosthetic-btn {
-    background-color: darkred;
+    background-color: rgb(180, 3, 3);
     width: 100px;
     border-radius: 1em;
     border: 1px solid black;
 }
 
 .prosthetic-btn:hover {
-    background-color: rgb(99, 1, 1);
+    background-color: rgb(146, 3, 3);
     border: 1px solid black;
 }
 
