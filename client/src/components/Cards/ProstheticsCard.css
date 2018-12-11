@@ -1,11 +1,50 @@
-/* .card {
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+.prostheticCard {
+    margin: 1em;
     background-color: white;
+    height: 300px;
+    width: 300px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
-.custom {
+#prosthetic-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    max-height: 200px;
+    text-align: center;
+}
+
+.prosthetic-btn {
     background-color: darkred;
-    color: white;
-    font-weight: bolder;
-    border: black solid 5px;
-} */
+    width: 100px;
+    border-radius: 1em;
+    border: 1px solid black;
+}
+
+.prosthetic-btn:hover {
+    background-color: rgb(99, 1, 1);
+    border: 1px solid black;
+}
+
+.wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.result-date {
+    float: right;
+    font-size: small;
+}
+
+.prosthetic-title {
+    margin-top: 10px;
+}
+
+.prosthetic-info {
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-bottom: 1%;
+}

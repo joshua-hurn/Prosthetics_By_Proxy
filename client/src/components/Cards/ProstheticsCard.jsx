@@ -1,24 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./ProstheticsCard.css"
+import "./ProstheticsCard.css";
 
 const ProstheticsCard = props => {
   return (
-    <div className="col-md-4 mt-4">
-      <div className="card">
-        <div className="card-header bg-secondary text-black ">
-          Parts ID: {props.prosthetic.id}
+    <div className="prostheticCard">
+      <div className="wrapper">
+        <div className="img">
+          <img
+            id="prosthetic-img"
+            className="rounded"
+            src={props.prosthetic.prosthetic_image}
+            alt="Image 1"
+          />
         </div>
-        <div className="card-body">
-          <h5 className="card-title">{props.prosthetic.brand}</h5>
-          <p className="card-text">{props.prosthetic.part}</p>
-          <p className="card-text"> length: {props.prosthetic.length}</p>
-          <p className="card-text"> width: {props.prosthetic.width}</p>
-          <p className="card-text"> weight: {props.prosthetic.weight}</p>
-
-          <Link to={`/part/${props.prosthetic.id}`} className="btn">
+        <div className="prosthetic-info">
+          <div className="prosthetic-title">{props.prosthetic.brand}</div>
+          <div className="prosthetic-quality">
+            <strong>Quality: </strong> {props.prosthetic.quality}
+          </div>
+          <Link to={`/part/${props.prosthetic.id}`} className="btn btn-sm prosthetic-btn ">
             See More
           </Link>
+          <time className="result-date">Dec 12</time>
         </div>
       </div>
     </div>

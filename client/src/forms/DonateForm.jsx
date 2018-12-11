@@ -8,7 +8,6 @@ class DonateForm extends React.Component {
     super(props);
 
     this.state = {
-      
       urls: " "
     };
   }
@@ -28,7 +27,10 @@ class DonateForm extends React.Component {
       console.log(error);
     }
     this.props.history.push("/ThankYou1");
-  };
+  }
+
+  
+
   render() {
     return (
       <form>
@@ -107,10 +109,49 @@ class DonateForm extends React.Component {
         </div>
         <div className="form-group">
           <div className="form-check">
-            <input className="form-check-input" type="checkbox" id="gridCheck" />
+            <input
+              className="form-check-input"
+              type="checkbox"
+              id="gridCheck"
+            />
             <label className="form-check-label" for="gridCheck">
               Save Contact Information
             </label>
+          </div>
+        </div>
+
+        <hr className="hr" />
+
+        <div className="form-group">
+          <label for="brand-input">Prosthetic Brand</label>
+          <input type="text" className="form-control" id="brand-input" />
+        </div>
+
+        <div className="form-group">
+          <label for="part-input">Type of Part</label>
+          <input type="text" className="form-control" id="part-input" />
+        </div>
+
+        <div className="form-froup">
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Select Part location
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li class="dropdown-item" href="#">
+                Upper Limb
+              </li>
+              <li class="dropdown-item" href="#">
+                Lower Limb
+              </li>
+            </div>
           </div>
         </div>
 
