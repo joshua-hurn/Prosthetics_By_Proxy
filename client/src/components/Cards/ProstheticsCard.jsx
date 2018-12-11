@@ -22,7 +22,10 @@ const ProstheticsCard = props => {
           <Link to={`/part/${props.prosthetic.id}`} className="btn btn-sm prosthetic-btn ">
             See More
           </Link>
-          <time className="result-date">Dec 12</time>
+          <Link to={"./ThankYou"} className="btn btn-danger">
+            Reserve
+          </Link>
+          <time className="result-date">{props.prosthetic._created}</time>
         </div>
       </div>
     </div>
