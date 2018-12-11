@@ -69,9 +69,9 @@ class Navbar extends Component {
                     Lower Limb
                     </Link>
                   <div className="dropdown-divider" />
-                  {/* <Link className="dropdown-item" to="/">
-                    Info for New Amputees
-                    </Link> */}
+                  <Link className="dropdown-item" to="/Media">
+                  Media Library
+                    </Link>
                 </div>
               </li>
               <li className="nav-item">
