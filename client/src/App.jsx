@@ -13,6 +13,7 @@ import RegistrationPage from "./pages/Registrationpage";
 import AllParts from "./pages/AllParts";
 import FAQ from "./pages/FAQ.jsx";
 import SinglePart from "./pages/SingleProsthetic";
+import MediaLibrary from "./pages/MediaLibrary.jsx";
 
 class App extends Component {
   render() {
@@ -30,6 +31,7 @@ class App extends Component {
           <Route exact path="/user/:id" component={UserProfile} />
           <Route exact path="/FAQ" component={FAQ} />
           <Route exact path="/part/:id" component={SinglePart} />
+          <Route exact path="/Media" component = {MediaLibrary}/>
         </div>
       </Router>
     );
