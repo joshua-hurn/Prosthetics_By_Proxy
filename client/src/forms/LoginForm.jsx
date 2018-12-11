@@ -61,12 +61,12 @@ class LoginForm extends Component {
     }
 
     return (
-      <div class=" register">
+      <div className=" register">
    
-            <div class="row register-form">
-              <div class="col-md-12">
+            <div className="row register-form">
+              <div className="col-md-12">
                 <form method="post" id="form1" onSubmit={e => this.login(e)}>
-                  <div class="form-group">
+                  <div className="form-group">
                     <label htmlFor="email"> Email </label>
                     <input
                       type="email"
@@ -78,7 +78,7 @@ class LoginForm extends Component {
                       }}
                     />
                   </div>
-                  <div class="form-group">
+                  <div className="form-group">
                     <label htmlFor="password"> Password </label>
                     <input
                       type="password"
@@ -94,7 +94,7 @@ class LoginForm extends Component {
                     <p id="missingcredentials">{this.state.feedbackMessage}</p>
                   ) : null}
                   <input
-                    class="btnContactSubmit"
+                    className="btnContactSubmit"
                     type="submit"
                     value="Login"
                     className="btn btn-warning"
