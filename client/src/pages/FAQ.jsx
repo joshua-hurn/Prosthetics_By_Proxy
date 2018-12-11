@@ -8,7 +8,7 @@ export default props => {
       <Navbar />
 
       <div className="jumbotron text-left">
-        <h3 className="outlineblack" style={{ fontFamily: "bungee" }}>
+        <h3 className="outlineblack" style={{ fontFamily: "bungee", color: "white" }}>
           pros·the·sis
         </h3>
         <h1
@@ -25,7 +25,7 @@ export default props => {
           noun
         </p>
         <hr className="my-4" />
-        <p>
+        <p className="text-white" style={{ fontSize: "18px"}} >
           1. an artificial body part, such as a leg, a heart, or a breast
           implant.
           <br /> 2. "his upper jaw was removed and a prosthesis was fitted"
@@ -73,9 +73,6 @@ export default props => {
               half of the battle. Please remember that physical therapy is a key
               component of the process.
             </h5>
-            <a href="#" className="btn btn-primary">
-              Ask A Question
-            </a>
           </div>
         </div>
 
@@ -106,9 +103,6 @@ export default props => {
               & needs. After receiving your prosthesis, you will then report to
               a physical therapist.
             </h5>
-            <a href="#" className="btn btn-primary">
-              Ask A Question
-            </a>
           </div>
         </div>
 
@@ -135,9 +129,6 @@ export default props => {
               incision has healed, your physician will clear you to start the
               fitting process.
             </h5>
-            <a href="#" className="btn btn-primary">
-              Ask A Question
-            </a>
           </div>
         </div>
 
@@ -177,9 +168,6 @@ export default props => {
               insurance claims or missing out on things that you could have
               received for $0 out-of-pocket.
             </h5>
-            <a href="#" className="btn btn-primary">
-              Ask A Question
-            </a>
           </div>
         </div>
 
@@ -207,9 +195,6 @@ export default props => {
               prosthesis is serious stuff. Don’t forget about your mental
               stability along the way.
             </h5>
-            <a href="#" className="btn btn-primary">
-              Ask A Question
-            </a>
           </div>
         </div>
 
@@ -236,9 +221,6 @@ export default props => {
               physician’s recommendations very seriously when it comes to these
               things.
             </h5>
-            <a href="#" className="btn btn-primary">
-              Ask A Question
-            </a>
           </div>
         </div>
 
@@ -266,9 +248,6 @@ export default props => {
               seriously. DO YOUR PART!! Physical therapy must not be skimmed
               over if you wish to have a smooth transition.
             </h5>
-            <a href="#" className="btn btn-primary">
-              Ask A Question
-            </a>
           </div>
         </div>
 
@@ -296,9 +275,6 @@ export default props => {
               duties like driving, attaching your prosthetic, & walking on
               different surfaces.
             </h5>
-            <a href="#" className="btn btn-primary">
-              Ask A Question
-            </a>
           </div>
         </div>
 
@@ -326,9 +302,6 @@ export default props => {
               sockets, & you may have to wear thicker socks to compensate for
               the extra space.
             </h5>
-            <a href="#" className="btn btn-primary">
-              Ask A Question
-            </a>
           </div>
         </div>
 
@@ -354,9 +327,6 @@ export default props => {
               are also devices that are especially made for water activities
               like swimming, canoeing, and surfing.
             </h5>
-            <a href="#" className="btn btn-primary">
-              Ask A Question
-            </a>
           </div>
         </div>
       </div>

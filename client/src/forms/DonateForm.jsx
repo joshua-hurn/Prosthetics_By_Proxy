@@ -1,125 +1,185 @@
 import React from "react";
+import * as prostheticsService from "../services/prosthetics";
 import "./DonateForm.css";
 import { withRouter } from "react-router";
+
 class DonateForm extends React.Component {
-  state = {
-    firstName: "",
-    lastName: "",
-    username: "",
-    email: "",
-    password: ""
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      urls: " "
+    };
+  }
+
   change = e => {
     this.setState({
       [e.target.name]: e.target.value
     });
   };
 
-  onSubmit = e => {
+  async onDonate(e) {
     e.preventDefault();
-    console.log(this.state);
-  };
-  onDonate = e => {
+    try {
+      let res = await prostheticsService.insert(this.state);
+      this.props.history.replace("/");
+    } catch (error) {
+      console.log(error);
+    }
     this.props.history.push("/ThankYou1");
-  };
+  }
+
+  
+
   render() {
     return (
       <form>
-        <div class="form-group">
+        <div className="form-group">
           <label for="formGroupExampleInput">First Name </label>
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             id="formGroupExampleInput"
             placeholder="First Name"
           />
         </div>
-        <div class="form-group">
+        <div className="form-group">
           <label for="formGroupExampleInput2">Last Name</label>
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             id="formGroupExampleInput2"
             placeholder="Last Name"
           />
         </div>
 
-        <div class="form-row" />
-        <div class="form-group col-md-6">
+        <div className="form-row" />
+        <div className="form-group col-md-6">
           <label for="inputEmail4">Email</label>
           <input
             type="email"
-            class="form-control"
+            className="form-control"
             id="inputEmail4"
             placeholder="Email"
           />
         </div>
-        <div class="form-group col-md-6">
+        <div className="form-group col-md-6">
           <label for="inputPassword4">Password</label>
           <input
             type="password"
-            class="form-control"
+            className="form-control"
             id="inputPassword4"
             placeholder="Password"
           />
         </div>
-        <div class="form-group">
+        <div className="form-group">
           <label for="inputAddress">Address</label>
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             id="inputAddress"
             placeholder="1234 Main St"
           />
         </div>
-        <div class="form-group">
+        <div className="form-group">
           <label for="inputAddress2">Address 2</label>
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             id="inputAddress2"
             placeholder="Apartment, studio, or floor"
           />
         </div>
-        <div class="form-row">
-          <div class="form-group col-md-6">
+        <div className="form-row">
+          <div className="form-group col-md-6">
             <label for="inputCity">City</label>
-            <input type="text" class="form-control" id="inputCity" />
+            <input type="text" className="form-control" id="inputCity" />
           </div>
-          <div class="form-group col-md-4">
+          <div className="form-group col-md-4">
             <label for="inputState">State</label>
-            <select id="inputState" class="form-control">
+            <select id="inputState" className="form-control">
               <option selected>Choose...</option>
               <option>...</option>
             </select>
           </div>
-          <div class="form-group col-md-2">
+          <div className="form-group col-md-2">
             <label for="inputZip">Zip</label>
-            <input type="text" class="form-control" id="inputZip" />
+            <input type="text" className="form-control" id="inputZip" />
           </div>
         </div>
-        <div class="form-group">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck" />
-            <label class="form-check-label" for="gridCheck">
+        <div className="form-group">
+          <div className="form-check">
+            <input
+              className="form-check-input"
+              type="checkbox"
+              id="gridCheck"
+            />
+            <label className="form-check-label" for="gridCheck">
               Save Contact Information
             </label>
           </div>
         </div>
 
-        <div class="form-group">
+        <hr className="hr" />
+
+        <div className="form-group">
+          <label for="brand-input">Prosthetic Brand</label>
+          <input type="text" className="form-control" id="brand-input" />
+        </div>
+
+        <div className="form-group">
+          <label for="part-input">Type of Part</label>
+          <input type="text" className="form-control" id="part-input" />
+        </div>
+
+        <div className="form-froup">
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Select Part location
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li class="dropdown-item" href="#">
+                Upper Limb
+              </li>
+              <li class="dropdown-item" href="#">
+                Lower Limb
+              </li>
+            </div>
+          </div>
+        </div>
+
+        <div className="form-group">
           <label for="exampleFormControlTextarea1">Donation Description</label>
           <textarea
-            class="form-control"
+            className="form-control"
             id="exampleFormControlTextarea1"
             rows="3"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="image-upload">Upload images</label>
+          <p>Our site supports url links as images. Please enter URLs below.</p>
+          <input
+            type="text"
+            multiple="true"
+            name="image-upload"
+            id="uploadedfile"
+            class="form-control"
           />
         </div>
 
         <button
           href="/ThankYou1"
           type="submit"
-          class="btn btn-primary"
+          className="btn btn-primary"
           id="button"
           onClick={this.onDonate}
         >

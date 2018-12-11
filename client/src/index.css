@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: url('https://ultraprosthetics.com/wp-content/uploads/2017/05/prosthetic-leg-sunset.png');
+  background: url('../background.png');
   background-repeat: no-repeat; 
   background-size: cover;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -34,4 +34,42 @@ code {
   1.5px -1.5px 0 black,
   -1.5px 1.5px 0 black,
   1.5px 1.5px 0 black;
+}
+
+.outlinered {
+  text-shadow:
+  -1.5px -1.5px 0 darkred,
+  1.5px -1.5px 0 darkred,
+  -1.5px 1.5px 0 darkred,
+  1.5px 1.5px 0 darkred;
+}
+
+.redbungee {
+  color: darkred;
+  font-weight: bold;
+  font-family: "bungee";
+}
+
+.whitebungee {
+  color: white;
+  font-weight: bold;
+  font-family: "bungee";
+}
+
+.map-container > div {
+  position: relative !important;
+  height: auto !important;
+  width: 100% !important;
+}
+
+.map-container > div > div {
+  width: 70% !important;
+}
+
+.single-product-container >.container > div:nth-of-type(2) {
+  width: 100%;
+}
+
+.jumbotron.text-xs-center {
+  color: white;
 }

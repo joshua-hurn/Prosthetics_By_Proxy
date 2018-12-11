@@ -61,33 +61,16 @@ class LoginForm extends Component {
     }
 
     return (
-      <div class="container register">
-        <div class="row">
-          <div class="col-md-12">
-            <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
-              <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  id="home-tab"
-                  data-toggle="tab"
-                  href="#home"
-                  role="tab"
-                  aria-controls="home"
-                  aria-selected="true"
-                >
-                  Login
-                </a>
-              </li>
-            </ul>
-
+      <div class=" register">
+   
             <div class="row register-form">
               <div class="col-md-12">
-                <form method="post" onSubmit={e => this.login(e)}>
+                <form method="post" id="form1" onSubmit={e => this.login(e)}>
                   <div class="form-group">
                     <label htmlFor="email"> Email </label>
                     <input
                       type="email"
-                      id="email"
+                      id="emailinput"
                       name="email"
                       placeholder="Enter your email"
                       onChange={e => {
@@ -99,7 +82,7 @@ class LoginForm extends Component {
                     <label htmlFor="password"> Password </label>
                     <input
                       type="password"
-                      id="password"
+                      id="passwordinput"
                       name="password"
                       placeholder="Enter a password. Make it secure!"
                       onChange={e => {
@@ -108,20 +91,18 @@ class LoginForm extends Component {
                     />
                   </div>
                   {this.state.feedbackMessage ? (
-                    <p>{this.state.feedbackMessage}</p>
+                    <p id="missingcredentials">{this.state.feedbackMessage}</p>
                   ) : null}
                   <input
-                  id= "a1"
+                    class="btnContactSubmit"
                     type="submit"
                     value="Login"
-                    className="btn btn-primary"
+                    className="btn btn-warning"
                   />
                 </form>
               </div>
             </div>
           </div>
-        </div>
-      </div>
     );
   }
 }

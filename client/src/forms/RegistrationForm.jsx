@@ -136,12 +136,25 @@ class RegistrationForm extends React.Component {
                   href="/ThankYou1"
                   target="_blank"
                   type="button"
-                  id="a2"
+              
                   class="btn btn-primary btn-lg btn-block login-button"
                   onClick={this.onRegister}
                 >
                   Register
                 </button>
+                <main>
+        <div class="container">
+          {/* <!--Grid row--> */}
+          <div class="row py-5">
+            {/* <!--Grid column--> */}
+            <div class="col-md-12 text-center">
+              <p>May accept donations of used prosthetic limbs and/or components and distributes all forms of prosthetic limbs to those in need. goal is to collect old prosthetic parts and ship them overseas so that more amputees will have greater access.</p>
+            </div>
+            {/* <!--Grid column--> */}
+          </div>
+          {/* <!--Grid row--> */}
+        </div>
+      </main>
               </div>
             </form>
           </div>

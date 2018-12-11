@@ -1,4 +1,4 @@
-/* 
+
 .react-autosuggest__container {
     position: relative;
   }
@@ -55,4 +55,8 @@
   
   .react-autosuggest__suggestion--highlighted {
     background-color: #ddd;
-  } */
+  }
+
+  .product-container {
+   
+  }

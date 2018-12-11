@@ -26,6 +26,7 @@ class Navbar extends Component {
             aria-label="Search"
           />
           <button
+          id="searchbarbutton"
             className="btn btn-outline-danger font-weight-bold text-center my-2 my-sm-0"
             type="submit"
           >
@@ -68,9 +69,9 @@ class Navbar extends Component {
                     Lower Limb
                     </Link>
                   <div className="dropdown-divider" />
-                  <Link className="dropdown-item" to="/">
+                  {/* <Link className="dropdown-item" to="/">
                     Info for New Amputees
-                    </Link>
+                    </Link> */}
                 </div>
               </li>
               <li className="nav-item">

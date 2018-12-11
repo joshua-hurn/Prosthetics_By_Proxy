@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://localhost:3000/UpperLimbs -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="./webpage_files/css" rel="stylesheet">
+
+    <link rel="stylesheet" href="./webpage_files/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style type="text/css">body {
+  margin: 0;
+  padding: 0;
+  background: url('https://ultraprosthetics.com/wp-content/uploads/2017/05/prosthetic-leg-sunset.png');
+  background-repeat: no-repeat; 
+  background-size: cover;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.jumbotron {
+  height: auto;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.outline {
+  text-shadow:
+  -1.5px -1.5px 0 white,
+  1.5px -1.5px 0 white,
+  -1.5px 1.5px 0 white,
+  1.5px 1.5px 0 white;
+}
+
+.outlineblack {
+  text-shadow:
+  -1.5px -1.5px 0 black,
+  1.5px -1.5px 0 black,
+  -1.5px 1.5px 0 black,
+  1.5px 1.5px 0 black;
+}</style><style type="text/css">.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+</style><style type="text/css">.navbar {
+background-color: black;
+display: block;
+justify-content: space-between;
+border-radius: .5em;
+}
+
+.navbar-nav {
+    display:flex;
+    align-items:left;
+}
+
+.navbar-toggler {
+    margin : 0.5px;
+    align-items: left;
+}
+
+.form-inline.my-2.my-lg-0 {
+    
+    float: right;
+    margin-top: -40px;
+    position: relative;
+    left: 12px;
+    margin: 3px;
+
+
+}
+
+img{
+    width: 40px;
+    float: right;
+    position: relative;
+    margin-top: -40px;
+}
+    
+</style><style type="text/css">.footer {
+    margin-top: 13%;
+    position: center;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    line-height: normal;
+    background-color: grey;
+
+}
+
+.col-md-4.col-lg-3.mx-auto.my-md-4.my-0.mt-4.mb-1 {
+    display: inline-block;
+    vertical-align: top;
+}</style><style type="text/css">.jumbotron {
+    background: linear-gradient(rgba(0,0,0, 0.4), rgba(0,0,0,0.4)), url('https://ultraprosthetics.com/wp-content/uploads/2017/05/prosthetic-leg-sunset.png');
+    background-position: no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    border-radius: 1em;
+    font-weight: bolder;
+    border: black solid 5px;
+    height: auto;
+}</style><style type="text/css">/* 
+.d-block.h-50.w-50.l-50 {
+    background-size:cover;
+   5
+}
+.d-block.h-50.w-50 {
+    background-size:cover;
+  
+} */
+
+.Carousel {
+    width: 100%;
+}
+
+.carousel .item {
+    height: 75px;
+}
+
+.item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    display: block;
+    margin: 75px 0 0 100px;
+   
+    background-size: 100% 100%;
+    
+}
+
+.w-20 {
+    margin-top: -1px;
+    align-content: center;
+    bottom:50%;
+    width: 35% !important;
+    height: 20% ! important;
+    width: 193px;
+    right: 35%;
+    left: auto;
+   border-right-width: 100%;
+   border-left-width:100%;
+   object-fit: cover;
+   background: cover;
+   background-size:cover;
+background-repeat:no-repeat;
+border-radius:8px;
+    /* border-radius: 66%; */
+
+}
+
+.img.d-block.w-20 {
+    width: 260px;
+    overflow:hidden;
+  
+}</style><style type="text/css">.btnContactSubmit
+{
+    width: 50%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    color: #fff;
+    background-color: #0062cc;
+    border: none;
+    cursor: pointer;
+    margin-right: 6%;
+    background-color: white;
+    color: blue;
+    margin-top: 4%;
+}
+.register .nav-tabs .nav-link:hover{
+    border: none;
+}
+.text-align{
+    margin-top: -3%;
+    margin-bottom: -9%;
+    padding: 10%;
+    margin-left: 30%;
+}
+.form-new{
+    margin-right: 22%;
+    margin-left: 20%;
+}
+
+.button{
+    border: none;
+    padding: 2%;
+    width: 60%;
+    cursor: pointer;
+    background: #29abe2 !important;
+    font-weight: bold;
+    color: #fff;
+}
+.btnForgetPwd{
+    cursor: pointer;
+    margin-right: 5%;
+    color: #f8f9fa;
+}
+.register{
+    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+    margin-top: 3%;
+    padding: 3%;
+    border-radius: 2.5rem;
+}
+.nav-tabs .nav-link{
+    border: 1px solid transparent;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    color: white;
+}
+.col-md-12 {
+    margin-top:3%;
+    margin-bottom:3%;
+ 
+    
+}
+
+.row.register-form {
+    margin-left: 41%;
+    margin-right:40%;
+}
+
+.nav-link.active {
+    font-weight:bold;
+}
+
+
+#a1, #a2 {
+    background-color: red;
+  /* box-shadow: 0 5px 0 darkred; */
+  color: white;
+  padding: 0.2em 1em;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+
+}
+
+#a2 {
+    margin-left:10px;
+    
+}
+
+
+
+#a1:hover,#a2:hover {
+  background-color: #ce0606;
+  cursor: pointer;
+}
+
+#a1:active,#a2:active {
+  box-shadow: none;
+  top: 5px;
+}
+
+/* Non-Demo Styles
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+} */</style><style type="text/css">#button{
+   color: white;
+   background: #29abe2 !important;
+   margin-bottom: 10px;
+ 
+}
+
+</style><style type="text/css">.emp-profile {
+    padding: 3%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    border-radius: 0.5rem;
+    background: #fff;
+}
+
+.profile-img {
+    text-align: center;
+}
+
+.profile-img img {
+    width: 70%;
+    height: 100%;
+}
+
+.profile-img .file {
+    position: relative;
+    overflow: hidden;
+    margin-top: -20%;
+    width: 70%;
+    border: none;
+    border-radius: 0;
+    font-size: 15px;
+    background: #212529b8;
+}
+
+.profile-img .file input {
+    position: absolute;
+    opacity: 0;
+    right: 0;
+    top: 0;
+}
+
+.profile-head h5 {
+    color: #333;
+}
+
+.profile-head h6 {
+    color: #0062cc;
+}
+
+.profile-edit-btn {
+    border: none;
+    border-radius: 1.5rem;
+    width: 70%;
+    padding: 2%;
+    font-weight: 600;
+    color: #6c757d;
+    cursor: pointer;
+}
+
+.proile-rating {
+    font-size: 12px;
+    color: #818182;
+    margin-top: 5%;
+}
+
+.proile-rating span {
+    color: #495057;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.profile-head .nav-tabs {
+    margin-bottom: 5%;
+}
+
+.profile-head .nav-tabs .nav-link {
+    font-weight: 600;
+    border: none;
+}
+
+.profile-head .nav-tabs .nav-link.active {
+    border: none;
+    border-bottom: 2px solid #0062cc;
+}
+
+.profile-work {
+    padding: 14%;
+    margin-top: -15%;
+}
+
+.profile-work p {
+    font-size: 12px;
+    color: #818182;
+    font-weight: 600;
+    margin-top: 10%;
+}
+
+.profile-work a {
+    text-decoration: none;
+    color: #495057;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.profile-work ul {
+    list-style: none;
+}
+
+.profile-tab label {
+    font-weight: 600;
+}
+
+.profile-tab p {
+    font-weight: 600;
+    color: #0062cc;
+}
+
+.infocontainer {
+    padding-left: 4em;
+}</style><style type="text/css">#playground-container {
+    height: 500px;
+    overflow: hidden !important;
+    -webkit-overflow-scrolling: touch;
+}
+/* .registerbody, html{
+     height: 100%;
+ 	background-repeat: no-repeat;
+ 	background:url(https://i.ytimg.com/vi/4kfXjatgeEU/maxresdefault.jpg);
+ 	font-family: 'Oxygen', sans-serif;
+	    background-size: cover;
+} */
+
+.main{
+ 	margin:50px 15px;
+}
+
+h1.title { 
+	font-size: 50px;
+	font-family: 'Passion One', cursive; 
+	font-weight: 400; 
+}
+
+hr{
+	width: 10%;
+	color: #fff;
+}
+
+.form-group{
+	margin-bottom: 15px;
+}
+
+label{
+	margin-bottom: 15px;
+}
+
+input,
+input::-webkit-input-placeholder {
+    font-size: 11px;
+    padding-top: 3px;
+}
+
+.main-login{
+ 	background-color: #fff;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+
+}
+.form-control {
+    height: auto!important;
+padding: 8px 12px !important;
+}
+.input-group {
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;
+}
+#button {
+    border: 1px solid #ccc;
+    margin-top: 28px;
+    padding: 6px 12px;
+    color: white !important;
+    font-weight: bold;
+    text-shadow: 0 1px #fff;
+    cursor: pointer;
+    -moz-border-radius: 3px 3px;
+    -webkit-border-radius: 3px 3px;
+    border-radius: 3px 3px;
+    -moz-box-shadow: 0 1px #fff inset, 0 1px #ddd;
+    -webkit-box-shadow: 0 1px #fff inset, 0 1px #ddd;
+    box-shadow: 0 1px #fff inset, 0 1px #ddd;
+    background-color: #29abe2 !important;
+    background: -moz-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f5f5f5), color-stop(100%, #eeeeee));
+    background: -webkit-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+    background: -o-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+    background: -ms-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+    background: linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#eeeeee', GradientType=0);
+}
+.main-center{
+ 	margin-top: 30px;
+ 	margin: 0 auto;
+ 	max-width: 400px;
+    padding: 10px 40px;
+	background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+	    color: #FFF;
+    text-shadow: none;
+	-webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+-moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+
+}
+span.input-group-addon i {
+    color: #009edf;
+    font-size: 17px;
+}
+
+.login-button{
+    margin-top: 5px;
+    
+}
+
+.login-register{
+	font-size: 11px;
+	text-align: center;
+}
+
+.btn-primary.btn-lg.btn-block.login-button {
+    background-color:  #29abe2 !important;
+    font-weight: bold;
+}</style><style type="text/css">
+.react-autosuggest__container {
+    position: relative;
+  }
+  
+  .react-autosuggest__input {
+    width: 100%;
+    height: 40px;
+    padding: 10px 20px;
+    font-family: Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+  }
+  
+  .react-autosuggest__input--focused {
+    outline: none;
+  }
+  
+  .react-autosuggest__input--open {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  
+  .react-autosuggest__suggestions-container {
+    display: none;
+  }
+  
+  .react-autosuggest__suggestions-container--open {
+    display: block;
+    position: absolute;
+    top: 39px;
+    width: 100%;
+    border: 1px solid #aaa;
+    background-color: #fff;
+    font-family: Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    z-index: 2;
+  }
+  
+  .react-autosuggest__suggestions-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  .react-autosuggest__suggestion {
+    cursor: pointer;
+    padding: 10px 20px;
+  }
+  
+  .react-autosuggest__suggestion--highlighted {
+    background-color: #ddd;
+  }</style><style type="text/css">#map {
+    max-width: 100px;
+    max-height: 100px;
+    flex: 1
+}
+
+.container {
+    flex-direction: row;
+    display: flex;
+}</style></head>
+
+<body>
+    <div id="root"><div class="ui container"><div><nav class="navbar navbar-dark mt-3"><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><form class="form-inline my-2 my-lg-0"><input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"><button class="btn btn-outline-danger font-weight-bold text-center my-2 my-sm-0" type="submit">SEARCH</button></form><a class="navbar-brand" to="/"></a><div class="container"><div class="navbar-collapse collapse show" id="navbarSupportedContent" style=""><ul class="navbar-nav ml-auto"><li class="nav-item active"><a class="nav-link" href="http://localhost:3000/">Home <span class="sr-only">(current)</span></a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="http://localhost:3000/">Make a Selection</a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="http://localhost:3000/UpperLimbs">Upper Limb</a><a class="dropdown-item" href="http://localhost:3000/LowerLimbs">Lower Limb</a><div class="dropdown-divider"></div><a class="dropdown-item" href="http://localhost:3000/">Info for New Amputees</a></div></li><li class="nav-item"><a class="nav-link" href="http://localhost:3000/Donations">Donate</a></li><li class="nav-item"><a class="nav-link" href="http://localhost:3000/FAQ">FAQ</a></li></ul></div></div></nav><div class="jumbotron jumbotron-fluid"><div class="p-5" id="jumbotext"><h1 class="outline display-3 text-left" style="color: darkred; font-weight: bold; font-family: Bungee;">Prosthetic</h1><h1 class="outline display-3 text-center" style="color: black; font-weight: bold; font-family: pacifico; width: 75%;">by proxy</h1></div><div class="d-flex justify-content-around align-items-center m-2"><button class="btn btn-lg" style="background-color: darkred; width: 250px; border-radius: 0.5em; border: 3px solid black;"><a class="" href="http://localhost:3000/login" style="color: white; font-weight: bold;"> L O G I N </a></button><button class="btn btn-lg" style="background-color: darkred; width: 250px; border-radius: 0.5em; border: 3px solid black;"><a class="" href="http://localhost:3000/register" style="color: white; font-weight: bold;"> R E G I S T E R </a></button></div><br><br><div class="d-flex justify-content-center align-items-bottom text-center"><p class="outlineblack lead" style="color: white; font-weight: bold; z-index: 99999;"> See What's Available </p></div></div><div class="container"><h2>Welcome to PBP</h2><p>We have a selection of upper limb prosthetics from our authorized donors.</p><div class="row"><div class="row"><div class="col-sm-6 mx-auto"><div class="card" style="width: 18rem; margin: 20px;"><div class="card-body"><h5 class="card-title">TruStep</h5><p class="card-text">Elbow Hinge</p><p class="card-text">  length: 12</p><p class="card-text">  width: 5</p><p class="card-text">  weight: 50</p><a href="http://localhost:3000/UpperLimbs#" class="btn btn-primary">View This Part</a></div></div></div></div><div class="row"><div class="col-sm-6 mx-auto"><div class="card" style="width: 18rem; margin: 20px;"><div class="card-body"><h5 class="card-title">Vari-Flex</h5><p class="card-text">Hand</p><p class="card-text">  length: 12</p><p class="card-text">  width: 5</p><p class="card-text">  weight: 50</p><a href="http://localhost:3000/UpperLimbs#" class="btn btn-primary">View This Part</a></div></div></div></div><div class="row"><div class="col-sm-6 mx-auto"><div class="card" style="width: 18rem; margin: 20px;"><div class="card-body"><h5 class="card-title">Vari-Flex</h5><p class="card-text">Arm</p><p class="card-text">  length: 12</p><p class="card-text">  width: 5</p><p class="card-text">  weight: 50</p><a href="http://localhost:3000/UpperLimbs#" class="btn btn-primary">View This Part</a></div></div></div></div></div></div><footer class="footer page-footer font-small mdb-color lighten-3 pt-4"><div class="container text-center text-md-left"><div class="row"><div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1"><h5 class="font-weight-bold text-uppercase mb-4"> Your New Prosthetic </h5><p>Prosthetic Help</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum.</p></div><div class="col-md-2 col-lg-2 mx-auto my-md-4 my-0 mt-4 mb-1"><h5 class="font-weight-bold text-uppercase mb-4">About</h5><ul class="list-unstyled"><li><p><a href="http://localhost:3000/UpperLimbs#!">PROJECTS</a></p></li><li><p><a href="http://localhost:3000/UpperLimbs#!">ABOUT US</a></p></li><li><p><a href="http://localhost:3000/UpperLimbs#!">BLOG</a></p></li><li><p><a href="http://localhost:3000/UpperLimbs#!">AWARDS</a></p></li></ul></div><hr class="clearfix w-100 d-md-none"><div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1"><h5 class="font-weight-bold text-uppercase mb-4">Address</h5><ul class="list-unstyled"><li><p><i class="fa fa-home mr-3"></i> Birmingham, AL, 35222, US</p></li><li><p><i class="fa fa-envelope mr-3"></i> contact@prostheticbyproxy.com</p></li><li><p><i class="fa fa-phone mr-3"></i> + 01 234 567 88</p></li><li><p><i class="fa fa-print mr-3"></i> + 01 234 567 89</p></li></ul></div><hr class="clearfix w-100 d-md-none"><div class="col-md-2 col-lg-2 text-center mx-auto my-4"><h5 class="font-weight-bold text-uppercase mb-4">Follow Us</h5><a type="button" class="btn-floating btn-fb"><i class="fa fa-facebook"></i></a><a type="button" class="btn-floating btn-tw"><i class="fa fa-twitter"></i></a><a type="button" class="btn-floating btn-gplus"><i class="fa fa-google-plus"></i></a><a type="button" class="btn-floating btn-dribbble"><i class="fa fa-dribbble"></i></a></div></div></div><div class="footer-copyright text-center py-3">© 2018 Copyright:<a href="https://mdbootstrap.com/education/bootstrap/"> ProstheticByProxy</a></div></footer></div></div></div>
+    <script src="./webpage_files/saved_resource"></script>
+    <script src="./webpage_files/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="./webpage_files/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="./webpage_files/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="./webpage_files/bundle.js"></script>
+
+
+</body></html>
