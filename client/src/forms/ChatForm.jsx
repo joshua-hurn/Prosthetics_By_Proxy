@@ -30,7 +30,7 @@ class ChatForm extends React.Component {
               <div class="chat_people">
                 <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"/> </div>
                 <div class="chat_ib">
-                  <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
+                  <h5>John Hurn <span class="chat_date">Dec 25</span></h5>
                   <p>Lower-limb prostheses might address stability in standing and walking, shock absorption, energy storage and return, cosmetic appearance, and even running, jumping, and other athletic activities. </p>
                 </div>
               </div>
@@ -39,7 +39,7 @@ class ChatForm extends React.Component {
               <div class="chat_people">
                 <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"/> </div>
                 <div class="chat_ib">
-                  <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
+                  <h5>Josh Hurn <span class="chat_date">Dec 25</span></h5>
                   <p>Matching a person with the right prosthesis is a significant part of that challenge. </p>
                 </div>
               </div>
@@ -48,7 +48,7 @@ class ChatForm extends React.Component {
               <div class="chat_people">
                 <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"/> </div>
                 <div class="chat_ib">
-                  <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
+                  <h5>Josh Hurn<span class="chat_date">Dec 25</span></h5>
                   <p>A wide range of devices are available to meet a wide range of prosthetic needs, from simple but effective cable and hook devices to high-tech and complex myoelectric and hybrid prosthetics. </p>
                 </div>
               </div>
@@ -57,7 +57,7 @@ class ChatForm extends React.Component {
               <div class="chat_people">
                 <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"/> </div>
                 <div class="chat_ib">
-                  <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
+                  <h5>Josh Hurn <span class="chat_date">Dec 25</span></h5>
                   <p>If a prosthesis allows a person to perform certain tasks or activities, whether they’re work-related or recreational, then it has value and it is medically indicated, even though it’s not used full-time.</p>
                 </div>
               </div>
@@ -118,7 +118,7 @@ class ChatForm extends React.Component {
       </div>
       
       
-      <p class="text-center top_spac"> Design by <a target="_blank" href="#">Sunil Rajput</a></p>
+ 
       
     </div></div>
  );

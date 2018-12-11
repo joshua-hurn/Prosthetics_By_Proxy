@@ -6,17 +6,17 @@ import Jumbotron from "../components/Jumbotron.jsx";
 // import { Link } from "react-router-dom";
 
 
-const MediaLibrary = () => (
+const Chatroom = () => (
     <div>
         <Navbar />
         <Jumbotron
-          title="Media Library"
+          title="Chat Forum"
         />
     
         <div className="container">
-          <h2>Welcome to PBP: Media Library</h2>
+          <h2>Welcome to PBP: Chat With Users</h2>
           <p>
-            Gain More Information
+            Chat with users to gain more information.
           </p>
 </div>
  <ChatForm />
@@ -49,4 +49,4 @@ const MediaLibrary = () => (
           );
 
  
-export default MediaLibrary;
+export default Chatroom;
