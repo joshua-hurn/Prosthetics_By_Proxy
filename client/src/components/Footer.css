@@ -1,14 +1,34 @@
 .footer {
-    position: center;
-    bottom: 0;
-    width: 100%;
-    height: 4px;
-    line-height: normal;
-    background-color: grey;
- 
+  margin-top: 15%;
+  position: center;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  line-height: normal;
+  background-color: grey;
 }
 
 .col-md-4.col-lg-3.mx-auto.my-md-4.my-0.mt-4.mb-1 {
-    display: inline-block;
-    vertical-align: top;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.brand-icons {
+  margin: 2px;
+}
+
+#fa-facebook{
+  color: #3b5998;
+}
+
+#fa-twitter{
+  color: #55acee;
+}
+
+#fa-google{
+  color: #dd4b39;
+}
+
+#fa-youtube{
+  color: #e52d27;
 }

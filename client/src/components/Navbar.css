@@ -1,10 +1,9 @@
 .navbar {
-background-color: #3584db;
-display:block;
+background-color: black;
+display: block;
 justify-content: space-between;
+border-radius: .5em;
 }
-
-
 
 .navbar-nav {
     display:flex;
@@ -12,13 +11,13 @@ justify-content: space-between;
 }
 
 .navbar-toggler {
-margin : 0.5px;
+    margin : 0.5px;
     align-items: left;
 }
 
 .form-inline.my-2.my-lg-0 {
     
-    float:right;
+    float: right;
     margin-top: -40px;
     position: relative;
     left: 12px;
@@ -33,4 +32,3 @@ img{
     position: relative;
     margin-top: -40px;
 }
-    

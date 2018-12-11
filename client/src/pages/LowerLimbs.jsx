@@ -1,29 +1,37 @@
-import React, { Component } from 'react';
-import Navbar from '../components/Navbar.jsx';
-import Footer from '../components/Footer.jsx';
-import Jumbotron from '../components/Jumbotron.jsx';
-import LowerCards from '../components/Cards/LowerCards';
+import React, { Component } from "react";
+import Navbar from "../components/Navbar.jsx";
+import Footer from "../components/Footer.jsx";
+import Jumbotron from "../components/Jumbotron.jsx";
+import LowerCard from "../components/Cards/LowerCard";
 
 class LowerLimbs extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-        prosthetics: []
+      prosthetics: []
     };
   }
   async componentDidMount() {
-    let res = await fetch('/api/prosthetics');
+    let res = await fetch("/api/prosthetics");
     let prosthetics = await res.json();
+    let lowerprosthetics = prosthetics.filter(item => {
+      if (item.placement == "Lowerlimb") {
+        return true;
+      }
+      return false;
+    });
     console.log(prosthetics);
-    this.setState({ prosthetics });
-  } catch (e) {
-      console.log(e);
+    this.setState({ prosthetics: lowerprosthetics });
+  }
+  catch(e) {
+    console.log(e);
   }
 
   renderProsthetics() {
+    console.log(this.state);
     return this.state.prosthetics.map(prosthetic => {
-        return <LowerCards key={prosthetic.id} prosthetic={prosthetic} />
-    })
+      return <LowerCard key={prosthetic.id} prosthetic={prosthetic} />;
+    });
   }
 
   render() {
@@ -42,9 +50,7 @@ class LowerLimbs extends Component {
             donars.
           </p>
 
-          <div className="row">
-                 {this.renderProsthetics()}
-             </div>
+          <div className="row">{this.renderProsthetics()}</div>
         </div>
         <Footer />
       </div>

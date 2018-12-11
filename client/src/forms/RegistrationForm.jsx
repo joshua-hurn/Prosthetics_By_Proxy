@@ -1,111 +1,167 @@
-import React from 'react';
-import './RegistrationForm.css';
-import {withRouter} from 'react-router';
+import React from "react";
+import "./RegistrationForm.css";
+import { withRouter } from "react-router";
 
- class RegistrationForm extends React.Component {
-    state= {
-        firstName: '',
-        lastName:'',
-        username: '',
-        email: '',
-        password: ''
-    };
+class RegistrationForm extends React.Component {
+  state = {
+    firstName: "",
+    lastName: "",
+    username: "",
+    email: "",
+    password: ""
+  };
 
-    change = e => {
-        this.setState({
-            [e.target.name]: e.target.value
-        });
-    };
+  change = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
 
-    onSubmit= (e) => {    
-    e.preventDefault();           
-    console.log(this.state);                   
-                                               
-};
-onRegister= e => {
+  onSubmit = e => {
+    e.preventDefault();
+    console.log(this.state);
+  };
+  onRegister = e => {
     this.props.history.push("/ThankYou1");
-}
-render() {
+  };
+  render() {
     return (
+      <div class="container">
+        <div class="row main">
+          <div class="main-login main-center">
+            <h5>Sign up and Join! It's 100% free!</h5>
+            <form class="" method="post" action="#">
+              <div class="form-group">
+                <label for="name" class="cols-sm-2 control-label">
+                  Your Name
+                </label>
+                <div class="cols-sm-10">
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <i class="fa fa-user fa" aria-hidden="true" />
+                    </span>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="name"
+                      id="name"
+                      placeholder="Enter your Name"
+                    />
+                  </div>
+                </div>
+              </div>
 
+              <div class="form-group">
+                <label for="email" class="cols-sm-2 control-label">
+                  Your Email
+                </label>
+                <div class="cols-sm-10">
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <i class="fa fa-envelope fa" aria-hidden="true" />
+                    </span>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="email"
+                      id="email"
+                      placeholder="Enter your Email"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="username" class="cols-sm-2 control-label">
+                  Username
+                </label>
+                <div class="cols-sm-10">
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <i class="fa fa-users fa" aria-hidden="true" />
+                    </span>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="username"
+                      id="username"
+                      placeholder="Enter your Username"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="password" class="cols-sm-2 control-label">
+                  Password
+                </label>
+                <div class="cols-sm-10">
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <i class="fa fa-lock fa-lg" aria-hidden="true" />
+                    </span>
+                    <input
+                      type="password"
+                      class="form-control"
+                      name="password"
+                      id="password"
+                      placeholder="Enter your Password"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="confirm" class="cols-sm-2 control-label">
+                  Confirm Password
+                </label>
+                <div class="cols-sm-10">
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <i class="fa fa-lock fa-lg" aria-hidden="true" />
+                    </span>
+                    <input
+                      type="password"
+                      class="form-control"
+                      name="confirm"
+                      id="confirm"
+                      placeholder="Confirm your Password"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group ">
+                <button
+                  href="/ThankYou1"
+                  target="_blank"
+                  type="button"
+              
+                  class="btn btn-primary btn-lg btn-block login-button"
+                  onClick={this.onRegister}
+                >
+                  Register
+                </button>
+                <main>
         <div class="container">
-			<div class="row main">
-				<div class="main-login main-center">
-				<h5>Sign up and Join! It's 100% free!</h5>
-					<form class="" method="post" action="#">
-						
-						<div class="form-group">
-							<label for="name" class="cols-sm-2 control-label">Your Name</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name"/>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label for="email" class="cols-sm-2 control-label">Your Email</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label for="username" class="cols-sm-2 control-label">Username</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username"/>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label for="password" class="cols-sm-2 control-label">Password</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group ">
-							<button href ="/ThankYou1" target="_blank" type="button" id="button2" class="btn btn-primary btn-lg btn-block login-button" onClick={this.onRegister}>Register</button>
-						</div>
-						
-					</form>
-				</div>
-			</div>
-		</div>
-
-
-    )
-
-
-
-    
-
-    
-
-    }
-}      
-
-
-
+          {/* <!--Grid row--> */}
+          <div class="row py-5">
+            {/* <!--Grid column--> */}
+            <div class="col-md-12 text-center">
+              <p>May accept donations of used prosthetic limbs and/or components and distributes all forms of prosthetic limbs to those in need. goal is to collect old prosthetic parts and ship them overseas so that more amputees will have greater access.</p>
+            </div>
+            {/* <!--Grid column--> */}
+          </div>
+          {/* <!--Grid row--> */}
+        </div>
+      </main>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
 
 export default withRouter(RegistrationForm);

@@ -2,27 +2,35 @@ import React, { Component } from "react";
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 import Jumbotron from "../components/Jumbotron.jsx";
+import UpperCard from "../components/Cards/UpperCard";
 
 class UpperLimbs extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-        prosthetics: []
+      prosthetics: []
     };
   }
   async componentDidMount() {
-    let res = await fetch('/api/prosthetics');
+    let res = await fetch("/api/prosthetics");
     let prosthetics = await res.json();
+    let upperprosthetics = prosthetics.filter(item => {
+      if (item.placement == "Upperlimb") {
+        return true;
+      }
+      return false;
+    });
     console.log(prosthetics);
-    this.setState({ prosthetics });
-  } catch (e) {
-      console.log(e);
+    this.setState({ prosthetics: upperprosthetics });
+  }
+  catch(e) {
+    console.log(e);
   }
 
   renderProsthetics() {
     return this.state.prosthetics.map(prosthetic => {
-        return <UpperCards key={prosthetic.id} prosthetic={prosthetic} />
-    })
+      return <UpperCard key={prosthetic.id} prosthetic={prosthetic} />;
+    });
   }
 
   render() {
@@ -30,20 +38,16 @@ class UpperLimbs extends Component {
       <div>
         <Navbar />
         <Jumbotron
-          title="Lower Limb Selection"
+          title="Upper Limb Selection"
           subtitle="See What's Available"
         />
-
         <div className="container">
           <h2>Welcome to PBP</h2>
           <p>
-            We have a selection of lower limb prosthetics from our authorized
-            donars.
+            We have a selection of upper limb prosthetics from our authorized
+            donors.
           </p>
-
-          <div className="row">
-                 {this.renderProsthetics()}
-             </div>
+          <div className="row">{this.renderProsthetics()}</div>
         </div>
         <Footer />
       </div>

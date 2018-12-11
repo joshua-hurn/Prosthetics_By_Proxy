@@ -1,7 +1,15 @@
-#button{
+#button {
    color: white;
    background: #29abe2 !important;
    margin-bottom: 10px;
- 
 }
 
+hr {
+   color: black;
+   justify-content: center;
+   margin: 2em;
+   display: block;
+   overflow: hidden;
+   border-style: inset;
+   border-width: 1px;
+}
