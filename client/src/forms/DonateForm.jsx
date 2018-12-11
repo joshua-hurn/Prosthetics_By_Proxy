@@ -29,8 +29,6 @@ class DonateForm extends React.Component {
     this.props.history.push("/ThankYou1");
   }
 
-  
-
   render() {
     return (
       <form>
@@ -189,4 +187,5 @@ class DonateForm extends React.Component {
     );
   }
 }
+
 export default withRouter(DonateForm);
