@@ -69,3 +69,7 @@ code {
 .single-product-container >.container > div:nth-of-type(2) {
   width: 100%;
 }
+
+.jumbotron.text-xs-center {
+  color: white;
+}
