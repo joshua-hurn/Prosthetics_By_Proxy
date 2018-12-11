@@ -36,7 +36,7 @@ const ProstheticsCard = props => {
               <strong>DECLINED</strong> 182
             </div>
           </div>
-          <Link to={`/part/${props.prosthetic.id}`} classNameName="btn">
+          <Link to={`/part/${props.prosthetic.id}`} className="btn">
             See More
           </Link>
         </div>
