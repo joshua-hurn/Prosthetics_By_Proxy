@@ -1,12 +1,10 @@
 import React from "react";
 import "./RegistrationForm.css";
-import * as baseServices from "../services/base";
 import { withRouter } from "react-router";
 
 class RegistrationForm extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       name: "",
       email: "",
@@ -47,7 +45,7 @@ class RegistrationForm extends React.Component {
             <form className="" method="post" action="#">
               <div className="form-group">
                 <label for="name" className="cols-sm-2 control-label redbungee outlineblack pl-2"
-                style={{ fontSize: "24px" }}>
+                  style={{ fontSize: "24px" }}>
                   Your Name
                 </label>
                 <div className="cols-sm-10">
@@ -68,7 +66,7 @@ class RegistrationForm extends React.Component {
 
               <div className="form-group">
                 <label for="email" className="cols-sm-2 control-label redbungee outlineblack pl-2"
-                style={{ fontSize: "24px" }}>
+                  style={{ fontSize: "24px" }}>
                   Your Email
                 </label>
                 <div className="cols-sm-10">
@@ -89,7 +87,7 @@ class RegistrationForm extends React.Component {
 
               <div className="form-group">
                 <label for="username" className="cols-sm-2 control-label redbungee outlineblack pl-2"
-                style={{ fontSize: "24px" }}>
+                  style={{ fontSize: "24px" }}>
                   Username
                 </label>
                 <div className="cols-sm-10">
@@ -110,7 +108,7 @@ class RegistrationForm extends React.Component {
 
               <div className="form-group">
                 <label for="password" className="cols-sm-2 control-label redbungee outlineblack pl-2"
-                style={{ fontSize: "24px" }}>
+                  style={{ fontSize: "24px" }}>
                   Password
                 </label>
                 <div className="cols-sm-10">
@@ -131,7 +129,7 @@ class RegistrationForm extends React.Component {
 
               <div className="form-group">
                 <label for="confirm" className="cols-sm-2 control-label redbungee outlineblack pl-2"
-                style={{ fontSize: "24px" }}>
+                  style={{ fontSize: "24px" }}>
                   Confirm Password
                 </label>
                 <div className="cols-sm-10">
@@ -155,7 +153,7 @@ class RegistrationForm extends React.Component {
                   href="/ThankYou1"
                   target="_blank"
                   type="button"
-              
+
                   className="btn btn-outline-danger btn-lg btn-block login-button redbungee outlineblack mt-3"
                   style={{ fontSize: "24px" }}
                   onClick={this.onSubmit}
@@ -163,18 +161,18 @@ class RegistrationForm extends React.Component {
                   Register
                 </button>
                 <main>
-        <div className="container">
-          {/* <!--Grid row--> */}
-          <div className="row py-5">
-            {/* <!--Grid column--> */}
-            <div className="col-md-12 text-center" >
-              <p className="" style={{ color: "white", fontSize: "30px" }}>FYI <br/>May accept donations of used prosthetic limbs and/or components and distributes all forms of prosthetic limbs to those in need. goal is to collect old prosthetic parts and ship them overseas so that more amputees will have greater access.</p>
-            </div>
-            {/* <!--Grid column--> */}
-          </div>
-          {/* <!--Grid row--> */}
-        </div>
-      </main>
+                  <div className="container">
+                    {/* <!--Grid row--> */}
+                    <div className="row py-5">
+                      {/* <!--Grid column--> */}
+                      <div className="col-md-12 text-center" >
+                        <p className="" style={{ color: "white", fontSize: "30px" }}>FYI <br />May accept donations of used prosthetic limbs and/or components and distributes all forms of prosthetic limbs to those in need. goal is to collect old prosthetic parts and ship them overseas so that more amputees will have greater access.</p>
+                      </div>
+                      {/* <!--Grid column--> */}
+                    </div>
+                    {/* <!--Grid row--> */}
+                  </div>
+                </main>
               </div>
             </form>
           </div>

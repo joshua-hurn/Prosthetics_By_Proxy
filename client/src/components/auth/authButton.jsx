@@ -10,6 +10,11 @@ class AuthButton extends Component {
         }
     }
 
+    derp() {
+
+
+    }
+
     async componentDidMount() {
         try {
             let loggedIn = await checkLogin();
