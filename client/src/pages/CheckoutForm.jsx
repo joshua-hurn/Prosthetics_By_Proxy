@@ -44,7 +44,9 @@ class CheckoutForm extends Component {
           <div id="image-container">
             <span id="card-image" />
             <div id="card-front">
-              <input type="text" id="card-token" />
+              {/* <input type="text" id="card-token" 
+                placeholder="CARD NUMBER"
+              /> */}
 
               {/* <label for="card-holder">Card Holder
       </label> */}
