@@ -6,7 +6,7 @@ import "./Footer.jsx";
 class Navbar extends Component {
   render() {
     return (
-      <nav className="navbar navbar-dark mt-3">
+      <nav className="navbar navbar-dark">
         <button
           className="navbar-toggler"
           type="button"

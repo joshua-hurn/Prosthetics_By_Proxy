@@ -1,9 +1,7 @@
-.donations-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-}
-
 .donate-money-form {
     margin-top: 30px;
+}
+
+.donate-form-container {
+    justify-content: center;
 }

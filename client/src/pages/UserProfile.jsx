@@ -3,6 +3,8 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Jumbotron from "../components/Jumbotron";
 import * as baseServices from "../services/base";
+import * as prostheticsServices from "../services/prosthetics";
+import ProstheticsCard from "../components/Cards/ProstheticsCard";
 import "./UserProfile.css";
 
 class UserProfile extends Component {
@@ -10,27 +12,36 @@ class UserProfile extends Component {
     super(props);
 
     this.state = {
-      user: {}
+      user: {},
+      singleUsersProthetics: []
     };
   }
 
   async componentDidMount() {
     try {
       baseServices.populateAuthToken();
-
       let user = await baseServices.get("/api/users/me");
-
       if (user.donator_type === 0) {
         user.donator_type = "Individual donor";
       } else {
         user.donator_type = "Organization";
       }
-
       this.setState({ user });
+      let prosthetics = await prostheticsServices.all();
+      let singleUsersProthetics = prosthetics.filter(function(singleThang) {
+        return user.id === singleThang.userid;
+      });
+      this.setState(singleUsersProthetics);
     } catch (e) {
       console.log(e);
     }
   }
+
+  renderProsthetics = () => {
+    return this.state.singleUsersProthetics.map(prosthetic => {
+      return <ProstheticsCard key={prosthetic.id} prosthetic={prosthetic} />;
+    });
+  };
 
   render() {
     return (
@@ -61,11 +72,11 @@ class UserProfile extends Component {
                     <li className="nav-item">
                       <a
                         className="nav-link active"
-                        id="home-tab"
+                        id="about"
                         data-toggle="tab"
-                        href="#home"
+                        href="#about"
                         role="tab"
-                        aria-controls="home"
+                        aria-controls="about"
                         aria-selected="true"
                       >
                         About
@@ -74,14 +85,27 @@ class UserProfile extends Component {
                     <li className="nav-item">
                       <a
                         className="nav-link"
-                        id="profile-tab"
+                        id="summary"
                         data-toggle="tab"
-                        href="#profile"
+                        href="#summary"
                         role="tab"
-                        aria-controls="profile"
+                        aria-controls="summary-tab"
                         aria-selected="false"
                       >
                         Summary
+                      </a>
+                    </li>
+                    <li className="nav-item">
+                      <a
+                        className="nav-link"
+                        id="postedItems"
+                        data-toggle="tab"
+                        href="#postedItem"
+                        role="tab"
+                        aria-controls="posted-items"
+                        aria-selected="false"
+                      >
+                        Posted Items
                       </a>
                     </li>
                   </ul>
@@ -100,13 +124,13 @@ class UserProfile extends Component {
               <div className="tab-content profile-tab" id="myTabContent">
                 <div
                   className="tab-pane fade show active"
-                  id="home"
+                  id="#about"
                   role="tabpanel"
-                  aria-labelledby="home-tab"
+                  aria-labelledby="about"
                 >
                   <div className="row">
                     <div className="col-md-6">
-                      <label>Name</label>
+                      <label className="info-labels">Name:</label>
                     </div>
                     <div className="col-md-6">
                       <p>{this.state.user.name}</p>
@@ -114,7 +138,7 @@ class UserProfile extends Component {
                   </div>
                   <div className="row">
                     <div className="col-md-6">
-                      <label>Email</label>
+                      <label className="info-labels">Email:</label>
                     </div>
                     <div className="col-md-6">
                       <p>{this.state.user.email}</p>
@@ -122,7 +146,7 @@ class UserProfile extends Component {
                   </div>
                   <div className="row">
                     <div className="col-md-6">
-                      <label>Phone</label>
+                      <label className="info-labels">Phone:</label>
                     </div>
                     <div className="col-md-6">
                       <p>{this.state.user.phone_number}</p>
@@ -131,9 +155,9 @@ class UserProfile extends Component {
                 </div>
                 <div
                   className="tab-pane fade"
-                  id="profile"
+                  id="#summary-tab"
                   role="tabpanel"
-                  aria-labelledby="profile-tab"
+                  aria-labelledby="summary"
                 >
                   <div className="row">
                     <div className="col-md-6">
@@ -145,6 +169,21 @@ class UserProfile extends Component {
                         in testing and adapting to new prosthetics. I hope to be
                         a good resource for people in need.
                       </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="tab-pane fade"
+                  id="#postedItem-tab"
+                  role="tabpanel"
+                  aria-labelledby="postedItems"
+                >
+                  <div className="row">
+                    <div className="col-md-6">
+                      <label>Posted Items</label>
+                    </div>
+                    <div>
+                      {this.renderProsthetics()}
                     </div>
                   </div>
                 </div>
