@@ -33,7 +33,7 @@ export default props => {
         <br />
         <a
           className="btn btn-lg"
-          href="#"
+          href="/"
           role="button"
           style={{
             fontFamily: "bungee",
