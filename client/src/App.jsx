@@ -14,6 +14,7 @@ import AllParts from "./pages/AllParts";
 import FAQ from "./pages/FAQ.jsx";
 import SinglePart from "./pages/SingleProsthetic";
 import MediaLibrary from "./pages/MediaLibrary.jsx";
+import Logout from "./components/auth/logout";
 
 class App extends Component {
   render() {
@@ -22,6 +23,7 @@ class App extends Component {
         <div className="ui container">
           <Route exact path="/" component={Home} />
           <Route exact path="/login" exact component={LoginPage} />
+          <Route exact path="/logout" component={Logout} />
           <Route exact path="/register" exact component={RegistrationPage} />
           <Route exact path="/Donations" component={Donations} />
           <Route exact path="/ThankYou1" component={ThankYou1} />
