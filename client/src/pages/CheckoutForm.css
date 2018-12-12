@@ -1,0 +1,19 @@
+#form-container {
+    border: black solid 5px;
+    width: 352px;
+    background: -webkit-linear-gradient(left, darkred, #ea920c);
+    color: black;
+    height: 180px;
+    border-radius: 0.5em;
+}
+
+label {
+    color: white;
+}
+
+#card-btn {
+    font-family: bungee;
+    border: 3px solid black;
+    color: white;
+    background-color: darkred;
+}

@@ -13,7 +13,6 @@ class Jumbotron extends Component {
 
         </div>
         <div className="d-flex justify-content-around align-items-center m-2">
-          {/* <button className="btn btn-lg" style={{ backgroundColor: "darkred", width: "250px", borderRadius: ".5em", border: "black 3px solid" }}><Link className="" style={{ color: "white", fontWeight: "bold" }} to="/login" > L O G I N </Link></button> */}
           <AuthButton />
           <button className="btn btn-lg" style={{ backgroundColor: "darkred", width: "250px", borderRadius: ".5em", border: "black 3px solid" }}><Link className="" style={{ color: "white", fontWeight: "bold" }} to="/register" > R E G I S T E R </Link></button>
         </div><br /><br />

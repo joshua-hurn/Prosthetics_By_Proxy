@@ -1,154 +1,174 @@
 import React from "react";
 import "./RegistrationForm.css";
+import * as baseServices from "../services/base";
 import { withRouter } from "react-router";
 
 class RegistrationForm extends React.Component {
-  state = {
-    firstName: "",
-    lastName: "",
-    username: "",
-    email: "",
-    password: ""
-  };
+  constructor(props) {
+    super(props);
 
-  change = e => {
-    this.setState({
-      [e.target.name]: e.target.value
-    });
-  };
+    this.state = {
+      name: "",
+      email: "",
+      password: "",
+      passwordConfirm: ""
+    };
+  }
 
-  onSubmit = e => {
-    e.preventDefault();
-    console.log(this.state);
-  };
-  onRegister = e => {
+  handleNameChange(event) {
+    this.setState({ name: event.target.value });
+  }
+  handleEmailChange(event) {
+    this.setState({ email: event.target.value });
+  }
+  handlePasswordChange(event) {
+    this.setState({ password: event.target.value });
+  }
+  handleConfirmPasswordChange(event) {
+    this.setState({ passwordConfirm: event.target.value });
+  }
+
+  async onSubmit(event) {
+    try {
+      let res = await blogServices.insert(this.state);
+      this.props.history.replace("/");
+    } catch (error) {
+      console.log(error);
+    }
     this.props.history.push("/ThankYou1");
   };
+
   render() {
     return (
-      <div class="container">
-        <div class="row main">
-          <div class="main-login main-center">
-            <h5>Sign up and Join! It's 100% free!</h5>
-            <form class="" method="post" action="#">
-              <div class="form-group">
-                <label for="name" class="cols-sm-2 control-label">
+      <div className="container">
+        <div className="row main">
+          <div className="main-login main-center">
+            <h5 className="outlineblack whitepacifico m-3 text-center" style={{ fontSize: "24px" }} >Sign up and Join! It's 100% free!</h5>
+            <form className="" method="post" action="#">
+              <div className="form-group">
+                <label for="name" className="cols-sm-2 control-label redbungee outlineblack pl-2"
+                style={{ fontSize: "24px" }}>
                   Your Name
                 </label>
-                <div class="cols-sm-10">
-                  <div class="input-group">
-                    <span class="input-group-addon">
-                      <i class="fa fa-user fa" aria-hidden="true" />
+                <div className="cols-sm-10">
+                  <div className="input-group">
+                    <span className="input-group-addon">
+                      <i className="fa fa-user fa" aria-hidden="true" />
                     </span>
                     <input
                       type="text"
-                      class="form-control"
+                      className="form-control"
+                      style={{ borderRadius: ".5em", backgroundColor: "black", color: "white" }}
                       name="name"
                       id="name"
-                      placeholder="Enter your Name"
                     />
                   </div>
                 </div>
               </div>
 
-              <div class="form-group">
-                <label for="email" class="cols-sm-2 control-label">
+              <div className="form-group">
+                <label for="email" className="cols-sm-2 control-label redbungee outlineblack pl-2"
+                style={{ fontSize: "24px" }}>
                   Your Email
                 </label>
-                <div class="cols-sm-10">
-                  <div class="input-group">
-                    <span class="input-group-addon">
-                      <i class="fa fa-envelope fa" aria-hidden="true" />
+                <div className="cols-sm-10">
+                  <div className="input-group">
+                    <span className="input-group-addon">
+                      <i className="fa fa-envelope fa" aria-hidden="true" />
                     </span>
                     <input
                       type="text"
-                      class="form-control"
+                      className="form-control"
+                      style={{ borderRadius: ".5em", backgroundColor: "black", color: "white" }}
                       name="email"
                       id="email"
-                      placeholder="Enter your Email"
                     />
                   </div>
                 </div>
               </div>
 
-              <div class="form-group">
-                <label for="username" class="cols-sm-2 control-label">
+              <div className="form-group">
+                <label for="username" className="cols-sm-2 control-label redbungee outlineblack pl-2"
+                style={{ fontSize: "24px" }}>
                   Username
                 </label>
-                <div class="cols-sm-10">
-                  <div class="input-group">
-                    <span class="input-group-addon">
-                      <i class="fa fa-users fa" aria-hidden="true" />
+                <div className="cols-sm-10">
+                  <div className="input-group">
+                    <span className="input-group-addon">
+                      <i className="fa fa-users fa" aria-hidden="true" />
                     </span>
                     <input
                       type="text"
-                      class="form-control"
+                      className="form-control"
+                      style={{ borderRadius: ".5em", backgroundColor: "black", color: "white" }}
                       name="username"
                       id="username"
-                      placeholder="Enter your Username"
                     />
                   </div>
                 </div>
               </div>
 
-              <div class="form-group">
-                <label for="password" class="cols-sm-2 control-label">
+              <div className="form-group">
+                <label for="password" className="cols-sm-2 control-label redbungee outlineblack pl-2"
+                style={{ fontSize: "24px" }}>
                   Password
                 </label>
-                <div class="cols-sm-10">
-                  <div class="input-group">
-                    <span class="input-group-addon">
-                      <i class="fa fa-lock fa-lg" aria-hidden="true" />
+                <div className="cols-sm-10">
+                  <div className="input-group">
+                    <span className="input-group-addon">
+                      <i className="fa fa-lock fa-lg" aria-hidden="true" />
                     </span>
                     <input
                       type="password"
-                      class="form-control"
+                      className="form-control"
+                      style={{ borderRadius: ".5em", backgroundColor: "black", color: "white" }}
                       name="password"
                       id="password"
-                      placeholder="Enter your Password"
                     />
                   </div>
                 </div>
               </div>
 
-              <div class="form-group">
-                <label for="confirm" class="cols-sm-2 control-label">
+              <div className="form-group">
+                <label for="confirm" className="cols-sm-2 control-label redbungee outlineblack pl-2"
+                style={{ fontSize: "24px" }}>
                   Confirm Password
                 </label>
-                <div class="cols-sm-10">
-                  <div class="input-group">
-                    <span class="input-group-addon">
-                      <i class="fa fa-lock fa-lg" aria-hidden="true" />
+                <div className="cols-sm-10">
+                  <div className="input-group">
+                    <span className="input-group-addon">
+                      <i className="fa fa-lock fa-lg" aria-hidden="true" />
                     </span>
                     <input
                       type="password"
-                      class="form-control"
+                      className="form-control"
+                      style={{ borderRadius: ".5em", backgroundColor: "black", color: "white" }}
                       name="confirm"
                       id="confirm"
-                      placeholder="Confirm your Password"
                     />
                   </div>
                 </div>
               </div>
 
-              <div class="form-group ">
+              <div className="form-group m-5">
                 <button
                   href="/ThankYou1"
                   target="_blank"
                   type="button"
               
-                  class="btn btn-primary btn-lg btn-block login-button"
-                  onClick={this.onRegister}
+                  className="btn btn-outline-danger btn-lg btn-block login-button redbungee outlineblack mt-3"
+                  style={{ fontSize: "24px" }}
+                  onClick={this.onSubmit}
                 >
                   Register
                 </button>
                 <main>
-        <div class="container">
+        <div className="container">
           {/* <!--Grid row--> */}
-          <div class="row py-5">
+          <div className="row py-5">
             {/* <!--Grid column--> */}
-            <div class="col-md-12 text-center">
-              <p>May accept donations of used prosthetic limbs and/or components and distributes all forms of prosthetic limbs to those in need. goal is to collect old prosthetic parts and ship them overseas so that more amputees will have greater access.</p>
+            <div className="col-md-12 text-center" >
+              <p className="" style={{ color: "white", fontSize: "30px" }}>FYI <br/>May accept donations of used prosthetic limbs and/or components and distributes all forms of prosthetic limbs to those in need. goal is to collect old prosthetic parts and ship them overseas so that more amputees will have greater access.</p>
             </div>
             {/* <!--Grid column--> */}
           </div>
