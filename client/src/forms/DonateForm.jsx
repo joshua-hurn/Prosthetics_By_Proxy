@@ -282,9 +282,7 @@ class DonateForm extends React.Component {
 
           <div class="form-group">
             <label for="image-upload">Upload images</label>
-            <p>
-              Our site supports url links as images. Please enter URLs below.
-            </p>
+            
             <input
               type="text"
               multiple="true"
