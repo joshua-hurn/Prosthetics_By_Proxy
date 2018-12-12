@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Jumbotron from "../components/Jumbotron";
+import * as baseServices from "../services/base";
 import "./UserProfile.css";
 
 class UserProfile extends Component {
@@ -15,9 +16,16 @@ class UserProfile extends Component {
 
   async componentDidMount() {
     try {
-      let id = this.props.match.params.id
-      let res = await fetch(`/api/users/${id}`);
-      let user = await res.json();
+      baseServices.populateAuthToken();
+
+      let user = await baseServices.get("/api/users/me");
+
+      if (user.donator_type === 0) {
+        user.donator_type = "Individual donor";
+      } else {
+        user.donator_type = "Organization";
+      }
+
       this.setState({ user });
     } catch (e) {
       console.log(e);
@@ -96,14 +104,6 @@ class UserProfile extends Component {
                   role="tabpanel"
                   aria-labelledby="home-tab"
                 >
-                  <div className="row">
-                    <div className="col-md-6">
-                      <label>User Number</label>
-                    </div>
-                    <div className="col-md-6">
-                      <p>{this.state.userid}</p>
-                    </div>
-                  </div>
                   <div className="row">
                     <div className="col-md-6">
                       <label>Name</label>
