@@ -9,3 +9,22 @@
     font-weight: bolder;
     border: black solid 5px;
 } */
+
+.lowerCard {
+    display: flex;
+    justify-content: center;
+    margin: 1em;
+    height: 520px;
+    width: 300px;
+}
+
+#prosthetic-img {
+    display: flex;
+    justify-content: center;
+    max-height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 280px;
+    margin-bottom: 1em;
+    min-height: 200px;
+}
