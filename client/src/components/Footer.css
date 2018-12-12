@@ -19,16 +19,20 @@
 
 #fa-facebook{
   color: #3b5998;
+  cursor: pointer;
 }
 
 #fa-twitter{
   color: #55acee;
+  cursor: pointer;
 }
 
 #fa-google{
   color: #dd4b39;
+  cursor: pointer;
 }
 
 #fa-youtube{
   color: #e52d27;
+  cursor: pointer;
 }
