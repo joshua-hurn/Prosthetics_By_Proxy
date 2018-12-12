@@ -29,11 +29,10 @@ class DonateForm extends React.Component {
     this.props.history.push("/ThankYou1");
   }
 
-  
-
   render() {
     return (
       <form>
+        <div className= "container">
         <div className="form-group">
           <label for="formGroupExampleInput">First Name </label>
           <input
@@ -185,8 +184,13 @@ class DonateForm extends React.Component {
         >
           Donate
         </button>
+        </div>
       </form>
+      
+    
+      
     );
   }
 }
+
 export default withRouter(DonateForm);

@@ -68,11 +68,12 @@ class Navbar extends Component {
                   <Link className="dropdown-item" to="/LowerLimbs">
                     Lower Limb
                     </Link>
-                  <div className="dropdown-divider" />
-                  {/* <Link className="dropdown-item" to="/">
-                    Info for New Amputees
-                    </Link> */}
-                </div>
+                  
+              </div>
+              <div className="nav-item" />
+                  <Link className="nav-link" to="/Chat">
+                Chat
+                    </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/Donations">
