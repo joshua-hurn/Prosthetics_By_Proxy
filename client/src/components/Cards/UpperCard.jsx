@@ -5,9 +5,8 @@ import "./UpperCard.css";
 const UpperCard = props => {
   return (
     <React.Fragment>
-      <div className="">
-        <div className="mx-auto" >
-          <div className="card" style={{ color: "white", width: '18rem', margin: '20px', background: "black" }}>
+        <div className="upperCard p-2" style={{ background: "black", borderRadius: ".5em", border: "black solid 3px"}}>
+          <div className="text-center" style={{ color: "white", width: '18rem', margin: '20px', background: "black", borderRadius: ".5em" }}>
             <div className="img">
               <img
                 id="prosthetic-img"
@@ -28,7 +27,6 @@ const UpperCard = props => {
             </div>
           </div>
         </div>
-      </div>
     </React.Fragment>
   );
 };
