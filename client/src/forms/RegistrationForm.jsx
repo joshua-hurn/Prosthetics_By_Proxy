@@ -9,7 +9,9 @@ class RegistrationForm extends React.Component {
       name: "",
       email: "",
       password: "",
-      passwordConfirm: ""
+      passwordConfirm: "",
+      username: '',
+      donator_type: 0
     };
   }
 
@@ -27,8 +29,24 @@ class RegistrationForm extends React.Component {
   }
 
   async onSubmit(event) {
+
+    let userObject = {
+      addressid: 1,
+      donator_type: this.state.donator_type,
+      phone_number: 5555555555,
+      name: this.state.name,
+      email: this.state.email,
+      hash: this.state.password
+    };
+
     try {
-      let res = await blogServices.insert(this.state);
+      let res = await fetch('/api/auth/register', {
+        method: 'POST',
+        body: JSON.stringify(userObject),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
       this.props.history.replace("/");
     } catch (error) {
       console.log(error);
@@ -44,7 +62,7 @@ class RegistrationForm extends React.Component {
             <h5 className="outlineblack whitepacifico m-3 text-center" style={{ fontSize: "24px" }} >Sign up and Join! It's 100% free!</h5>
             <form className="" method="post" action="#">
               <div className="form-group">
-                <label for="name" className="cols-sm-2 control-label redbungee outlineblack pl-2"
+                <label className="cols-sm-2 control-label redbungee outlineblack pl-2"
                   style={{ fontSize: "24px" }}>
                   Your Name
                 </label>
@@ -54,6 +72,8 @@ class RegistrationForm extends React.Component {
                       <i className="fa fa-user fa" aria-hidden="true" />
                     </span>
                     <input
+                      value={this.state.name}
+                      onChange={(e) => this.handleNameChange(e)}
                       type="text"
                       className="form-control"
                       style={{ borderRadius: ".5em", backgroundColor: "black", color: "white" }}
@@ -65,7 +85,7 @@ class RegistrationForm extends React.Component {
               </div>
 
               <div className="form-group">
-                <label for="email" className="cols-sm-2 control-label redbungee outlineblack pl-2"
+                <label className="cols-sm-2 control-label redbungee outlineblack pl-2"
                   style={{ fontSize: "24px" }}>
                   Your Email
                 </label>
@@ -75,6 +95,8 @@ class RegistrationForm extends React.Component {
                       <i className="fa fa-envelope fa" aria-hidden="true" />
                     </span>
                     <input
+                      value={this.state.emaik}
+                      onChange={(e) => this.handleEmailChange(e)}
                       type="text"
                       className="form-control"
                       style={{ borderRadius: ".5em", backgroundColor: "black", color: "white" }}
@@ -86,7 +108,7 @@ class RegistrationForm extends React.Component {
               </div>
 
               <div className="form-group">
-                <label for="username" className="cols-sm-2 control-label redbungee outlineblack pl-2"
+                <label className="cols-sm-2 control-label redbungee outlineblack pl-2"
                   style={{ fontSize: "24px" }}>
                   Username
                 </label>
@@ -96,6 +118,8 @@ class RegistrationForm extends React.Component {
                       <i className="fa fa-users fa" aria-hidden="true" />
                     </span>
                     <input
+                      value={this.state.username}
+                      onChange={(e) => this.setState({ username: e.target.value })}
                       type="text"
                       className="form-control"
                       style={{ borderRadius: ".5em", backgroundColor: "black", color: "white" }}
@@ -107,7 +131,37 @@ class RegistrationForm extends React.Component {
               </div>
 
               <div className="form-group">
-                <label for="password" className="cols-sm-2 control-label redbungee outlineblack pl-2"
+                <label className="cols-sm-2 control-label redbungee outlineblack pl-2"
+                  style={{ fontSize: "24px" }}>
+                  Donor or Recipient?
+                </label>
+                <div className="cols-sm-10">
+                  <div className="input-group" style={{ borderRadius: ".5em", border: '.5px solid white', backgroundColor: "black", color: "white" }}>
+                    <span className="input-group-addon">
+                      <i className="fa fa-users fa" aria-hidden="true" />
+                    </span>
+                    <div className="form-check form-check-inline mx-5 my-2">
+                      <input
+                        className="form-check-input"
+                        onChange={(e) => this.setState({ donator_type: e.target.value })}
+                        type="checkbox"
+                        value={0} />
+                      <label className="form-check-label redbungee outlineblack" style={{ fontSize: "24px" }}>Donor</label>
+                    </div>
+                    <div className="form-check form-check-inline mx-5 my-2">
+                      <input
+                        className="form-check-input"
+                        onChange={(e) => this.setState({ donator_type: e.target.value })}
+                        type="checkbox"
+                        value={1} />
+                      <label className="form-check-label redbungee outlineblack" style={{ fontSize: "24px" }}>Recipient</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="form-group">
+                <label className="cols-sm-2 control-label redbungee outlineblack pl-2"
                   style={{ fontSize: "24px" }}>
                   Password
                 </label>
@@ -117,6 +171,8 @@ class RegistrationForm extends React.Component {
                       <i className="fa fa-lock fa-lg" aria-hidden="true" />
                     </span>
                     <input
+                      value={this.state.password}
+                      onChange={(e) => this.handlePasswordChange(e)}
                       type="password"
                       className="form-control"
                       style={{ borderRadius: ".5em", backgroundColor: "black", color: "white" }}
@@ -128,7 +184,7 @@ class RegistrationForm extends React.Component {
               </div>
 
               <div className="form-group">
-                <label for="confirm" className="cols-sm-2 control-label redbungee outlineblack pl-2"
+                <label className="cols-sm-2 control-label redbungee outlineblack pl-2"
                   style={{ fontSize: "24px" }}>
                   Confirm Password
                 </label>
@@ -138,6 +194,8 @@ class RegistrationForm extends React.Component {
                       <i className="fa fa-lock fa-lg" aria-hidden="true" />
                     </span>
                     <input
+                      value={this.state.passwordConfirm}
+                      onChange={(e) => this.handleConfirmPasswordChange(e)}
                       type="password"
                       className="form-control"
                       style={{ borderRadius: ".5em", backgroundColor: "black", color: "white" }}
@@ -150,13 +208,10 @@ class RegistrationForm extends React.Component {
 
               <div className="form-group m-5">
                 <button
-                  href="/ThankYou1"
-                  target="_blank"
                   type="button"
-
                   className="btn btn-outline-danger btn-lg btn-block login-button redbungee outlineblack mt-3"
                   style={{ fontSize: "24px" }}
-                  onClick={this.onSubmit}
+                  onClick={() => this.onSubmit()}
                 >
                   Register
                 </button>
