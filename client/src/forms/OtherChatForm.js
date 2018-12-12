@@ -1,10 +1,11 @@
-// class App extends Component {
+// class ChatForm extends Component {
 
-//     constructor() {
-//       super()
+//     constructor(props) {
+//       super(props);
+
 //       this.state = {
-//         data: {
-//           messages: []
+
+//                 messages: []
 //         }
 //       }
 //     }
@@ -21,8 +22,9 @@
 //           messages.reverse()
 //           this.setState({
 //             data: {
-//               author: data.author,
-//               messages
+//               class: " ",
+//               image: " ",
+//               message
 //             }
 //           })
 //         }
@@ -43,7 +45,8 @@
 //       const messages = this.state.data.messages
 //       this.setState({
 //         data: {
-//           author,
+//           class: " ",
+//           image: " ",
 //           messages
 //         }
 //       })
@@ -66,9 +69,14 @@
 //       const message_browser = {
 //         _id: uuid.v1(),
 //         metafield: {
-//           author: {
-//             value: data.author
+//           class: {
+//             value: data.class
 //           },
+//           {
+//             image: {
+//                 value: Image
+//             },
+//           {
 //           message: {
 //             value: message_text
 //           }
@@ -77,8 +85,10 @@
 //       messages.push(message_browser)
 //       this.setState({
 //         data: {
-//           author: data.author,
-//           messages
+//             class: data.class
+//             value:image,
+//             message: message_text,
+            
 //         }
 //       })
 //       this.refs.message.refs.input.value = ''
@@ -106,7 +116,7 @@
 //           if (message_object) {
 //             return (
 //               <li style={ { listStyle: 'none', ...S('mb-5') } } key={ message_object._id }>
-//                 <b>{ message_object.metafield.author.value }</b><br/>
+//                 <b>{ message_object.metafield.class.value }</b><br/>
 //                 { message_object.metafield.message.value }
 //               </li>
 //             )
