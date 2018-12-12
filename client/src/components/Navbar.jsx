@@ -26,7 +26,7 @@ class Navbar extends Component {
             aria-label="Search"
           />
           <button
-          id="searchbarbutton"
+            id="searchbarbutton"
             className="btn btn-outline-danger font-weight-bold text-center my-2 my-sm-0"
             type="submit"
           >
@@ -47,33 +47,16 @@ class Navbar extends Component {
                 </Link>
               </li>
               <li className="nav-item dropdown">
-                <Link
-                  className="nav-link dropdown-toggle"
-                  to="/"
-                  id="navbarDropdown"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Make a Selection
-                  </Link>
-                <div
-                  className="dropdown-menu"
-                  aria-labelledby="navbarDropdown"
-                >
-                  <Link className="dropdown-item" to="/UpperLimbs">
-                    Upper Limb
-                    </Link>
-                  <Link className="dropdown-item" to="/LowerLimbs">
-                    Lower Limb
-                    </Link>
-                  
-              </div>
-              <div className="nav-item" />
-                  <Link className="nav-link" to="/Chat">
-                Chat
-                    </Link>
+                <div className="nav-item" />
+                <Link className="nav-link" to="/AllParts">
+                  Search Prosthetics
+                </Link>
+              </li>
+              <li className="nav-item dropdown">
+                <div className="nav-item" />
+                <Link className="nav-link" to="/Chat">
+                  Chat
+                </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/Donations">
