@@ -20,11 +20,16 @@ hr {
 }
 
 .donate-container {
+   max-width: 1000px;
    border: black solid 5px;
    border-radius: 1em;
    background: -webkit-linear-gradient(left, darkred, #ea920c);
 }
 
 label {
+   color: white;
+}
+
+div p {
    color: white;
 }
