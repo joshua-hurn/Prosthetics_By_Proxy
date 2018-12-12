@@ -1,15 +1,14 @@
-
-#form-container
-{
+#form-container {
     border: black solid 5px;
     width: 352px;
     background: -webkit-linear-gradient(left, darkred, #ea920c);
     color: black;
     height: 180px;
-    border-radius:0.5em;
+    border-radius: 0.5em;
 }
+
 label {
-    color:black;
+    color: white;
 }
 
 #card-btn {

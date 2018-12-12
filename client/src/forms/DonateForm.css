@@ -1,12 +1,12 @@
-#button.btn.btn-primary{
+#button.btn.btn-primary {
    color: white;
    background: #fb0 !important;
    font-family: bungee;
    margin-bottom: 10px;
    border: 4px solid black;
    border-radius: .3em;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), inset 0 10px 10px rgba(255,255,255,0.1);
-  color: #873C00;
+   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 10px 10px rgba(255, 255, 255, 0.1);
+   color: #873C00;
 }
 
 hr {
@@ -18,8 +18,13 @@ hr {
    border-style: inset;
    border-width: 1px;
 }
+
 .donate-container {
-  border: black solid 5px;
-  border-radius: 1em;
-  background: -webkit-linear-gradient(left, darkred, #ea920c);
+   border: black solid 5px;
+   border-radius: 1em;
+   background: -webkit-linear-gradient(left, darkred, #ea920c);
+}
+
+label {
+   color: white;
 }
