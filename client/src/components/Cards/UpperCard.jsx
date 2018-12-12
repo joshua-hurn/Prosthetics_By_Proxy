@@ -8,6 +8,14 @@ const UpperCard = props => {
       <div class="">
         <div class="mx-auto" >
           <div class="card" style={{ color: "white", width: '18rem', margin: '20px', background: "black" }}>
+            <div className="img">
+              <img
+                id="prosthetic-img"
+                className="rounded"
+                src={props.prosthetic.prosthetic_image}
+                alt="Image 1"
+              />
+            </div>
             <div class="card-body">
               <h5 class="card-title">{props.prosthetic.brand}</h5>
               <p class="card-text">{props.prosthetic.part}</p>
