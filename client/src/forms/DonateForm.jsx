@@ -225,6 +225,26 @@ class DonateForm extends React.Component {
             <input type="text" className="form-control" id="part-input" />
           </div>
 
+          <div className="form-group">
+            <label for="length-input">Part Length</label>
+            <input type="text" className="form-control" id="length-input" />
+          </div>
+
+          <div className="form-group">
+            <label for="width-input">Part Width</label>
+            <input type="text" className="form-control" id="width-input" />
+          </div>
+
+          <div className="form-group">
+            <label for="weight-input">Part Weight</label>
+            <input type="text" className="form-control" id="weight-input" />
+          </div>
+
+          <div className="form-group">
+            <label for="condition-input">Part Condition</label>
+            <input type="text" className="form-control" id="condition-input" />
+          </div>
+
           <div className="form-froup">
             <div class="dropdown">
               <button
