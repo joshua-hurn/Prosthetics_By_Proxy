@@ -23,7 +23,7 @@ const ProstheticsCard = props => {
           <Link to={`/part/${props.prosthetic.id}`} className="btn btn-outline-danger mr-2">
             See More
           </Link>
-          <Link to={"./ThankYou1"} className="btn btn-outline-danger ml-2">
+          <Link to={"./ThankYou2"} className="btn btn-outline-danger ml-2">
             Reserve
           </Link></div><br/>
           
