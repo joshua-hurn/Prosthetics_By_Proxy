@@ -35,7 +35,7 @@ class App extends Component {
           <Route exact path="/FAQ" component={FAQ} />
           <Route exact path="/part/:id" component={SinglePart} />
           <Route exact path="/Chat" component = {Chatroom}/>
-          <PrivateRoute exact path="/user/:id" component={UserProfile} />
+          <PrivateRoute exact path="/user" component={UserProfile} />
         </div>
       </Router>
     );

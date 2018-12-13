@@ -41,7 +41,8 @@ class AllParts extends Component {
 
   async componentDidMount() {
     try {
-      let displayProsthetics = await prostheticsServices.all();
+      let prosthetics = await prostheticsServices.all();
+      let displayProsthetics = prosthetics.filter(prosthetic => prosthetic.part_status === 0);
       this.setState({ displayProsthetics });
     } catch (e) {
       console.log(e);
@@ -69,7 +70,8 @@ class AllParts extends Component {
   onSuggestionSelected = async (event, { suggestion, suggestionValue, suggestionIndex, sectionIndex, method }) => {
     try {
       let res = await fetch(`/api/q/prosthetics/category/${suggestion.id}`);
-      let displayProsthetics = await res.json();
+      let prosthetics = await res.json();
+      let displayProsthetics = prosthetics.filter(prosthetic => prosthetic.part_status === 0);
       this.setState({ displayProsthetics });
     } catch (e) {
       console.log(e);
@@ -108,7 +110,7 @@ class AllParts extends Component {
           />
         </div>
         <div className="container ">
-          <div className="d-flex flex-wrap justify-content-center product-container" style={{ background: "linear-gradient(rgba(0,0,0, 0.55), rgba(0,0,0,0.55))", borderRadius: ".5em", border: "black solid 3px"}} >{this.renderProsthetics()}</div>
+          <div className="d-flex flex-wrap justify-content-center product-container" style={{ background: "linear-gradient(rgba(0,0,0, 0.55), rgba(0,0,0,0.55))", borderRadius: ".5em", border: "black solid 3px" }} >{this.renderProsthetics()}</div>
         </div>
         <Footer />
       </div>

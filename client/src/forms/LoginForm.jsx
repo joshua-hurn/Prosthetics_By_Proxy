@@ -57,7 +57,7 @@ class LoginForm extends Component {
       return <IndeterminateProgress message="Checking Login Status..." />;
     }
     if (redirectToReferrer) {
-      return <Redirect to={from} />;
+      return <Redirect to={'/user'} />;
     }
 
     return (
