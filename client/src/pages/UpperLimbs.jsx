@@ -47,7 +47,7 @@ class UpperLimbs extends Component {
             We have a selection of upper limb prosthetics from our authorized
             donors.
           </h3><br/>
-          <div className="d-flex flex-wrap justify-content-center" style={{ background: "linear-gradient(rgba(0,0,0, 0.55), rgba(0,0,0,0.55))", borderRadius: ".5em"}}>{this.renderProsthetics()}</div>
+          <div className="d-flex flex-wrap justify-content-center" style={{ background: "linear-gradient(rgba(0,0,0, 0.55), rgba(0,0,0,0.55))", border: "black solid 3px", borderRadius: ".5em"}}>{this.renderProsthetics()}</div>
         </div>
         <Footer />
       </div>

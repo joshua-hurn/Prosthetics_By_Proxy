@@ -32,7 +32,7 @@ class CheckoutForm extends Component {
 
   render() {
     return (
-      <div id="form-container">
+      <div id="form-container" className="bg-warning">
         <form onSubmit={e => this.handleSubmit(e)}>
           <input
             onChange={e => this.handleNameInput(e)}
@@ -44,12 +44,14 @@ class CheckoutForm extends Component {
           <div id="image-container">
             <span id="card-image" />
             <div id="card-front">
-              <input type="text" id="card-token" />
+              {/* <input type="text" id="card-token" 
+                placeholder="CARD NUMBER"
+              /> */}
 
               {/* <label for="card-holder">Card Holder
       </label> */}
 
-              <div id="exp-container">
+              <div id="exp-container" className="bg-warning">
                 <label for="card-exp">Expiration</label>
                 <input
                   id="card-month"

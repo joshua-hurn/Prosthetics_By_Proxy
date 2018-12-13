@@ -21,7 +21,7 @@ class Donations extends Component {
             <div className="d-flex justify-content-center" >
             <h1 className="mr-3 outlineblack whitepacifico">Donate a </h1><h1 className="ml-3 outline redbungee">prosthesis</h1>
             </div>
-            <p className="text-center font-weight-bold" style={{ fontSize: "28px", color: "black" }}>
+            <p className="text-center font-weight-bold" style={{ fontSize: "28px", color: "white" }}>
               PBP happily accepts the following new prostheses as donations:
               Above-knee, below-knee, body harnesses, arm prostheses, prosthetic
               hands.
