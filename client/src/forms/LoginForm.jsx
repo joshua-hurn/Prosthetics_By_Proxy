@@ -61,7 +61,7 @@ class LoginForm extends Component {
     }
 
     return (
-      <div className=" register">
+      <div className="register">
         <div className="row register-form">
           <div className="col-md-12">
             <form method="post" id="form1" onSubmit={e => this.login(e)}>

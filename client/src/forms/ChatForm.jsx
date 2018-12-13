@@ -17,18 +17,6 @@ class ChatForm extends React.Component {
   componentDidMount() {
     let chatData = [
       {
-        type: "sent",
-        image: "http://emilcarlsson.se/assets/mikeross.png",
-        message:
-          "A hook does not match a normal human hand for appearance or overall versatility!"
-      },
-      {
-        type: "replies",
-        image: "http://emilcarlsson.se/assets/harveyspecter.png",
-        message:
-          "When youre backed against the wall, break the thing down."
-      },
-      {
         type: "replies",
         image: "http://emilcarlsson.se/assets/harveyspecter.png",
         message: "Excuses dont win championships."
@@ -65,11 +53,11 @@ class ChatForm extends React.Component {
   }
 
   renderChat() {
-    return this.state.chatData.map(chat => {
+    return this.state.chatData.map((chat, index) => {
       return (
-        <li className={chat.type}>
+        <li key={index} className={chat.type}>
           <img src={chat.image} />
-          <p>{chat.message}</p>
+          <p className={chat.type === "sent" ? "text-white" : "text-dark"}>{chat.message}</p>
         </li>
       );
     });
@@ -93,31 +81,15 @@ class ChatForm extends React.Component {
         <Navbar />
         <Jumbotron title="Chat Room" subtitle="Talk to other users" />
         <div>
-          <div className="chat-container">
+          <div className="chat-container mx-auto p-3">
             <h2 id="connect-chat">Connect with donors, accept, and track donations online with this online chat tool!</h2>
             <h3 id="chat-here">Chat Here</h3>
             <p id="join">
               Join or start any conversation in the world with a simple chat message.
             </p>
-            {/* <p>
-			<div class="row d-flex justify-content-center">
-
-  
-<div class="col-md-6">
-
-
-  <div class="embed-responsive embed-responsive-16by9 mb-4">
-	<iframe class="embed-responsive-item" src="" allowfullscreen></iframe>
-  </div>
-
-</div>
-
-</div>
-
-            </p> */}
           </div>
         </div>
-        <div id="frame">
+        <div className="mt-5 mx-auto" id="frame" style={{ border: '4px solid black', boxShadow: '0 .5rem 1rem rgba(256, 256, 256, .15)'}}>
           <div id="sidepanel">
             <div id="profile">
               <div className="wrap">
@@ -195,7 +167,7 @@ class ChatForm extends React.Component {
                     <div className="meta">
                       <p className="name">Harvey Specter</p>
                       <p className="preview">
-					  A transradial prosthesis is an artificial limb that replaces an arm missing below the elbow.
+                        A transradial prosthesis is an artificial limb that replaces an arm missing below the elbow.
                       </p>
                     </div>
                   </div>
@@ -357,11 +329,6 @@ class ChatForm extends React.Component {
                 <button onClick={() => this.handleMessage()} className="submit">
                   <i className="fa fa-paper-plane" aria-hidden="true" />Send
                 </button>
-				<div> <div class="container">
-
-
-
-</div></div>
               </div>
             </div>
           </div>

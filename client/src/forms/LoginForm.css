@@ -145,7 +145,7 @@ h1 {
   position: absolute;
   right: 50px;
   top: 0;
-  width: 300px;
+  padding: 1em;
 }
 
 #form1:after {

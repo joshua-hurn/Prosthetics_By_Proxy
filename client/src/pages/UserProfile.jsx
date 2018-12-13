@@ -56,7 +56,7 @@ class UserProfile extends Component {
           title="Prosthetic By Proxy"
           subtitle="Provider of Prosthetic Patient Needs"
         />
-        <div className="container" style={{ borderRadius: '10px', backgroundColor: '#d6d6d6' }}>
+        <div className="container" style={{ borderRadius: '10px', backgroundColor: 'rgba(0, 0, 0, .75)' }}>
           <div className="row">
             {/* avatar */}
             <div className="col-md-12">
@@ -71,7 +71,7 @@ class UserProfile extends Component {
             </div>
             {/* card */}
             <div className="col-md-12">
-              <h3 className="esketit text-center">Profile</h3>
+              <h3 className="esketit text-center text-white">Profile</h3>
               <div className="card" style={{ boxShadow: '0 .5rem 1rem rgba(0, 0, 0, .15)' }}>
                 <ul className="list-group list-group-flush">
                   <li className="list-group-item d-flex justify-content-between"><span className="esketit">Name: </span><span className="esketit">{this.state.user.name}</span></li>
@@ -82,7 +82,7 @@ class UserProfile extends Component {
               </div>
             </div>
             <div className="col-md-12">
-              <h3 className="esketit text-center">Donations</h3>
+              {this.state.singleUsersProthetics.length > 0 ? <h3 className="esketit text-center text-white">Donations</h3> : null}
               {this.state.singleUsersProthetics.length > 0 ? <div className="card" style={{ boxShadow: '0 .5rem 1rem rgba(0, 0, 0, .15)' }}>
                 <ul className="list-group list-group-flush">
                   {this.renderDonations()}
