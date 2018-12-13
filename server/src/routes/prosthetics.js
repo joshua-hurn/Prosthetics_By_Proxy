@@ -19,6 +19,9 @@ router.get('/:id?', (req, res) => {
 router.post('/', (req, res) => {
     let newProsthetic = req.body;
     newProsthetic.userid = req.user.id;
+    if(newProsthetic.prosthetic_image.length === 0) {
+        delete newProsthetic.prosthetic_image;
+    }
     prostheticsTable.insert(newProsthetic)
         .then(results => res.send(results))
         .catch(e => res.status(500).send(e));
