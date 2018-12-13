@@ -20,7 +20,7 @@ app.use('/api', routes);
 
 app.use(stateRouting);
 
-let port = process.env.PORT || 5000;
+let port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
 });

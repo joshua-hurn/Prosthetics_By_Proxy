@@ -10,18 +10,18 @@ class HomeCards extends React.Component {
             <div className="" >
               <h5 className="whitebungee outlinered text-center" style={{ fontSize: "30px" }}>Recipients</h5>
               <p className="text-white text-center" style={{ fontFamily: "pacifico", fontSize: "26px" }}>Find what you need</p>
-              <a href="/AllParts" className="btn font-weight-bold btn-outline-danger d-flex justify-content-center">
+              <Link to="/AllParts" className="btn font-weight-bold btn-outline-danger d-flex justify-content-center">
                 S E L E C T
-              </a>
+              </Link>
             </div>
           </div>
         <div className="col-sm-5 p-4" style={{ borderRadius: ".8em", backgroundColor: "black" }} >
           <div className="" >
               <h5 className="whitebungee outlinered text-center" style={{ fontSize: "30px" }}>Donors</h5>
               <p className="text-white text-center" style={{ fontFamily: "pacifico", fontSize: "26px" }}>Give a prosthetic</p>
-              <a href="/Donations" className="btn font-weight-bold d-flex justify-content-center btn-outline-danger">
+              <Link to="/Donations" className="btn font-weight-bold d-flex justify-content-center btn-outline-danger">
                 D O N A T E
-              </a>
+              </Link>
             </div>
           </div>
       </div>
