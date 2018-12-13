@@ -8,6 +8,7 @@
 .navbar-nav {
     display: flex;
     align-items: left;
+
 }
 
 .navbar-toggler {
@@ -20,4 +21,9 @@
     position: relative;
     left: 12px;
     margin: 3px;
+}
+
+.nav-link {
+    color: darkred!important;
+    cursor: pointer;
 }
