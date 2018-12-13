@@ -20,13 +20,13 @@ class ChatForm extends React.Component {
         type: "sent",
         image: "http://emilcarlsson.se/assets/mikeross.png",
         message:
-          "How the hell am I supposed to get a jury to believe you when I am not even sure that I do?!"
+          "A hook does not match a normal human hand for appearance or overall versatility!"
       },
       {
         type: "replies",
         image: "http://emilcarlsson.se/assets/harveyspecter.png",
         message:
-          "When youre backed against the wall, break the god damn thing down."
+          "When youre backed against the wall, break the thing down."
       },
       {
         type: "replies",
@@ -52,13 +52,13 @@ class ChatForm extends React.Component {
         type: "sent",
         image: "http://emilcarlsson.se/assets/harveyspecter.png",
         message:
-          "What are you talking about? You do what they say or they shoot you."
+          "What are you talking about? I need a prosthetic hand."
       },
       {
         type: "replies",
         image: "http://emilcarlsson.se/assets/harveyspecter.png",
         message:
-          "Wrong. You take the gun, or you pull out a bigger one. Or, you call their bluff. Or, you do any one of a hundred and forty six other things."
+          "I live in the Netherlands. Can you ship it here?"
       }
     ];
     this.setState({ chatData });
@@ -94,17 +94,27 @@ class ChatForm extends React.Component {
         <Jumbotron title="Chat Room" subtitle="Talk to other users" />
         <div>
           <div className="container">
-            <h2>See what's happening in the world right now</h2>
-            <h3>Tweet</h3>
+            <h2>Connect with donors and accept and track donations online with this online chat tool.</h2>
+            <h3>Chat Here</h3>
             <p>
-              It all begins with a Tweet. Join or start any conversation in the
-              world with a simple Tweet. Find more tips about posting a Tweet.
+              Join or start any conversation in the world with a simple chat message.
             </p>
-            <h4>Retweet</h4>
-            <p>
-              See something you like? Retweet it to spread the word instantly.
-              Read more about Retweeting another Tweet.
-            </p>
+            {/* <p>
+			<div class="row d-flex justify-content-center">
+
+  
+<div class="col-md-6">
+
+
+  <div class="embed-responsive embed-responsive-16by9 mb-4">
+	<iframe class="embed-responsive-item" src="" allowfullscreen></iframe>
+  </div>
+
+</div>
+
+</div>
+
+            </p> */}
           </div>
         </div>
         <div id="frame">
@@ -185,9 +195,7 @@ class ChatForm extends React.Component {
                     <div className="meta">
                       <p className="name">Harvey Specter</p>
                       <p className="preview">
-                        Wrong. You take the gun, or you pull out a bigger one.
-                        Or, you call their bluff. Or, you do any one of a
-                        hundred and forty six other things.
+					  A transradial prosthesis is an artificial limb that replaces an arm missing below the elbow.
                       </p>
                     </div>
                   </div>
@@ -202,8 +210,7 @@ class ChatForm extends React.Component {
                     <div className="meta">
                       <p className="name">Rachel Zane</p>
                       <p className="preview">
-                        I was thinking that we could have chicken tonight,
-                        sounds good?
+                        I need a Lower-extremity prostheses.
                       </p>
                     </div>
                   </div>
@@ -218,7 +225,7 @@ class ChatForm extends React.Component {
                     <div className="meta">
                       <p className="name">Donna Paulsen</p>
                       <p className="preview">
-                        Mike, I know everything! I'm Donna..
+                        Mike, I know what you need! I'm Donna..
                       </p>
                     </div>
                   </div>
@@ -276,7 +283,7 @@ class ChatForm extends React.Component {
                     <div className="meta">
                       <p className="name">Katrina Bennett</p>
                       <p className="preview">
-                        I've sent you the files for the Garrett trial.
+                        I've sent you the files for the transfemoral prosthesis.
                       </p>
                     </div>
                   </div>
@@ -304,7 +311,7 @@ class ChatForm extends React.Component {
                     <div className="meta">
                       <p className="name">Jonathan Sidwell</p>
                       <p className="preview">
-                        <span>You:</span> That's bullshit. This deal is solid.
+                        <span>You:</span> That's not true. This deal is solid.
                       </p>
                     </div>
                   </div>
@@ -350,6 +357,11 @@ class ChatForm extends React.Component {
                 <button onClick={() => this.handleMessage()} className="submit">
                   <i className="fa fa-paper-plane" aria-hidden="true" />Send
                 </button>
+				<div> <div class="container">
+
+
+
+</div></div>
               </div>
             </div>
           </div>
