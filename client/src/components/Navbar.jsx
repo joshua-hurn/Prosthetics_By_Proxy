@@ -33,9 +33,6 @@ class Navbar extends Component {
             SEARCH
           </button>
         </form>
-        {/* <div className="logo" id="logo">
-          <img src="https://storage.pixteller.com/designs/designs-images/2018-12-03/10/logo-1-5c0596089c591.png" />
-        </div> */}
 
         <a className="navbar-brand" to="/" />
         <div className="container">
@@ -61,12 +58,16 @@ class Navbar extends Component {
               <li className="nav-item">
                 <Link className="nav-link" to="/Donations">
                   Donate
-                  </Link>
+                </Link>
               </li>
-
               <li className="nav-item">
                 <Link className="nav-link" to="/FAQ">
                   FAQ
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/user/me">
+                  My Account
                 </Link>
               </li>
             </ul>
