@@ -10,10 +10,11 @@
         "clean:client": "rimraf ./client/dist",
         "clean:server": "rimraf ./server/lib",
         "dev": "npm run clean && npm run build:server && concurrently -r -k \"npm run watch:client\" \"npm run watch:server\" \"nodemon --watch server/lib --delay 1\"",
-        "start": "npm run clean && npm run build:client && npm run build:server && npm run start:server",
+        "start": "npm run start:server",
         "start:server": "node server/lib/index.js",
         "watch:client": "webpack --mode development --watch",
-        "watch:server": "babel ./server/src -w -d ./server/lib"
+        "watch:server": "babel ./server/src -w -d ./server/lib",
+        "heroku-postbuild": "npm run build:client && npm run build:server"
     },
     "author": "Covalence",
     "license": "ISC",
