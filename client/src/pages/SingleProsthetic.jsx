@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import MapContainer from "../services/mapsContainer.jsx";
+import { Link } from 'react-router-dom';
 import Navbar from "../components/Navbar";
 import Jumbotron from "../components/Jumbotron";
 import Footer from "../components/Footer";
 import "./SingleProsthetic.css";
+import * as categoryServices from '../services/categories';
+import * as prostheticServices from '../services/prosthetics';
 
 class SingleProsthetic extends Component {
   constructor(props) {
@@ -16,11 +19,22 @@ class SingleProsthetic extends Component {
   async componentDidMount() {
     try {
       let id = this.props.match.params.id;
-      let res = await fetch(`/api/prosthetics/${id}`);
-      let prosthetic = await res.json();
-      console.log(prosthetic);
+      let prosthetic = await prostheticServices.one(id);
+      let category_id = await categoryServices.one(prosthetic.category_id);
+      prosthetic.part = category_id.name;
       this.setState({ prosthetic });
     } catch (e) {
+      console.log(e);
+    }
+  }
+
+  async handleReserve() {
+    let id = this.props.match.params.id;
+    let prosthetic = this.state.prosthetic;
+    prosthetic.part_status = 1;
+    try {
+      let res = await prostheticServices.update(id, prosthetic)
+    } catch(e) {
       console.log(e);
     }
   }
@@ -37,7 +51,7 @@ class SingleProsthetic extends Component {
           <div className="singleCard p-2" style={{ background: "black", borderRadius: ".5em", border: "black solid 3px" }} >
             <div className="shadow">
               <div className="card-header text-center text-white font-weight-bold">
-                Part Status: {this.state.prosthetic.part_status}
+                Part Status: {this.state.prosthetic.part_status === 0 ? <span className="btn btn-success">Available!</span> : <span className="btn btn-success">Reserved</span>}
               </div>
 
               <div className="card-body text-center font-weight-bold">
@@ -58,9 +72,9 @@ class SingleProsthetic extends Component {
                 <p className="card-text text-white font-weight-bold">
                   WEIGHT: {this.state.prosthetic.weight}
                 </p>
-                <a href="#" className="btn btn-outline-danger">
-                Reserve This Part
-                </a>
+                <Link onClick={() => this.handleReserve()} to="/ThankYou2" className="btn btn-outline-danger">
+                  Reserve This Part
+                </Link>
               </div>
             </div>
           </div>

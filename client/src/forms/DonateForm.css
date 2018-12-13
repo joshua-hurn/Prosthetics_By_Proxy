@@ -33,3 +33,14 @@ label {
 div p {
    color: white;
 }
+
+.killme {
+   color: white;
+   font-weight: bold;
+   font-family: "bungee";
+   text-shadow:
+   -1.5px -1.5px 0 black,
+   1.5px -1.5px 0 black,
+   -1.5px 1.5px 0 black,
+   1.5px 1.5px 0 black;
+}

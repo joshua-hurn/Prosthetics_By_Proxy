@@ -43,6 +43,7 @@ class AllParts extends Component {
     try {
       let prosthetics = await prostheticsServices.all();
       let displayProsthetics = prosthetics.filter(prosthetic => prosthetic.part_status === 0);
+      displayProsthetics.reverse();
       this.setState({ displayProsthetics });
     } catch (e) {
       console.log(e);
@@ -72,6 +73,7 @@ class AllParts extends Component {
       let res = await fetch(`/api/q/prosthetics/category/${suggestion.id}`);
       let prosthetics = await res.json();
       let displayProsthetics = prosthetics.filter(prosthetic => prosthetic.part_status === 0);
+      displayProsthetics.reverse();
       this.setState({ displayProsthetics });
     } catch (e) {
       console.log(e);
