@@ -21,9 +21,9 @@ const UpperCard = props => {
               <p className="card-text">  length: {props.prosthetic.length}</p>
               <p className="card-text">  width: {props.prosthetic.width}</p>
               <p className="card-text">  weight: {props.prosthetic.weight}</p>
-              <a href="#" className="btn btn-outline-danger">
-                View This Part
-              </a>
+              <Link to={`/part/${props.prosthetic.id}`} className="btn btn-outline-danger">
+              View This Part
+              </Link>
             </div>
           </div>
         </div>
