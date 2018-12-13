@@ -93,10 +93,10 @@ class ChatForm extends React.Component {
         <Navbar />
         <Jumbotron title="Chat Room" subtitle="Talk to other users" />
         <div>
-          <div className="container">
-            <h2>Connect with donors and accept and track donations online with this online chat tool.</h2>
-            <h3>Chat Here</h3>
-            <p>
+          <div className="chat-container">
+            <h2 id="connect-chat">Connect with donors, accept, and track donations online with this online chat tool!</h2>
+            <h3 id="chat-here">Chat Here</h3>
+            <p id="join">
               Join or start any conversation in the world with a simple chat message.
             </p>
             {/* <p>
