@@ -62,47 +62,46 @@ class LoginForm extends Component {
 
     return (
       <div className=" register">
-   
-            <div className="row register-form">
-              <div className="col-md-12">
-                <form method="post" id="form1" onSubmit={e => this.login(e)}>
-                  <div className="form-group">
-                    <label htmlFor="email"> Email </label>
-                    <input
-                      type="email"
-                      id="emailinput"
-                      name="email"
-                      placeholder="Enter your email"
-                      onChange={e => {
-                        this.handleEmailChange(e.target.value);
-                      }}
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="password"> Password </label>
-                    <input
-                      type="password"
-                      id="passwordinput"
-                      name="password"
-                      placeholder="Enter a password. Make it secure!"
-                      onChange={e => {
-                        this.handlePasswordChange(e.target.value);
-                      }}
-                    />
-                  </div>
-                  {this.state.feedbackMessage ? (
-                    <p id="missingcredentials">{this.state.feedbackMessage}</p>
-                  ) : null}
-                  <input
-                    className="btnContactSubmit"
-                    type="submit"
-                    value="Login"
-                    className="btn btn-warning"
-                  />
-                </form>
+        <div className="row register-form">
+          <div className="col-md-12">
+            <form method="post" id="form1" onSubmit={e => this.login(e)}>
+              <div className="form-group">
+                <label htmlFor="email"> Email </label>
+                <input
+                  type="email"
+                  id="emailinput"
+                  name="email"
+                  placeholder="Enter your email"
+                  onChange={e => {
+                    this.handleEmailChange(e.target.value);
+                  }}
+                />
               </div>
-            </div>
+              <div className="form-group">
+                <label htmlFor="password"> Password </label>
+                <input
+                  type="password"
+                  id="passwordinput"
+                  name="password"
+                  placeholder="Enter a password. Make it secure!"
+                  onChange={e => {
+                    this.handlePasswordChange(e.target.value);
+                  }}
+                />
+              </div>
+              {this.state.feedbackMessage ? (
+                <p id="missingcredentials">{this.state.feedbackMessage}</p>
+              ) : null}
+              <input
+                className="btnContactSubmit"
+                type="submit"
+                value="Login"
+                className="btn btn-warning"
+              />
+            </form>
           </div>
+        </div>
+      </div>
     );
   }
 }

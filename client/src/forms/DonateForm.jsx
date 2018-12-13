@@ -70,27 +70,7 @@ class DonateForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.onDonate}>
-        <div className="container">
-          <div className="form-group">
-            <label for="formGroupExampleInput">First Name </label>
-            <input
-              type="text"
-              className="form-control"
-              id="formGroupExampleInput"
-              placeholder="First Name"
-              onChange={this.handleChange}
-            />
-          </div>
-          <div className="form-group">
-            <label for="formGroupExampleInput2">Last Name</label>
-            <input
-              type="text"
-              className="form-control"
-              id="formGroupExampleInput2"
-              placeholder="Last Name"
-            />
-          </div>
-
+        <div className="container w3-col l4 w3-center">
           <div className="form-row" />
           <div className="form-group col-md-6">
             <label for="inputEmail4">Email</label>
@@ -99,15 +79,6 @@ class DonateForm extends React.Component {
               className="form-control"
               id="inputEmail4"
               placeholder="Email"
-            />
-          </div>
-          <div className="form-group col-md-6">
-            <label for="inputPassword4">Password</label>
-            <input
-              type="password"
-              className="form-control"
-              id="inputPassword4"
-              placeholder="Password"
             />
           </div>
           <div className="form-group">

@@ -21,15 +21,12 @@ class UserProfile extends Component {
   async componentDidMount() {
     try {
       baseServices.populateAuthToken();
-
       let user = await baseServices.get("/api/users/me");
-
       if (user.donator_type === 0) {
         user.donator_type = "Individual donor";
       } else {
         user.donator_type = "Organization";
       }
-
       this.setState({ user });
 
       let prosthetics = await prostheticsServices.all();

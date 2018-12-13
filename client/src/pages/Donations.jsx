@@ -10,14 +10,14 @@ import "./Donations.css";
 class Donations extends Component {
   render() {
     return (
-      <div>
+      <div >
         <Navbar />
         <Jumbotron
           title="Donations"
           subtitle="Provider of Prosthetic Patient Needs"
         />
-        <div className="donate-container">
-          <div>
+        <div>
+          <div className="donate-container">
             <div className="d-flex justify-content-center" >
             <h1 className="mr-3 outlineblack whitepacifico">Donate a </h1><h1 className="ml-3 outline redbungee">prosthesis</h1>
             </div>
@@ -27,7 +27,7 @@ class Donations extends Component {
               hands.
             </p>
           </div>
-          <div>
+          <div className="donate-form-container">
             <DonateForm />
           </div>
         </div>
