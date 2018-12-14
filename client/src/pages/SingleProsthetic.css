@@ -9,6 +9,9 @@
 }
 
 .product-image {
+    margin-bottom: 3px;
     min-height: 150px;
     min-width: 150px;
+    max-width: 250px;
+    max-height: 250px;
 }
