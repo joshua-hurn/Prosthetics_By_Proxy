@@ -28,7 +28,6 @@ class LowerLimbs extends Component {
   }
 
   renderProsthetics() {
-    console.log(this.state);
     return this.state.prosthetics.map(prosthetic => {
       return <LowerCard key={prosthetic.id} prosthetic={prosthetic} />;
     });
@@ -42,15 +41,13 @@ class LowerLimbs extends Component {
           title="Lower Limb Selection"
           subtitle="See What's Available"
         />
-
-        <div className="container">
-          <h2>Welcome to PBP</h2>
-          <p>
+        <div className="m-5 text-center">
+          <h2 className="blackpacifico outline display-4">Welcome to PBP</h2>
+          <h3 className="redbungee outline">
             We have a selection of lower limb prosthetics from our authorized
-            donars.
-          </p>
-
-          <div className="row">{this.renderProsthetics()}</div>
+            donors.
+          </h3><br/>
+          <div className="d-flex flex-wrap justify-content-center" style={{ background: "linear-gradient(rgba(0,0,0, 0.55), rgba(0,0,0,0.55))", border: "black solid 3px", borderRadius: ".5em"}}>{this.renderProsthetics()}</div>
         </div>
         <Footer />
       </div>

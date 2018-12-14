@@ -6,7 +6,7 @@ import "./Footer.jsx";
 class Navbar extends Component {
   render() {
     return (
-      <nav className="navbar navbar-dark mt-3">
+      <nav className="navbar navbar-dark">
         <button
           className="navbar-toggler"
           type="button"
@@ -26,16 +26,13 @@ class Navbar extends Component {
             aria-label="Search"
           />
           <button
-          id="searchbarbutton"
+            id="searchbarbutton"
             className="btn btn-outline-danger font-weight-bold text-center my-2 my-sm-0"
             type="submit"
           >
             SEARCH
           </button>
         </form>
-        {/* <div className="logo" id="logo">
-          <img src="https://storage.pixteller.com/designs/designs-images/2018-12-03/10/logo-1-5c0596089c591.png" />
-        </div> */}
 
         <a className="navbar-brand" to="/" />
         <div className="container">
@@ -47,43 +44,30 @@ class Navbar extends Component {
                 </Link>
               </li>
               <li className="nav-item dropdown">
-                <Link
-                  className="nav-link dropdown-toggle"
-                  to="/"
-                  id="navbarDropdown"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Make a Selection
-                  </Link>
-                <div
-                  className="dropdown-menu"
-                  aria-labelledby="navbarDropdown"
-                >
-                  <Link className="dropdown-item" to="/UpperLimbs">
-                    Upper Limb
-                    </Link>
-                  <Link className="dropdown-item" to="/LowerLimbs">
-                    Lower Limb
-                    </Link>
-                  
-              </div>
-              <div className="nav-item" />
-                  <Link className="nav-link" to="/Chat">
-                Chat
-                    </Link>
+                <div className="nav-item" />
+                <Link className="nav-link" to="/AllParts">
+                  Search Prosthetics
+                </Link>
+              </li>
+              <li className="nav-item dropdown">
+                <div className="nav-item" />
+                <Link className="nav-link" to="/Chat">
+                  Chat
+                </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/Donations">
                   Donate
-                  </Link>
+                </Link>
               </li>
-
               <li className="nav-item">
                 <Link className="nav-link" to="/FAQ">
                   FAQ
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/user">
+                  My Account
                 </Link>
               </li>
             </ul>

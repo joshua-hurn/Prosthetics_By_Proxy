@@ -1,5 +1,6 @@
 import React from "react";
-import * as prostheticsService from "../services/prosthetics";
+import * as categoryServices from "../services/categories";
+import * as prostheticsService from '../services/prosthetics';
 import "./DonateForm.css";
 import { withRouter } from "react-router";
 
@@ -8,187 +9,134 @@ class DonateForm extends React.Component {
     super(props);
 
     this.state = {
-      urls: " "
+      brand: "",
+      part: 0,
+      length: "",
+      width: "",
+      weight: "",
+      prosthetic_image: "",
+      quality: "",
+      categories: []
     };
   }
 
-  change = e => {
-    this.setState({
-      [e.target.name]: e.target.value
-    });
-  };
+  async componentDidMount() {
+    try {
+      let categories = await categoryServices.all();
+      this.setState({ categories });
+    } catch (e) {
+      console.log(e);
+    }
+  }
 
   async onDonate(e) {
     e.preventDefault();
+    let myObject = {
+      brand: this.state.brand,
+      category_id: parseInt(this.state.part),
+      length: parseInt(this.state.length),
+      width: parseInt(this.state.width),
+      weight: parseInt(this.state.weight),
+      prosthetic_image: this.state.prosthetic_image,
+      quality: this.state.quality,
+    };
+
     try {
-      let res = await prostheticsService.insert(this.state);
-      this.props.history.replace("/");
+      let res = await prostheticsService.insert(myObject);
+      this.props.history.push('/AllParts');
     } catch (error) {
       console.log(error);
     }
-    this.props.history.push("/ThankYou1");
+  }
+
+  handleSelectChange(e) {
+    this.setState({ part: e.target.value });
+  }
+
+  renderCategories() {
+    return this.state.categories.map(category => {
+      return <option value={category.id}>{category.name}</option>
+    });
   }
 
   render() {
     return (
       <form>
-        <div className= "container">
-        <div className="form-group">
-          <label for="formGroupExampleInput">First Name </label>
-          <input
-            type="text"
-            className="form-control"
-            id="formGroupExampleInput"
-            placeholder="First Name"
-          />
-        </div>
-        <div className="form-group">
-          <label for="formGroupExampleInput2">Last Name</label>
-          <input
-            type="text"
-            className="form-control"
-            id="formGroupExampleInput2"
-            placeholder="Last Name"
-          />
-        </div>
+        <div className="container w3-col l4 w3-center">
 
-        <div className="form-row" />
-        <div className="form-group col-md-6">
-          <label for="inputEmail4">Email</label>
-          <input
-            type="email"
-            className="form-control"
-            id="inputEmail4"
-            placeholder="Email"
-          />
-        </div>
-        <div className="form-group col-md-6">
-          <label for="inputPassword4">Password</label>
-          <input
-            type="password"
-            className="form-control"
-            id="inputPassword4"
-            placeholder="Password"
-          />
-        </div>
-        <div className="form-group">
-          <label for="inputAddress">Address</label>
-          <input
-            type="text"
-            className="form-control"
-            id="inputAddress"
-            placeholder="1234 Main St"
-          />
-        </div>
-        <div className="form-group">
-          <label for="inputAddress2">Address 2</label>
-          <input
-            type="text"
-            className="form-control"
-            id="inputAddress2"
-            placeholder="Apartment, studio, or floor"
-          />
-        </div>
-        <div className="form-row">
-          <div className="form-group col-md-6">
-            <label for="inputCity">City</label>
-            <input type="text" className="form-control" id="inputCity" />
+          <div className="form-group">
+            <label className="killme">Prosthetic Brand</label>
+            <input type="text" className="form-control" id="brand-input"
+              placeholder="The brand of the prosthetic"
+              value={this.state.brand}
+              onChange={(e) => this.setState({ brand: e.target.value })} />
           </div>
-          <div className="form-group col-md-4">
-            <label for="inputState">State</label>
-            <select id="inputState" className="form-control">
-              <option selected>Choose...</option>
-              <option>...</option>
+
+          <div className="form-group">
+            <label className="killme">Type of Part</label>
+            <select
+              value={this.state.part}
+              onChange={(e) => this.handleSelectChange(e)}
+              className="form-control"
+              id="categorySelect">
+              <option>Select a type ...</option>
+              {this.renderCategories()}
             </select>
           </div>
-          <div className="form-group col-md-2">
-            <label for="inputZip">Zip</label>
-            <input type="text" className="form-control" id="inputZip" />
+
+          <div className="form-group">
+            <label className="killme">Part Length</label>
+            <input type="text" className="form-control" id="length-input"
+              placeholder="Length in cm"
+              value={this.state.length}
+              onChange={(e) => this.setState({ length: e.target.value })} />
           </div>
-        </div>
-        <div className="form-group">
-          <div className="form-check">
+
+          <div className="form-group">
+            <label className="killme">Part Width</label>
+            <input type="text" className="form-control" id="width-input"
+              value={this.state.width}
+              placeholder="Width in cm"
+              onChange={(e) => this.setState({ width: e.target.value })} />
+          </div>
+
+          <div className="form-group">
+            <label className="killme">Part Weight</label>
+            <input type="text" className="form-control" id="weight-input"
+              value={this.state.weight}
+              placeholder="Weight in lbs"
+              onChange={(e) => this.setState({ weight: e.target.value })} />
+          </div>
+
+          <div className="form-group">
+            <label className="killme">Part Condition</label>
+            <input type="text" className="form-control" id="condition-input"
+              value={this.state.quality}
+              placeholder="One or two word quality description"
+              onChange={(e) => this.setState({ quality: e.target.value })} />
+          </div>
+          <div className="form-group">
+            <label className="killme">Part Image</label>
             <input
-              className="form-check-input"
-              type="checkbox"
-              id="gridCheck"
+              type="text"
+              name="image-upload"
+              id="uploadedfile"
+              className="form-control"
+              placeholder="Link a url to the picture"
+              value={this.state.prosthetic_image}
+              onChange={(e) => this.setState({ prosthetic_image: e.target.value })}
             />
-            <label className="form-check-label" for="gridCheck">
-              Save Contact Information
-            </label>
           </div>
-        </div>
-
-        <hr className="hr" />
-
-        <div className="form-group">
-          <label for="brand-input">Prosthetic Brand</label>
-          <input type="text" className="form-control" id="brand-input" />
-        </div>
-
-        <div className="form-group">
-          <label for="part-input">Type of Part</label>
-          <input type="text" className="form-control" id="part-input" />
-        </div>
-
-        <div className="form-froup">
-          <div class="dropdown">
-            <button
-              class="btn btn-secondary dropdown-toggle"
-              type="button"
-              id="dropdownMenuButton"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Select Part location
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <li class="dropdown-item" href="#">
-                Upper Limb
-              </li>
-              <li class="dropdown-item" href="#">
-                Lower Limb
-              </li>
-            </div>
-          </div>
-        </div>
-
-        <div className="form-group">
-          <label for="exampleFormControlTextarea1">Donation Description</label>
-          <textarea
-            className="form-control"
-            id="exampleFormControlTextarea1"
-            rows="3"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="image-upload">Upload images</label>
-          <p>Our site supports url links as images. Please enter URLs below.</p>
-          <input
-            type="text"
-            multiple="true"
-            name="image-upload"
-            id="uploadedfile"
-            class="form-control"
-          />
-        </div>
-
-        <button
-          href="/ThankYou1"
-          type="submit"
-          className="btn btn-primary"
-          id="button"
-          onClick={this.onDonate}
-        >
-          Donate
-        </button>
+          <button
+            type="submit"
+            className="btn btn-primary btn-lg mx-auto btn-block mb-2"
+            id="button"
+            onClick={(e) => this.onDonate(e)}
+          >
+            Donate
+          </button>
         </div>
       </form>
-      
-    
-      
     );
   }
 }

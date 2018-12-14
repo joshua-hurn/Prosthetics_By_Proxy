@@ -5,24 +5,31 @@ import "./LowerCard.css";
 const LowerCard = props => {
   return (
     <React.Fragment>
-      <div class="row">
-        <div class="col-sm-6 mx-auto">
-          <div class="card" style={{width: '18rem', margin: '20px'}}>
-            <div class="card-body">
-              <h5 class="card-title">{props.prosthetic.brand}</h5>
-              <p class="card-text">{props.prosthetic.part}</p>
-              <p class="card-text">  length: {props.prosthetic.length}</p>
-              <p class="card-text">  width: {props.prosthetic.width}</p>
-              <p class="card-text">  weight: {props.prosthetic.weight}</p>
-              <a href="#" class="btn btn-primary">
+        <div className="lowerCard p-2" style={{ background: "black", borderRadius: ".5em", border: "black solid 3px" }}>
+          <div className="text-center" style={{ color: "white", backgroundColor: "black", borderRadius: ".5em" }}>
+            <div className="img">
+              <img
+                id="prosthetic-img"
+                className="rounded"
+                src={props.prosthetic.prosthetic_image}
+                alt="Image 1"
+              />
+            </div>
+            <div className="card-body">
+              <h5 className="card-title">{props.prosthetic.brand}</h5>
+              <p className="card-text">{props.prosthetic.part}</p>
+              <p className="card-text">  LENGTH: {props.prosthetic.length}</p>
+              <p className="card-text">  WIDTH: {props.prosthetic.width}</p>
+              <p className="card-text">  WEIGHT: {props.prosthetic.weight}</p>
+              <a href="#" className="btn btn-outline-danger">
                 View This Part
               </a>
             </div>
           </div>
         </div>
-      </div>
     </React.Fragment>
   );
 };
+
 
 export default LowerCard;

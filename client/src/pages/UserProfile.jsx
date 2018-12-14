@@ -3,33 +3,49 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Jumbotron from "../components/Jumbotron";
 import * as baseServices from "../services/base";
+import * as prostheticsServices from "../services/prosthetics";
 import "./UserProfile.css";
+
+import moment from 'moment';
 
 class UserProfile extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      user: {}
+      user: {},
+      singleUsersProthetics: []
     };
   }
 
   async componentDidMount() {
     try {
       baseServices.populateAuthToken();
-
       let user = await baseServices.get("/api/users/me");
-
       if (user.donator_type === 0) {
         user.donator_type = "Individual donor";
       } else {
         user.donator_type = "Organization";
       }
-
       this.setState({ user });
+
+      let prosthetics = await prostheticsServices.all();
+      let singleUsersProthetics = prosthetics.filter(function (singleThang) {
+        return user.id === singleThang.userid;
+      });
+      this.setState({ singleUsersProthetics });
+
     } catch (e) {
       console.log(e);
     }
+  }
+
+  renderDonations() {
+    return this.state.singleUsersProthetics.map(item => {
+      return (
+        <li key={item.id} className="list-group-item d-flex justify-content-between align-items-center"><span className="esketit">{item.brand}</span>{item.part_status === 1 ? <span className="btn btn-success esketit">Reserved</span>: <span className="btn btn-danger esketit">Pending</span>}</li>
+      );
+    })
   }
 
   render() {
@@ -40,120 +56,43 @@ class UserProfile extends Component {
           title="Prosthetic By Proxy"
           subtitle="Provider of Prosthetic Patient Needs"
         />
-        <div className="container emp-profile">
-          <form method="post">
-            <div className="row">
-              <div className="col-md-4">
-                <div className="profile-img">
-                  <img src={`${this.state.user.profile_image}`} alt="" />
-                  <div className="file btn btn-lg btn-primary">
-                    Change Photo
-                    <input type="file" name="file" />
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-6">
-                <div className="profile-head">
-                  <h5>{this.state.user.name}</h5>
-                  <h6>Web Developer and Designer</h6>
-                  <h6>{this.state.user.donator_type}</h6>
-                  <ul className="nav nav-tabs" id="myTab" role="tablist">
-                    <li className="nav-item">
-                      <a
-                        className="nav-link active"
-                        id="home-tab"
-                        data-toggle="tab"
-                        href="#home"
-                        role="tab"
-                        aria-controls="home"
-                        aria-selected="true"
-                      >
-                        About
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        className="nav-link"
-                        id="profile-tab"
-                        data-toggle="tab"
-                        href="#profile"
-                        role="tab"
-                        aria-controls="profile"
-                        aria-selected="false"
-                      >
-                        Summary
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="col-md-2">
-                <input
-                  type="submit"
-                  className="profile-edit-btn"
-                  name="btnAddMore"
-                  value="Edit Profile"
-                />
-              </div>
-            </div>
-            <div className="col-md-8 infocontainer">
-              <div className="tab-content profile-tab" id="myTabContent">
-                <div
-                  className="tab-pane fade show active"
-                  id="home"
-                  role="tabpanel"
-                  aria-labelledby="home-tab"
-                >
-                  <div className="row">
-                    <div className="col-md-6">
-                      <label>Name</label>
-                    </div>
-                    <div className="col-md-6">
-                      <p>{this.state.user.name}</p>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-md-6">
-                      <label>Email</label>
-                    </div>
-                    <div className="col-md-6">
-                      <p>{this.state.user.email}</p>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-md-6">
-                      <label>Phone</label>
-                    </div>
-                    <div className="col-md-6">
-                      <p>{this.state.user.phone_number}</p>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className="tab-pane fade"
-                  id="profile"
-                  role="tabpanel"
-                  aria-labelledby="profile-tab"
-                >
-                  <div className="row">
-                    <div className="col-md-6">
-                      <label>Summary</label>
-                    </div>
-                    <div>
-                      <p>
-                        I've been an amputee for years with a lot of experience
-                        in testing and adapting to new prosthetics. I hope to be
-                        a good resource for people in need.
-                      </p>
-                    </div>
+        <div className="container" style={{ borderRadius: '10px', backgroundColor: '#d6d6d6' }}>
+          <div className="row">
+            {/* avatar */}
+            <div className="col-md-12">
+              <div className="d-flex justify-content-center h-100">
+                <div className="image_outer_container">
+                  {/* <div className="green_icon"></div> */}
+                  <div className="image_inner_container">
+                    <img src={this.state.user.profile_image} alt="user avatar" />
                   </div>
                 </div>
               </div>
             </div>
-          </form>
+            {/* card */}
+            <div className="col-md-12">
+              <h3 className="esketit text-center">Profile</h3>
+              <div className="card" style={{ boxShadow: '0 .5rem 1rem rgba(0, 0, 0, .15)' }}>
+                <ul className="list-group list-group-flush">
+                  <li className="list-group-item d-flex justify-content-between"><span className="esketit">Name: </span><span className="esketit">{this.state.user.name}</span></li>
+                  <li className="list-group-item d-flex justify-content-between"><span className="esketit">Email: </span><span className="esketit">{this.state.user.email}</span></li>
+                  <li className="list-group-item d-flex justify-content-between"><span className="esketit">User Type: </span><span className="esketit">{this.state.user.donator_type}</span></li>
+                  <li className="list-group-item d-flex justify-content-between"><span className="esketit">Joined: </span><span className="esketit">{moment(this.state.user._created).format('LLL')}</span></li>
+                </ul>
+              </div>
+            </div>
+            <div className="col-md-12">
+              <h3 className="esketit text-center">Donations</h3>
+              {this.state.singleUsersProthetics.length > 0 ? <div className="card" style={{ boxShadow: '0 .5rem 1rem rgba(0, 0, 0, .15)' }}>
+                <ul className="list-group list-group-flush">
+                  {this.renderDonations()}
+                </ul>
+              </div> : null}
+            </div>
+          </div>
         </div>
         <Footer />
-      </div>
+      </div >
     );
   }
 }

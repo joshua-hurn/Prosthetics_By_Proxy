@@ -1,15 +1,14 @@
-
-#form-container
-{
+#form-container {
     border: black solid 5px;
-    width: 352px;
-    background: -webkit-linear-gradient(left, darkred, #ea920c);
+    width: 370px;
     color: black;
-    height: 180px;
-    border-radius:0.5em;
+    height: 192px;
+    border-radius: 0.5em;
+    padding: .5em;
 }
+
 label {
-    color:black;
+    color: white;
 }
 
 #card-btn {
@@ -17,4 +16,10 @@ label {
     border: 3px solid black;
     color: white;
     background-color: darkred;
+}
+
+.StripeElement {
+    margin: .5em 0;
+    padding: .2em;
+    background-color: white;
 }
