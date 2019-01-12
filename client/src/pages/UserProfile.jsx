@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import moment from 'moment';
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Jumbotron from "../components/Jumbotron";
@@ -6,7 +7,6 @@ import * as baseServices from "../services/base";
 import * as prostheticsServices from "../services/prosthetics";
 import "./UserProfile.css";
 
-import moment from 'moment';
 
 class UserProfile extends Component {
   constructor(props) {
