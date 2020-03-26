@@ -18,15 +18,16 @@ SELECT * FROM Prosthetics;
 
 CREATE TABLE Users(
 	id int not null auto_increment primary key,
-    addressid int not null,
-    donator_type tinyint,
+    	addressid int not null,
+    	donator_type tinyint,
 	name varchar(50) not null,
-    username varchar(16) not null,
+    	username varchar(16) not null,
 	email varchar(50) not null,
-    phone_number varchar(10) not null,
-    profile_image nvarchar(300) not null,
+    	phone_number varchar(10) not null,
+    	profile_image nvarchar(300) not null,
 	hash varchar(60) not null,
-	_created timestamp default current_timestamp);
+	_created timestamp default current_timestamp
+);
 
 insert into Users(addressid, donator_type, name, username, email, profile_image, hash, phone_number)
 values(1, 0, 'Beth', 'BethH25' 'beth17@gmail.com', 'https://cdn4.i-scmp.com/sites/default/files/styles/980x551/public/images/methode/2018/04/18/00df9aac-4153-11e8-ab09-36e8e67fb996_1280x720_155235.JPG?itok=CvMEgYB2', '$2y$12$eUiz5/luVwKdr/VoNEzVB.MbqaPwB5whCB/ZSRiU6Rz29unkqb5bK', 4656457869);
