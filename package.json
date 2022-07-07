@@ -39,7 +39,7 @@
         "google-maps-react": "^2.0.2",
         "isomorphic-fetch": "^2.2.1",
         "mailgun-js": "^0.22.0",
-        "moment": "^2.22.2",
+        "moment": "^2.29.4",
         "morgan": "^1.9.1",
         "mysql": "^2.16.0",
         "passport": "^0.4.0",
